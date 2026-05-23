@@ -1,0 +1,566 @@
+@prefix ex: <http://example.org/data#> .
+@prefix gql: <http://example.org/gql-types#> .
+
+ex:Pacjent_0 ex:dataPrzyjecia "2026-05-15T03:54:37"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "2000-06-26"^^gql:DATE ;
+    ex:idOpaskiHex "efa6"^^gql:BINARY ;
+    ex:imieNazwisko "Stanisław Mironiuk"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P4Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "114.5"^^gql:FLOAT ;
+    ex:wiek "57"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_1 ex:dataPrzyjecia "2026-03-29T07:50:03"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1994-10-10"^^gql:DATE ;
+    ex:idOpaskiHex "b813"^^gql:BINARY ;
+    ex:imieNazwisko "Kacper Mydlak"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Paracetamol\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P5Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "42.4"^^gql:FLOAT ;
+    ex:wiek "42"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_10 ex:dataPrzyjecia "2026-04-03T23:04:51"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "2019-09-12"^^gql:DATE ;
+    ex:idOpaskiHex "354"^^gql:BINARY ;
+    ex:imieNazwisko "Fabian Samiec"^^gql:STRING ;
+    ex:plec "Brak Danych"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Insulina\", \"Ibuprofen\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P5Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "100.9"^^gql:FLOAT ;
+    ex:wiek "300"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_11 ex:dataPrzyjecia "2026-05-14T13:50:28"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1950-01-22"^^gql:DATE ;
+    ex:idOpaskiHex "684a"^^gql:BINARY ;
+    ex:imieNazwisko "Tymoteusz Wojtyna"^^gql:STRING ;
+    ex:plec "Brak Danych"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Paracetamol\", "^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y10M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "84.5"^^gql:FLOAT ;
+    ex:wiek "-15"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_12 ex:dataPrzyjecia "2026-01-25T01:06:07"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1994-09-09"^^gql:DATE ;
+    ex:idOpaskiHex "c40"^^gql:BINARY ;
+    ex:imieNazwisko "Marcel Brózda"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Insulina\", \"Amoksycylina\", \"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "4 lat i 4 miesiecy"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "80.9"^^gql:FLOAT ;
+    ex:wiek "62"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_13 ex:dataPrzyjecia "2026-05-23 00:02:42"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1960-04-14"^^gql:DATE ;
+    ex:idOpaskiHex "6d7"^^gql:BINARY ;
+    ex:imieNazwisko "Karina Wiese"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Paracetamol\", "^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "86.0"^^gql:FLOAT ;
+    ex:wiek "3"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_14 ex:dataPrzyjecia "2026-05-05T07:27:29"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1956-02-13"^^gql:DATE ;
+    ex:idOpaskiHex "d35b"^^gql:BINARY ;
+    ex:imieNazwisko "Mariusz Szyndler"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Ibuprofen\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "73.8"^^gql:FLOAT ;
+    ex:wiek "36"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "nie"^^gql:BOOLEAN .
+
+ex:Pacjent_15 ex:dataPrzyjecia "2026-05-02T23:06:12"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "2021-09-20"^^gql:DATE ;
+    ex:idOpaskiHex "5b8d"^^gql:BINARY ;
+    ex:imieNazwisko "Tomasz Woźniczko"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "{\"lek\": \"Ibuprofen\"}"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "2 lat i 10 miesiecy"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "109.0"^^gql:FLOAT ;
+    ex:wiek "15"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_16 ex:dataPrzyjecia "2026-04-04T04:07:14"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1937-01-16"^^gql:DATE ;
+    ex:idOpaskiHex "845"^^gql:BINARY ;
+    ex:imieNazwisko "pani Julita Surdyk"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P5Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "80,5"^^gql:FLOAT ;
+    ex:wiek "42"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "nie"^^gql:BOOLEAN .
+
+ex:Pacjent_17 ex:dataPrzyjecia "2026-03-30T01:33:09"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1998-03-28"^^gql:DATE ;
+    ex:idOpaskiHex "8c5b"^^gql:BINARY ;
+    ex:imieNazwisko "Cezary Cylwik"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Paracetamol\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P4Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "115.1"^^gql:FLOAT ;
+    ex:wiek "26"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_18 ex:dataPrzyjecia "2026-01-11T14:44:17"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1990-07-15"^^gql:DATE ;
+    ex:idOpaskiHex "5c43"^^gql:BINARY ;
+    ex:imieNazwisko "Marek Łaś"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Insulina\", \"Paracetamol\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P0Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "75.6"^^gql:FLOAT ;
+    ex:wiek "98"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
+ex:Pacjent_19 ex:dataPrzyjecia "2026-01-05T05:29:08"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1959-05-29"^^gql:DATE ;
+    ex:idOpaskiHex "272a"^^gql:BINARY ;
+    ex:imieNazwisko "pan Mieszko Cierpka"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Insulina\", \"Amoksycylina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P0Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "78,9"^^gql:FLOAT ;
+    ex:wiek "300"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
+ex:Pacjent_2 ex:dataPrzyjecia "2026-03-26T21:09:19"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "2021-02-13"^^gql:DATE ;
+    ex:idOpaskiHex "d9b1"^^gql:BINARY ;
+    ex:imieNazwisko "Rozalia Łyczak"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Paracetamol\", "^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y10M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "65.7"^^gql:FLOAT ;
+    ex:wiek "-15"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_20 ex:dataPrzyjecia "2026-05-06T05:10:06"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1935-01-30"^^gql:DATE ;
+    ex:idOpaskiHex "d6f"^^gql:BINARY ;
+    ex:imieNazwisko "Rozalia Reimann"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Insulina\", \"Paracetamol\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P0Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "111.4"^^gql:FLOAT ;
+    ex:wiek "68"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
+ex:Pacjent_21 ex:dataPrzyjecia "2026-05-07 06:18:15"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "2011-10-16"^^gql:DATE ;
+    ex:idOpaskiHex "be8"^^gql:BINARY ;
+    ex:imieNazwisko "Ryszard Piskor"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Amoksycylina\", \"Euthyrox\", \"Insulina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P0Y2M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "77,8"^^gql:FLOAT ;
+    ex:wiek "14"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_22 ex:dataPrzyjecia "2026-02-20 22:51:45"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1928-10-20"^^gql:DATE ;
+    ex:idOpaskiHex "28d1"^^gql:BINARY ;
+    ex:imieNazwisko "Józef Bejm"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Euthyrox\", \"Amoksycylina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "2 lat i 9 miesiecy"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "89.3"^^gql:FLOAT ;
+    ex:wiek "41"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_23 ex:dataPrzyjecia "2026-04-18T14:50:27"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "03-01-1984"^^gql:DATE ;
+    ex:idOpaskiHex "3e26"^^gql:BINARY ;
+    ex:imieNazwisko "Kamil Surdyk"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Amoksycylina\", \"Euthyrox\", \"Paracetamol\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P5Y10M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "101.8"^^gql:FLOAT ;
+    ex:wiek "91"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_24 ex:dataPrzyjecia "2026-05-16T09:53:27"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1982-09-06"^^gql:DATE ;
+    ex:idOpaskiHex "9930"^^gql:BINARY ;
+    ex:imieNazwisko "pan Krzysztof Stożek"^^gql:STRING ;
+    ex:plec "Kobieta"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Amoksycylina\", \"Paracetamol\", \"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P4Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "119.8"^^gql:FLOAT ;
+    ex:wiek "76"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_25 ex:dataPrzyjecia "2026-04-28T20:31:42"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "14-11-1957"^^gql:DATE ;
+    ex:idOpaskiHex "518"^^gql:BINARY ;
+    ex:imieNazwisko "pan Hubert Jagieło"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Amoksycylina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P5Y8M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "88.6"^^gql:FLOAT ;
+    ex:wiek "71"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_26 ex:dataPrzyjecia "2026-01-29T17:30:30"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "2012-12-29"^^gql:DATE ;
+    ex:idOpaskiHex "9277"^^gql:BINARY ;
+    ex:imieNazwisko "Sonia Steciuk"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Paracetamol\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "3 lat i 2 miesiecy"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "67.4"^^gql:FLOAT ;
+    ex:wiek "47"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "true"^^gql:BOOLEAN .
+
+ex:Pacjent_27 ex:dataPrzyjecia "2026-05-20T23:49:42"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1929-04-20"^^gql:DATE ;
+    ex:idOpaskiHex "92c4"^^gql:BINARY ;
+    ex:imieNazwisko "Kalina Mirga"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Amoksycylina\", \"Ibuprofen\", \"Insulina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "4 lat i 10 miesiecy"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "99.1"^^gql:FLOAT ;
+    ex:wiek "76"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
+ex:Pacjent_28 ex:dataPrzyjecia "2026-05-07T05:35:04"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1994-10-28"^^gql:DATE ;
+    ex:idOpaskiHex "b4a1"^^gql:BINARY ;
+    ex:imieNazwisko "Anita Rzeźniczak"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Insulina\", \"Ibuprofen\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P0Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "117.0"^^gql:FLOAT ;
+    ex:wiek "30"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_29 ex:dataPrzyjecia "2026-04-18T09:11:39"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "01-03-1931"^^gql:DATE ;
+    ex:idOpaskiHex "a402"^^gql:BINARY ;
+    ex:imieNazwisko "Igor Dyś"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Insulina\", \"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "92.5"^^gql:FLOAT ;
+    ex:wiek "48"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
+ex:Pacjent_3 ex:dataPrzyjecia "2026-05-10T08:52:32"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1999-12-01"^^gql:DATE ;
+    ex:idOpaskiHex "4d76"^^gql:BINARY ;
+    ex:imieNazwisko "Przemysław Bobel"^^gql:STRING ;
+    ex:plec "Kobieta"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Insulina\", \"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P1Y4M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "53,5"^^gql:FLOAT ;
+    ex:wiek "84"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "true"^^gql:BOOLEAN .
+
+ex:Pacjent_30 ex:dataPrzyjecia "2026-04-22T03:59:15"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1992-08-08"^^gql:DATE ;
+    ex:idOpaskiHex "9cb9"^^gql:BINARY ;
+    ex:imieNazwisko "Albert Dziewa"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Paracetamol\", "^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P5Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "78,7"^^gql:FLOAT ;
+    ex:wiek "54"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_31 ex:dataPrzyjecia "2026-04-25 12:55:48"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1944-04-23"^^gql:DATE ;
+    ex:idOpaskiHex "9fb4"^^gql:BINARY ;
+    ex:imieNazwisko "pani Inga Hanke"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P1Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "87.3"^^gql:FLOAT ;
+    ex:wiek "19"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "prawda"^^gql:BOOLEAN .
+
+ex:Pacjent_32 ex:dataPrzyjecia "2026-03-17T10:35:17"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1948-03-05"^^gql:DATE ;
+    ex:idOpaskiHex "9ae2"^^gql:BINARY ;
+    ex:imieNazwisko "Wojciech Bartoszak"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Ibuprofen\", \"Insulina\", \"Ketonal\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "71.7"^^gql:FLOAT ;
+    ex:wiek "21"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "true"^^gql:BOOLEAN .
+
+ex:Pacjent_33 ex:dataPrzyjecia "2026-04-23T12:39:58"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1968-08-28"^^gql:DATE ;
+    ex:idOpaskiHex "638"^^gql:BINARY ;
+    ex:imieNazwisko "pan Błażej Morka"^^gql:STRING ;
+    ex:plec "Mężczyzna"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Ketonal\", \"Euthyrox\", \"Ibuprofen\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "2 lat i 8 miesiecy"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "118.0"^^gql:FLOAT ;
+    ex:wiek "79"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_34 ex:dataPrzyjecia "2026-04-30T13:43:54"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1932-10-25"^^gql:DATE ;
+    ex:idOpaskiHex "2514"^^gql:BINARY ;
+    ex:imieNazwisko "pan Konstanty Margas"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Insulina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P1Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "55,9"^^gql:FLOAT ;
+    ex:wiek "35"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "tak"^^gql:BOOLEAN .
+
+ex:Pacjent_35 ex:dataPrzyjecia "2026-04-12T06:28:37"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1956-11-13"^^gql:DATE ;
+    ex:idOpaskiHex "6fde"^^gql:BINARY ;
+    ex:imieNazwisko "Tobiasz Korgul"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Amoksycylina\", \"Ketonal\", \"Insulina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P1Y8M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "41.7"^^gql:FLOAT ;
+    ex:wiek "76"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_36 ex:dataPrzyjecia "2026-03-28T08:12:01"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1971-12-09"^^gql:DATE ;
+    ex:idOpaskiHex "ab97"^^gql:BINARY ;
+    ex:imieNazwisko "Urszula Owsiany"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Paracetamol\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P1Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "68.2"^^gql:FLOAT ;
+    ex:wiek "8"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_37 ex:dataPrzyjecia "2026-01-25T22:44:35"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1949-03-05"^^gql:DATE ;
+    ex:idOpaskiHex "d2b5"^^gql:BINARY ;
+    ex:imieNazwisko "Tomasz Krzan"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Ibuprofen\", \"Paracetamol\", \"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P1Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "77.4"^^gql:FLOAT ;
+    ex:wiek "90"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_38 ex:dataPrzyjecia "2026-02-21T23:07:54"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1948-01-20"^^gql:DATE ;
+    ex:idOpaskiHex "640"^^gql:BINARY ;
+    ex:imieNazwisko "Olgierd Drobek"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Paracetamol\", "^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "2 lat i 8 miesiecy"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "109.5"^^gql:FLOAT ;
+    ex:wiek "86"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
+ex:Pacjent_39 ex:dataPrzyjecia "2026-04-09T09:38:08"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1970-12-15"^^gql:DATE ;
+    ex:idOpaskiHex "b4db"^^gql:BINARY ;
+    ex:imieNazwisko "Adrian Seweryniak"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Paracetamol\", "^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P4Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "57,7"^^gql:FLOAT ;
+    ex:wiek "8"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "true"^^gql:BOOLEAN .
+
+ex:Pacjent_4 ex:dataPrzyjecia "2026-03-04T05:27:22"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "2020-08-31"^^gql:DATE ;
+    ex:idOpaskiHex "a19"^^gql:BINARY ;
+    ex:imieNazwisko "Bartek Tolak"^^gql:STRING ;
+    ex:plec "Brak Danych"^^gql:CHAR ;
+    ex:przepisaneLeki "{\"lek\": \"Ibuprofen\"}"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P1Y4M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "55.3"^^gql:FLOAT ;
+    ex:wiek "5"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "true"^^gql:BOOLEAN .
+
+ex:Pacjent_40 ex:dataPrzyjecia "2026-03-22T17:16:27"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "17-02-1989"^^gql:DATE ;
+    ex:idOpaskiHex "3420"^^gql:BINARY ;
+    ex:imieNazwisko "Dariusz Katana"^^gql:STRING ;
+    ex:plec "Kobieta"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Ketonal\", \"Ibuprofen\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P0Y10M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "73.8"^^gql:FLOAT ;
+    ex:wiek "300"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "prawda"^^gql:BOOLEAN .
+
+ex:Pacjent_41 ex:dataPrzyjecia "2026-02-06 11:47:30"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "19-09-1935"^^gql:DATE ;
+    ex:idOpaskiHex "a5ed"^^gql:BINARY ;
+    ex:imieNazwisko "pan Cezary Patora"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Ibuprofen\", \"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P5Y8M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "75,2"^^gql:FLOAT ;
+    ex:wiek "78"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "true"^^gql:BOOLEAN .
+
+ex:Pacjent_42 ex:dataPrzyjecia "2026-03-05T00:16:55"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "27-01-1964"^^gql:DATE ;
+    ex:idOpaskiHex "2985"^^gql:BINARY ;
+    ex:imieNazwisko "pan Jędrzej Wichłacz"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "83,1"^^gql:FLOAT ;
+    ex:wiek "-15"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_43 ex:dataPrzyjecia "2026-04-30T01:03:55"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1978-04-14"^^gql:DATE ;
+    ex:idOpaskiHex "6c2"^^gql:BINARY ;
+    ex:imieNazwisko "Anastazja Dziadowicz"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Amoksycylina\", \"Euthyrox\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P1Y4M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "105.7"^^gql:FLOAT ;
+    ex:wiek "300"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "prawda"^^gql:BOOLEAN .
+
+ex:Pacjent_44 ex:dataPrzyjecia "2026-04-24T10:34:03"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1942-06-22"^^gql:DATE ;
+    ex:idOpaskiHex "9ae2"^^gql:BINARY ;
+    ex:imieNazwisko "Ryszard Spólnik"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Paracetamol\", "^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P5Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "77,3"^^gql:FLOAT ;
+    ex:wiek "31"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
+ex:Pacjent_45 ex:dataPrzyjecia "2026-02-01 12:29:07"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1977-09-28"^^gql:DATE ;
+    ex:idOpaskiHex "cfa8"^^gql:BINARY ;
+    ex:imieNazwisko "Karol Politowicz"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Ibuprofen\", \"Paracetamol\", \"Amoksycylina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P4Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "80.4"^^gql:FLOAT ;
+    ex:wiek "86"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
+ex:Pacjent_46 ex:dataPrzyjecia "2026-01-01 11:17:54"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "02-12-2007"^^gql:DATE ;
+    ex:idOpaskiHex "a623"^^gql:BINARY ;
+    ex:imieNazwisko "pan Iwo Prostak"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:poleTestowe "123"^^gql:NIEZNANY_TYP ;
+    ex:przepisaneLeki "[\"Paracetamol\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "79.9"^^gql:FLOAT ;
+    ex:wiek "-15"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "0"^^gql:BOOLEAN .
+
+ex:Pacjent_47 ex:dataPrzyjecia "2026-03-12T19:25:56"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1948-07-20"^^gql:DATE ;
+    ex:idOpaskiHex "4c1c"^^gql:BINARY ;
+    ex:imieNazwisko "Ignacy Foremniak"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Euthyrox\", \"Insulina\", \"Amoksycylina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P5Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "66,3"^^gql:FLOAT ;
+    ex:wiek "36"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "tak"^^gql:BOOLEAN .
+
+ex:Pacjent_48 ex:dataPrzyjecia "2026-03-09T14:38:41"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1984-04-22"^^gql:DATE ;
+    ex:idOpaskiHex "0488"^^gql:BINARY ;
+    ex:imieNazwisko "Adrianna Sopata"^^gql:STRING ;
+    ex:plec "Kobieta"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Euthyrox\", \"Insulina\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "2 lat i 8 miesiecy"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "64.6"^^gql:FLOAT ;
+    ex:wiek "100"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "true"^^gql:BOOLEAN .
+
+ex:Pacjent_49 ex:dataPrzyjecia "2026-01-13T02:44:14"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "2015-11-24"^^gql:DATE ;
+    ex:idOpaskiHex "73b0"^^gql:BINARY ;
+    ex:imieNazwisko "Maksymilian Litwińczuk"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "{\"lek\": \"Ibuprofen\"}"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P0Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "76.5"^^gql:FLOAT ;
+    ex:wiek "7"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_5 ex:dataPrzyjecia "2026-02-12T21:29:08"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1982-08-15"^^gql:DATE ;
+    ex:idOpaskiHex "6a6c"^^gql:BINARY ;
+    ex:imieNazwisko "Ewa Dziduch"^^gql:STRING ;
+    ex:plec "K"^^gql:CHAR ;
+    ex:przepisaneLeki "{\"lek\": \"Ibuprofen\"}"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P0Y2M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "81.2"^^gql:FLOAT ;
+    ex:wiek "-15"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_6 ex:dataPrzyjecia "2026-03-18T00:33:31"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "2025-03-16"^^gql:DATE ;
+    ex:idOpaskiHex "793"^^gql:BINARY ;
+    ex:imieNazwisko "Natasza Ofiara"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Insulina\", \"Paracetamol\", \"Ketonal\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "92.1"^^gql:FLOAT ;
+    ex:wiek "2"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
+ex:Pacjent_7 ex:dataPrzyjecia "2026-03-29T00:48:20"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1965-06-07"^^gql:DATE ;
+    ex:idOpaskiHex "2ccf"^^gql:BINARY ;
+    ex:imieNazwisko "Nicole Radziewicz"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Paracetamol\", "^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "2 lat i 7 miesiecy"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "47.1"^^gql:FLOAT ;
+    ex:wiek "52"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_8 ex:dataPrzyjecia "2026-04-21T14:18:31"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "1987-06-16"^^gql:DATE ;
+    ex:idOpaskiHex "727"^^gql:BINARY ;
+    ex:imieNazwisko "Tymon Drywa"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Ibuprofen\", \"Ketonal\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P3Y8M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "102.4"^^gql:FLOAT ;
+    ex:wiek "41"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "false"^^gql:BOOLEAN .
+
+ex:Pacjent_9 ex:dataPrzyjecia "2026-02-11T11:36:41"^^gql:TIMESTAMP ;
+    ex:dataUrodzenia "09-05-1940"^^gql:DATE ;
+    ex:idOpaskiHex "467d"^^gql:BINARY ;
+    ex:imieNazwisko "Jędrzej Radzewicz"^^gql:STRING ;
+    ex:plec "M"^^gql:CHAR ;
+    ex:przepisaneLeki "[\"Insulina\", \"Euthyrox\", \"Ibuprofen\"]"^^gql:ARRAY ;
+    ex:przewidywanyCzasLeczenia "P1Y4M"^^gql:DURATION_YEAR_TO_MONTH ;
+    ex:waga "50,8"^^gql:FLOAT ;
+    ex:wiek "96"^^gql:UINT8 ;
+    ex:zgodaNaZabieg "1"^^gql:BOOLEAN .
+
