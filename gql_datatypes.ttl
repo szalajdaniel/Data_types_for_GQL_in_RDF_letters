@@ -429,3 +429,56 @@ gql:UNIT_RECORD a rdfs:Datatype ;
     owl:onDatatype xsd:string ;
     owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "\\{\\s*\\}" ] ) ;
     rdfs:comment "Zamknięty rekord o zerowej liczbie pól (pusty rekord)."@en .
+
+
+### JAWNE MAPOWANIE BAZOWYCH TYPÓW GQL NA STANDARD XSD
+
+
+gql:BOOLEAN owl:equivalentClass xsd:boolean .
+
+gql:STRING owl:equivalentClass xsd:string .
+gql:CHAR owl:equivalentClass xsd:string .
+gql:VARCHAR owl:equivalentClass xsd:string .
+
+gql:BINARY owl:equivalentClass xsd:hexBinary .
+gql:VARBINARY owl:equivalentClass xsd:hexBinary .
+gql:BYTES owl:equivalentClass xsd:hexBinary .
+
+gql:INT owl:equivalentClass xsd:integer .
+gql:BIGINT owl:equivalentClass xsd:integer .
+gql:SMALLINT owl:equivalentClass xsd:integer .
+gql:UINT owl:equivalentClass xsd:nonNegativeInteger .
+gql:UBIGINT owl:equivalentClass xsd:nonNegativeInteger .
+gql:USMALLINT owl:equivalentClass xsd:nonNegativeInteger .
+
+gql:INT8 owl:equivalentClass xsd:byte .
+gql:INT16 owl:equivalentClass xsd:short .
+gql:INT32 owl:equivalentClass xsd:int .
+gql:INT64 owl:equivalentClass xsd:long .
+gql:INT128 owl:equivalentClass xsd:integer .
+gql:INT256 owl:equivalentClass xsd:integer .
+
+gql:UINT8 owl:equivalentClass xsd:unsignedByte .
+gql:UINT16 owl:equivalentClass xsd:unsignedShort .
+gql:UINT32 owl:equivalentClass xsd:unsignedInt .
+gql:UINT64 owl:equivalentClass xsd:unsignedLong .
+gql:UINT128 owl:equivalentClass xsd:nonNegativeInteger .
+gql:UINT256 owl:equivalentClass xsd:nonNegativeInteger .
+
+gql:DECIMAL owl:equivalentClass xsd:decimal .
+
+gql:FLOAT owl:equivalentClass xsd:double .
+gql:FLOAT16 owl:equivalentClass xsd:float .
+gql:FLOAT32 owl:equivalentClass xsd:float .
+gql:FLOAT64 owl:equivalentClass xsd:double .
+gql:FLOAT128 owl:equivalentClass xsd:double .
+gql:FLOAT256 owl:equivalentClass xsd:double .
+
+gql:DATE owl:equivalentClass xsd:date .
+gql:LOCAL_TIME owl:equivalentClass xsd:time .
+gql:ZONED_TIME owl:equivalentClass xsd:time .
+gql:LOCAL_DATETIME owl:equivalentClass xsd:dateTime .
+gql:ZONED_DATETIME owl:equivalentClass xsd:dateTime .
+
+gql:DURATION_YEAR_TO_MONTH owl:equivalentClass xsd:duration .
+gql:DURATION_DAY_TO_SECOND owl:equivalentClass xsd:duration .

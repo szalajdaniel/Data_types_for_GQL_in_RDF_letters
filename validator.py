@@ -1,41 +1,12 @@
 import logging
 import json
 import warnings
-import re  # <--- DODANO: Biblioteka do obsługi wyrażeń regularnych (pattern)
+import re
 from rdflib import Graph, Literal, XSD, RDF, OWL
 
 # Suppress warnings from rdflib
 warnings.filterwarnings("ignore", category=UserWarning, module="rdflib")
 logging.getLogger("rdflib").setLevel(logging.ERROR)
-
-# =====================================================================
-# EXPLICIT TYPE MAPPING TO XSD
-# Structural types (JSON) are excluded from XSD mapping.
-# =====================================================================
-GQL_TO_XSD = {
-    "BOOLEAN": XSD.boolean, "BOOL": XSD.boolean,
-    "STRING": XSD.string, "VARCHAR": XSD.string, "CHAR": XSD.string,
-    "VARBINARY": XSD.hexBinary, "BYTES": XSD.hexBinary, "BINARY": XSD.hexBinary,
-    "INT": XSD.integer, "BIGINT": XSD.integer, "SMALLINT": XSD.integer, "INTEGER": XSD.integer,
-    "SIGNED_INTEGER": XSD.integer, "BIG_INTEGER": XSD.integer, "SIGNED_BIG_INTEGER": XSD.integer,
-    "SMALL_INTEGER": XSD.integer, "SIGNED_SMALL_INTEGER": XSD.integer,
-    "UINT": XSD.nonNegativeInteger, "UBIGINT": XSD.nonNegativeInteger, "USMALLINT": XSD.nonNegativeInteger,
-    "UNSIGNED_INTEGER": XSD.nonNegativeInteger, "UNSIGNED_BIG_INTEGER": XSD.nonNegativeInteger,
-    "UNSIGNED_SMALL_INTEGER": XSD.nonNegativeInteger,
-    "INT8": XSD.byte, "INT16": XSD.short, "INT32": XSD.int, "INT64": XSD.long,
-    "INT128": XSD.integer, "INT256": XSD.integer,
-    "UINT8": XSD.unsignedByte, "UINT16": XSD.unsignedShort, "UINT32": XSD.unsignedInt,
-    "UINT64": XSD.unsignedLong, "UINT128": XSD.nonNegativeInteger, "UINT256": XSD.nonNegativeInteger,
-    "DECIMAL": XSD.decimal, "DEC": XSD.decimal,
-    "FLOAT": XSD.double, "REAL": XSD.double, "DOUBLE": XSD.double, "DOUBLE_PRECISION": XSD.double,
-    "FLOAT16": XSD.float, "FLOAT32": XSD.float, "FLOAT64": XSD.double, "FLOAT128": XSD.double, "FLOAT256": XSD.double,
-    "DATE": XSD.date,
-    "LOCAL_TIME": XSD.time, "TIME_WITHOUT_TIME_ZONE": XSD.time,
-    "ZONED_TIME": XSD.time, "TIME_WITH_TIME_ZONE": XSD.time,
-    "LOCAL_DATETIME": XSD.dateTime, "TIMESTAMP": XSD.dateTime, "TIMESTAMP_WITHOUT_TIME_ZONE": XSD.dateTime,
-    "ZONED_DATETIME": XSD.dateTime, "TIMESTAMP_WITH_TIME_ZONE": XSD.dateTime,
-    "DURATION_YEAR_TO_MONTH": XSD.duration, "DURATION_DAY_TO_SECOND": XSD.duration
-}
 
 JSON_TYPES = [
     "LIST", "ARRAY", "GROUP_LIST", "GROUP_ARRAY",
@@ -43,11 +14,31 @@ JSON_TYPES = [
 ]
 
 
+def build_xsd_mapping(ont_g):
+
+    mapping = {}
+
+    # KROK 1: Odczyt bezpośrednich mapowań do XSD (np. gql:INT -> xsd:integer)
+    for s, p, o in ont_g.triples((None, OWL.equivalentClass, None)):
+        if str(o).startswith(str(XSD)) or str(o).startswith(str(RDF)):
+            name = str(s).split('#')[-1]
+            mapping[name] = o
+
+    # KROK 2: Odczyt aliasów (np. gql:INTEGER -> gql:INT -> xsd:integer)
+    for s, p, o in ont_g.triples((None, OWL.equivalentClass, None)):
+        if str(o).startswith("http://example.org/gql-types#"):
+            alias_name = str(s).split('#')[-1]
+            target_name = str(o).split('#')[-1]
+            if target_name in mapping:
+                mapping[alias_name] = mapping[target_name]
+
+    return mapping
+
+
 def build_rules(ont_g):
     rules = {}
     for dt in ont_g.subjects(RDF.type, None):
         name = str(dt).split('#')[-1]
-        # DODANO: Nowe klucze dla długości tekstu i wzorców
         rules[name] = {"min": None, "max": None, "min_len": None, "max_len": None, "pattern": None}
 
         for restr in ont_g.objects(dt, OWL.withRestrictions):
@@ -57,7 +48,6 @@ def build_rules(ont_g):
                 if first:
                     if (min_v := ont_g.value(first, XSD.minInclusive)): rules[name]["min"] = float(str(min_v))
                     if (max_v := ont_g.value(first, XSD.maxInclusive)): rules[name]["max"] = float(str(max_v))
-                    # DODANO: Pobieranie restrykcji tekstowych i wyrażeń regularnych
                     if (min_l := ont_g.value(first, XSD.minLength)): rules[name]["min_len"] = int(str(min_l))
                     if (max_l := ont_g.value(first, XSD.maxLength)): rules[name]["max_len"] = int(str(max_l))
                     if (pat := ont_g.value(first, XSD.pattern)): rules[name]["pattern"] = str(pat)
@@ -67,7 +57,11 @@ def build_rules(ont_g):
 
 def validate_data(data_file, ontology_file):
     ont_g = Graph().parse(ontology_file, format="turtle")
+
+    # Ładujemy mapowania z ontologii!
+    gql_to_xsd = build_xsd_mapping(ont_g)
     rules = build_rules(ont_g)
+
     data_g = Graph().parse(data_file, format="turtle")
 
     errors = []
@@ -76,11 +70,11 @@ def validate_data(data_file, ontology_file):
     for s, p, o in data_g:
         if isinstance(o, Literal) and o.datatype:
             total_literals += 1
-
             dtype_name = str(o.datatype).split('#')[-1]
             raw_val = str(o)
 
-            base_xsd_uri = GQL_TO_XSD.get(dtype_name)
+            # Korzystamy z dynamicznie zbudowanego słownika
+            base_xsd_uri = gql_to_xsd.get(dtype_name)
             base_xsd_str = str(base_xsd_uri).split('#')[
                 -1] if base_xsd_uri else "No mapping (JSON structure or unknown)"
 
@@ -107,16 +101,15 @@ def validate_data(data_file, ontology_file):
                     errors.append(error_data)
 
             # 3. Validation via XSD mapping and Ontology Rules
-            elif dtype_name in GQL_TO_XSD:
+            elif dtype_name in gql_to_xsd:
                 try:
                     val_lit = Literal(raw_val, datatype=base_xsd_uri)
                     error_found = False
 
-                    # KROK 1: Najpierw sprawdzamy precyzyjne reguły z ontologii (.ttl)
+                    # A. Verify Ontology Rules (min/max, length, pattern)
                     if dtype_name in rules:
                         r = rules[dtype_name]
 
-                        # A. Sprawdzanie wyrażeń regularnych (Pattern check)
                         if r["pattern"] is not None:
                             if not re.fullmatch(r["pattern"], raw_val):
                                 error_data[
@@ -124,7 +117,6 @@ def validate_data(data_file, ontology_file):
                                 errors.append(error_data.copy())
                                 error_found = True
 
-                        # B. Sprawdzanie długości (String length boundaries check)
                         if not error_found and r["min_len"] is not None and len(raw_val) < r["min_len"]:
                             error_data[
                                 "reason"] = f"String length ({len(raw_val)}) is below the minimum allowed ({r['min_len']})"
@@ -137,7 +129,6 @@ def validate_data(data_file, ontology_file):
                             errors.append(error_data.copy())
                             error_found = True
 
-                        # C. Sprawdzanie limitów numerycznych (Numerical boundaries check)
                         if not error_found and (r["min"] is not None or r["max"] is not None):
                             try:
                                 val_float = float(raw_val)
@@ -150,9 +141,9 @@ def validate_data(data_file, ontology_file):
                                     errors.append(error_data.copy())
                                     error_found = True
                             except ValueError:
-                                pass  # Omijamy błąd float(), bo ill_typed złapie zły format poniżej
+                                pass
 
-                    # KROK 2: Jeśli ontologia nie zgłosiła błędu, używamy mechanizmu ill_typed (Fallback)
+                                # B. Strict format check via ill_typed mechanism
                     if not error_found and val_lit.ill_typed:
                         error_data["reason"] = f"Lexical form is not valid for XSD data format ({base_xsd_str})"
                         errors.append(error_data.copy())
