@@ -6,479 +6,795 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix gql: <http://example.org/gql-types#> .
 
-
-### METADATA ONTOLOGII
-
-
 <http://example.org/gql-types> a owl:Ontology ;
-    rdfs:label "GQL Datatypes Ontology"@en ;
-    rdfs:comment "Formalna ontologia opisująca system typów danych języka Graph Query Language (GQL), w tym typy hierarchiczne, abstrakcyjne, skalarne i złożone."@en ;
-    dcterms:created "2024-05-18"^^xsd:date ;
-    vann:preferredNamespacePrefix "gql" ;
-    vann:preferredNamespaceUri "http://example.org/gql-types#" .
-
-
-### TYPY ABSTRAKCYJNE I HIERARCHICZNE
-
+	rdfs:label "GQL Datatypes Ontology"@en ;
+	rdfs:comment "Formalna ontologia opisująca system typów danych języka Graph Query Language (GQL), w tym typy hierarchiczne, abstrakcyjne, skalarne i złożone."@en ;
+	dcterms:created "2024-05-18"^^xsd:date ;
+	vann:preferredNamespacePrefix "gql" ;
+	vann:preferredNamespaceUri "http://example.org/gql-types#" .
 
 gql:VALUE_DATA a rdfs:Datatype ;
-    rdfs:label "VALUE DATA"@en ;
-    rdfs:comment "Główny, nadrzędny typ abstrakcyjny dla wszystkich wartości w GQL."@en .
+	rdfs:label "VALUE DATA"@en ;
+	rdfs:comment "Główny, nadrzędny typ abstrakcyjny dla wszystkich wartości w GQL."@en .
 
 gql:ANY_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "ANY DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "ANY DATA"@en .
 
 gql:BOOLEAN_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "BOOLEAN DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "BOOLEAN DATA"@en .
 
 gql:STRING_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "STRING DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "STRING DATA"@en .
 
 gql:BINARY_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "BINARY DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "BINARY DATA"@en .
 
 gql:EXACT_NUMERIC_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "EXACT NUMERIC DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "EXACT NUMERIC DATA"@en .
 
 gql:FLOAT_NUMERIC_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "FLOAT NUMERIC DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "FLOAT NUMERIC DATA"@en .
 
 gql:TEMPORAL_INSTANT_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "TEMPORAL INSTANT DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "TEMPORAL INSTANT DATA"@en .
 
 gql:TEMPORAL_DURATION_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "TEMPORAL DURATION DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "TEMPORAL DURATION DATA"@en .
 
 gql:LIST_VALUE_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "LIST VALUE DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "LIST VALUE DATA"@en .
 
 gql:RECORD_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "RECORD DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "RECORD DATA"@en .
 
 gql:VECTOR_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "VECTOR DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "VECTOR DATA"@en .
 
 gql:NULL_DATA a rdfs:Datatype ;
-    rdfs:subClassOf gql:VALUE_DATA ;
-    rdfs:label "NULL DATA"@en .
+	rdfs:subClassOf gql:VALUE_DATA ;
+	rdfs:label "NULL DATA"@en .
 
+gql:ANY a rdfs:Datatype ;
+	rdfs:subClassOf gql:ANY_DATA ;
+	rdfs:label "ANY"@en .
 
-### TYPY DYNAMICZNE, PUSTE I SPECJALNE
+gql:ANY_VALUE a rdfs:Datatype ;
+	rdfs:subClassOf gql:ANY_DATA ;
+	rdfs:label "ANY VALUE"@en .
 
+gql:ANY_PROPERTY_VALUE a rdfs:Datatype ;
+	rdfs:subClassOf gql:ANY_DATA ;
+	rdfs:label "ANY PROPERTY VALUE"@en .
 
-gql:ANY a rdfs:Datatype ; rdfs:subClassOf gql:ANY_DATA ; rdfs:label "ANY"@en .
-gql:ANY_VALUE a rdfs:Datatype ; rdfs:subClassOf gql:ANY_DATA ; rdfs:label "ANY VALUE"@en .
-gql:ANY_PROPERTY_VALUE a rdfs:Datatype ; rdfs:subClassOf gql:ANY_DATA ; rdfs:label "ANY PROPERTY VALUE"@en .
-gql:PROPERTY_VALUE a rdfs:Datatype ; rdfs:subClassOf gql:ANY_DATA ; rdfs:label "PROPERTY VALUE"@en .
+gql:PROPERTY_VALUE a rdfs:Datatype ;
+	rdfs:subClassOf gql:ANY_DATA ;
+	rdfs:label "PROPERTY VALUE"@en .
 
-gql:NULL a rdfs:Datatype ; rdfs:subClassOf gql:NULL_DATA ; rdfs:label "NULL"@en .
-gql:NOTHING a rdfs:Datatype ; rdfs:subClassOf gql:NULL_DATA ; rdfs:label "NOTHING"@en ; rdfs:comment "The bottom type (empty type)."@en .
-gql:NULL_NOT_NULL a rdfs:Datatype ; rdfs:subClassOf gql:NULL_DATA ; rdfs:label "NULL NOT NULL"@en .
-gql:EMPTY_TYPE a rdfs:Datatype ; rdfs:subClassOf gql:NULL_DATA ; rdfs:label "EMPTY TYPE"@en .
+gql:NULL a rdfs:Datatype ;
+	rdfs:subClassOf gql:NULL_DATA ;
+	rdfs:label "NULL"@en .
 
+gql:NOTHING a rdfs:Datatype ;
+	rdfs:subClassOf gql:NULL_DATA ;
+	rdfs:label "NOTHING"@en ;
+	rdfs:comment "The bottom type (empty type)."@en .
 
-### TYPY LOGICZNE
+gql:NULL_NOT_NULL a rdfs:Datatype ;
+	rdfs:subClassOf gql:NULL_DATA ;
+	rdfs:label "NULL NOT NULL"@en .
 
+gql:EMPTY_TYPE a rdfs:Datatype ;
+	rdfs:subClassOf gql:NULL_DATA ;
+	rdfs:label "EMPTY TYPE"@en .
 
-### TYPY LOGICZNE
 gql:BOOLEAN a rdfs:Datatype ;
-    rdfs:label "BOOLEAN"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "TRUE|FALSE|true|false|1|0" ] ) ;
-    rdfs:comment "Dwuwartościowy typ logiczny posiadający własny wzorzec leksykalny w GQL."@en .
+	rdfs:label "BOOLEAN"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "TRUE|FALSE|true|false|1|0" ;
+		]
+	) ;
+	rdfs:comment "Dwuwartościowy typ logiczny posiadający własny wzorzec leksykalny w GQL."@en ;
+	owl:equivalentClass xsd:boolean .
 
 gql:BOOL a rdfs:Datatype ;
-    rdfs:subClassOf gql:BOOLEAN_DATA ;
-    owl:equivalentClass gql:BOOLEAN ;
-    rdfs:label "BOOL"@en .
-
-
-### TYPY TEKSTOWE
-
+	rdfs:subClassOf gql:BOOLEAN_DATA ;
+	owl:equivalentClass gql:BOOLEAN ;
+	rdfs:label "BOOL"@en .
 
 gql:STRING a rdfs:Datatype ;
-    rdfs:subClassOf gql:STRING_DATA ;
-    rdfs:label "STRING"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:minLength "0"^^xsd:integer ] ) .
+	rdfs:subClassOf gql:STRING_DATA ;
+	rdfs:label "STRING"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minLength 0 ;
+		]
+	) ;
+	owl:equivalentClass xsd:string .
 
 gql:CHAR a rdfs:Datatype ;
-    rdfs:subClassOf gql:STRING_DATA ;
-    rdfs:label "CHAR"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:maxLength "1"^^xsd:integer ] ) ;
-    rdfs:comment "Ciąg znaków domyślnie ograniczony do długości jednego znaku."@en .
+	rdfs:subClassOf gql:STRING_DATA ;
+	rdfs:label "CHAR"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:maxLength 1 ;
+		]
+	) ;
+	rdfs:comment "Ciąg znaków domyślnie ograniczony do długości jednego znaku."@en ;
+	owl:equivalentClass xsd:string .
 
 gql:VARCHAR a rdfs:Datatype ;
-    rdfs:subClassOf gql:STRING_DATA ;
-    rdfs:label "VARCHAR"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:minLength "0"^^xsd:integer ] ) .
-
-### TYPY BINARNE
-
+	rdfs:subClassOf gql:STRING_DATA ;
+	rdfs:label "VARCHAR"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minLength 0 ;
+		]
+	) ;
+	owl:equivalentClass xsd:string .
 
 gql:BINARY a rdfs:Datatype ;
-    rdfs:subClassOf gql:BINARY_DATA ;
-    rdfs:label "BINARY"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions (
-        [ a owl:Restriction ; xsd:pattern "([0-9a-fA-F]{2})+" ]
-        [ a owl:Restriction ; xsd:length "2"^^xsd:integer ]
-    ) ;
-    rdfs:comment "Zapis heksadecymalny. Domyślna długość to jeden oktet (dwa znaki hex)."@en .
+	rdfs:subClassOf gql:BINARY_DATA ;
+	rdfs:label "BINARY"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "([0-9a-fA-F]{2})+" ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:length 2 ;
+		]
+	) ;
+	rdfs:comment "Zapis heksadecymalny. Domyślna długość to jeden oktet (dwa znaki hex)."@en ;
+	owl:equivalentClass xsd:hexBinary .
 
 gql:VARBINARY a rdfs:Datatype ;
-    rdfs:subClassOf gql:BINARY_DATA ;
-    rdfs:label "VARBINARY"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "([0-9a-fA-F]{2})*" ] ) .
+	rdfs:subClassOf gql:BINARY_DATA ;
+	rdfs:label "VARBINARY"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "([0-9a-fA-F]{2})*" ;
+		]
+	) ;
+	owl:equivalentClass xsd:hexBinary .
 
 gql:BYTES a rdfs:Datatype ;
-    rdfs:subClassOf gql:BINARY_DATA ;
-    rdfs:label "BYTES"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "([0-9a-fA-F]{2})*" ] ) .
-
-
-### TYPY CAŁKOWITOLICZBOWE (ZALEŻNE OD IMPLEMENTACJI)
-
+	rdfs:subClassOf gql:BINARY_DATA ;
+	rdfs:label "BYTES"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "([0-9a-fA-F]{2})*" ;
+		]
+	) ;
+	owl:equivalentClass xsd:hexBinary .
 
 gql:INT a rdfs:Datatype ;
-    rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
-    rdfs:label "INT"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+" ] ) ;
-    rdfs:comment "Typ całkowity ze znakiem, którego precyzja bitowa zależy od implementacji silnika."@en .
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "INT"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+" ;
+		]
+	) ;
+	rdfs:comment "Typ całkowity ze znakiem, którego precyzja bitowa zależy od implementacji silnika."@en ;
+	owl:equivalentClass xsd:integer .
 
 gql:BIGINT a rdfs:Datatype ;
-    rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
-    rdfs:label "BIGINT"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+" ] ) ;
-    rdfs:comment "Powiększony typ całkowity ze znakiem o precyzji zależnej od implementacji."@en .
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "BIGINT"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+" ;
+		]
+	) ;
+	rdfs:comment "Powiększony typ całkowity ze znakiem o precyzji zależnej od implementacji."@en ;
+	owl:equivalentClass xsd:integer .
 
 gql:SMALLINT a rdfs:Datatype ;
-    rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
-    rdfs:label "SMALLINT"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+" ] ) ;
-    rdfs:comment "Pomniejszony typ całkowity ze znakiem o precyzji zależnej od implementacji."@en .
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "SMALLINT"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+" ;
+		]
+	) ;
+	rdfs:comment "Pomniejszony typ całkowity ze znakiem o precyzji zależnej od implementacji."@en ;
+	owl:equivalentClass xsd:integer .
 
 gql:UINT a rdfs:Datatype ;
-    rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
-    rdfs:label "UINT"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+]?[0-9]+" ] ) ;
-    rdfs:comment "Typ całkowity bez znaku o precyzji zależnej od implementacji."@en .
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "UINT"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+]?[0-9]+" ;
+		]
+	) ;
+	rdfs:comment "Typ całkowity bez znaku o precyzji zależnej od implementacji."@en ;
+	owl:equivalentClass xsd:nonNegativeInteger .
 
 gql:UBIGINT a rdfs:Datatype ;
-    rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
-    rdfs:label "UBIGINT"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+]?[0-9]+" ] ) .
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "UBIGINT"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:nonNegativeInteger .
 
 gql:USMALLINT a rdfs:Datatype ;
-    rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
-    rdfs:label "USMALLINT"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+]?[0-9]+" ] ) .
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "USMALLINT"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:nonNegativeInteger .
 
-# Aliasy główne:
-gql:INTEGER a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; owl:equivalentClass gql:INT ; rdfs:label "INTEGER"@en .
-gql:SIGNED_INTEGER a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; owl:equivalentClass gql:INT ; rdfs:label "SIGNED INTEGER"@en .
+gql:INTEGER a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:INT ;
+	rdfs:label "INTEGER"@en .
 
-gql:BIG_INTEGER a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; owl:equivalentClass gql:BIGINT ; rdfs:label "BIG INTEGER"@en .
-gql:SIGNED_BIG_INTEGER a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; owl:equivalentClass gql:BIGINT ; rdfs:label "SIGNED BIG INTEGER"@en .
+gql:SIGNED_INTEGER a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:INT ;
+	rdfs:label "SIGNED INTEGER"@en .
 
-gql:SMALL_INTEGER a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; owl:equivalentClass gql:SMALLINT ; rdfs:label "SMALL INTEGER"@en .
-gql:SIGNED_SMALL_INTEGER a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; owl:equivalentClass gql:SMALLINT ; rdfs:label "SIGNED SMALL INTEGER"@en .
+gql:BIG_INTEGER a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:BIGINT ;
+	rdfs:label "BIG INTEGER"@en .
 
-gql:UNSIGNED_INTEGER a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; owl:equivalentClass gql:UINT ; rdfs:label "UNSIGNED INTEGER"@en .
-gql:UNSIGNED_BIG_INTEGER a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; owl:equivalentClass gql:UBIGINT ; rdfs:label "UNSIGNED BIG INTEGER"@en .
-gql:UNSIGNED_SMALL_INTEGER a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; owl:equivalentClass gql:USMALLINT ; rdfs:label "UNSIGNED SMALL INTEGER"@en .
+gql:SIGNED_BIG_INTEGER a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:BIGINT ;
+	rdfs:label "SIGNED BIG INTEGER"@en .
 
+gql:SMALL_INTEGER a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:SMALLINT ;
+	rdfs:label "SMALL INTEGER"@en .
 
-### TYPY CAŁKOWITE O ZDEFINIOWANEJ SZEROKOŚCI BITOWEJ
+gql:SIGNED_SMALL_INTEGER a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:SMALLINT ;
+	rdfs:label "SIGNED SMALL INTEGER"@en .
 
+gql:UNSIGNED_INTEGER a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:UINT ;
+	rdfs:label "UNSIGNED INTEGER"@en .
 
-gql:INT8 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "INT8"@en ;
-    rdfs:comment "8-bit signed integer. Binary precision 8."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "-128"^^xsd:integer ; xsd:maxInclusive "127"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+" ] ) .
+gql:UNSIGNED_BIG_INTEGER a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:UBIGINT ;
+	rdfs:label "UNSIGNED BIG INTEGER"@en .
 
-gql:INT16 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "INT16"@en ;
-    rdfs:comment "16-bit signed integer. Binary precision 16."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "-32768"^^xsd:integer ; xsd:maxInclusive "32767"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+" ] ) .
+gql:UNSIGNED_SMALL_INTEGER a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:USMALLINT ;
+	rdfs:label "UNSIGNED SMALL INTEGER"@en .
 
-gql:INT32 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "INT32"@en ;
-    rdfs:comment "32-bit signed integer. Binary precision 32."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "-2147483648"^^xsd:integer ; xsd:maxInclusive "2147483647"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+" ] ) .
+gql:INT8 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "INT8"@en ;
+	rdfs:comment "8-bit signed integer. Binary precision 8."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive -128 ;
+			xsd:maxInclusive 127 ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:byte .
 
-gql:INT64 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "INT64"@en ;
-    rdfs:comment "64-bit signed integer. Binary precision 64."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "-9223372036854775808"^^xsd:integer ; xsd:maxInclusive "9223372036854775807"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+" ] ) .
+gql:INT16 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "INT16"@en ;
+	rdfs:comment "16-bit signed integer. Binary precision 16."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive -32768 ;
+			xsd:maxInclusive 32767 ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:short .
 
-gql:INT128 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "INT128"@en ;
-    rdfs:comment "128-bit signed integer. Binary precision 128."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "-170141183460469231731687303715884105728"^^xsd:integer ; xsd:maxInclusive "170141183460469231731687303715884105727"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+" ] ) .
+gql:INT32 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "INT32"@en ;
+	rdfs:comment "32-bit signed integer. Binary precision 32."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive -2147483648 ;
+			xsd:maxInclusive 2147483647 ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:int .
 
-gql:INT256 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "INT256"@en ;
-    rdfs:comment "256-bit signed integer. Binary precision 256."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "-57896044618658097711785492504343953926634992332820282019728792003956564819968"^^xsd:integer ; xsd:maxInclusive "57896044618658097711785492504343953926634992332820282019728792003956564819967"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+" ] ) .
+gql:INT64 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "INT64"@en ;
+	rdfs:comment "64-bit signed integer. Binary precision 64."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive -9223372036854776000 ;
+			xsd:maxInclusive 9223372036854776000 ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:long .
 
-gql:UINT8 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "UINT8"@en ;
-    rdfs:comment "8-bit unsigned integer. Binary precision 8."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "0"^^xsd:integer ; xsd:maxInclusive "255"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+]?[0-9]+" ] ) .
+gql:INT128 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "INT128"@en ;
+	rdfs:comment "128-bit signed integer. Binary precision 128."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive "-1.7014118346046923e+38"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+			xsd:maxInclusive "1.7014118346046923e+38"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:integer .
 
-gql:UINT16 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "UINT16"@en ;
-    rdfs:comment "16-bit unsigned integer. Binary precision 16."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "0"^^xsd:integer ; xsd:maxInclusive "65535"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+]?[0-9]+" ] ) .
+gql:INT256 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "INT256"@en ;
+	rdfs:comment "256-bit signed integer. Binary precision 256."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive "-5.78960446186581e+76"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+			xsd:maxInclusive "5.78960446186581e+76"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:integer .
 
-gql:UINT32 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "UINT32"@en ;
-    rdfs:comment "32-bit unsigned integer. Binary precision 32."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "0"^^xsd:integer ; xsd:maxInclusive "4294967295"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+]?[0-9]+" ] ) .
+gql:UINT8 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "UINT8"@en ;
+	rdfs:comment "8-bit unsigned integer. Binary precision 8."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive 0 ;
+			xsd:maxInclusive 255 ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:unsignedByte .
 
-gql:UINT64 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "UINT64"@en ;
-    rdfs:comment "64-bit unsigned integer. Binary precision 64."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "0"^^xsd:integer ; xsd:maxInclusive "18446744073709551615"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+]?[0-9]+" ] ) .
+gql:UINT16 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "UINT16"@en ;
+	rdfs:comment "16-bit unsigned integer. Binary precision 16."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive 0 ;
+			xsd:maxInclusive 65535 ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:unsignedShort .
 
-gql:UINT128 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "UINT128"@en ;
-    rdfs:comment "128-bit unsigned integer. Binary precision 128."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "0"^^xsd:integer ; xsd:maxInclusive "340282366920938463463374607431768211455"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+]?[0-9]+" ] ) .
+gql:UINT32 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "UINT32"@en ;
+	rdfs:comment "32-bit unsigned integer. Binary precision 32."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive 0 ;
+			xsd:maxInclusive 4294967295 ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:unsignedInt .
 
-gql:UINT256 a rdfs:Datatype ; rdfs:subClassOf gql:EXACT_NUMERIC_DATA ; rdfs:label "UINT256"@en ;
-    rdfs:comment "256-bit unsigned integer. Binary precision 256."@en ;
-    owl:onDatatype xsd:integer ; owl:withRestrictions ( [ a owl:Restriction ; xsd:minInclusive "0"^^xsd:integer ; xsd:maxInclusive "115792089237316195423570985008687907853269984665640564039457584007913129639935"^^xsd:integer ] [ a owl:Restriction ; xsd:pattern "[+]?[0-9]+" ] ) .
+gql:UINT64 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "UINT64"@en ;
+	rdfs:comment "64-bit unsigned integer. Binary precision 64."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive 0 ;
+			xsd:maxInclusive 18446744073709552000 ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:unsignedLong .
 
+gql:UINT128 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "UINT128"@en ;
+	rdfs:comment "128-bit unsigned integer. Binary precision 128."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive 0 ;
+			xsd:maxInclusive "3.402823669209385e+38"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:nonNegativeInteger .
 
-### TYPY STAŁOPOZYCYJNE (DECIMAL)
-
+gql:UINT256 a rdfs:Datatype ;
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "UINT256"@en ;
+	rdfs:comment "256-bit unsigned integer. Binary precision 256."@en ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:minInclusive 0 ;
+			xsd:maxInclusive "1.157920892373162e+77"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+		]
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+]?[0-9]+" ;
+		]
+	) ;
+	owl:equivalentClass xsd:nonNegativeInteger .
 
 gql:DECIMAL a rdfs:Datatype ;
-    rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
-    rdfs:label "DECIMAL"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?" ] ) .
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	rdfs:label "DECIMAL"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?" ;
+		]
+	) ;
+	owl:equivalentClass xsd:decimal .
 
 gql:DEC a rdfs:Datatype ;
-    rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
-    owl:equivalentClass gql:DECIMAL ;
-    rdfs:label "DEC"@en .
-
-
-### TYPY ZMIENNOPRZECINKOWE
-
+	rdfs:subClassOf gql:EXACT_NUMERIC_DATA ;
+	owl:equivalentClass gql:DECIMAL ;
+	rdfs:label "DEC"@en .
 
 gql:FLOAT a rdfs:Datatype ;
-    rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
-    rdfs:label "FLOAT"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ] ) ;
-    rdfs:comment "Wartość przybliżona. Precyzja zależna od implementacji."@en .
+	rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
+	rdfs:label "FLOAT"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ;
+		]
+	) ;
+	rdfs:comment "Wartość przybliżona. Precyzja zależna od implementacji."@en ;
+	owl:equivalentClass xsd:double .
 
-gql:REAL a rdfs:Datatype ; rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ; owl:equivalentClass gql:FLOAT ; rdfs:label "REAL"@en .
+gql:REAL a rdfs:Datatype ;
+	rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
+	owl:equivalentClass gql:FLOAT ;
+	rdfs:label "REAL"@en .
 
-gql:DOUBLE a rdfs:Datatype ; rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
-    owl:onDatatype xsd:string ; owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ] ) ;
-    rdfs:label "DOUBLE"@en .
+gql:DOUBLE a rdfs:Datatype ;
+	rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ;
+		]
+	) ;
+	rdfs:label "DOUBLE"@en .
 
-gql:DOUBLE_PRECISION a rdfs:Datatype ; rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ; owl:equivalentClass gql:DOUBLE ; rdfs:label "DOUBLE PRECISION"@en .
+gql:DOUBLE_PRECISION a rdfs:Datatype ;
+	rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
+	owl:equivalentClass gql:DOUBLE ;
+	rdfs:label "DOUBLE PRECISION"@en .
 
-gql:FLOAT16 a rdfs:Datatype ; rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
-    owl:onDatatype xsd:string ; owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ] ) ; rdfs:label "FLOAT16"@en .
+gql:FLOAT16 a rdfs:Datatype ;
+	rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ;
+		]
+	) ;
+	rdfs:label "FLOAT16"@en ;
+	owl:equivalentClass xsd:float .
 
-gql:FLOAT32 a rdfs:Datatype ; rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
-    owl:onDatatype xsd:string ; owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ] ) ; rdfs:label "FLOAT32"@en .
+gql:FLOAT32 a rdfs:Datatype ;
+	rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ;
+		]
+	) ;
+	rdfs:label "FLOAT32"@en ;
+	owl:equivalentClass xsd:float .
 
-gql:FLOAT64 a rdfs:Datatype ; rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
-    owl:onDatatype xsd:string ; owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ] ) ; rdfs:label "FLOAT64"@en .
+gql:FLOAT64 a rdfs:Datatype ;
+	rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ;
+		]
+	) ;
+	rdfs:label "FLOAT64"@en ;
+	owl:equivalentClass xsd:double .
 
-gql:FLOAT128 a rdfs:Datatype ; rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
-    owl:onDatatype xsd:string ; owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ] ) ; rdfs:label "FLOAT128"@en .
+gql:FLOAT128 a rdfs:Datatype ;
+	rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ;
+		]
+	) ;
+	rdfs:label "FLOAT128"@en ;
+	owl:equivalentClass xsd:double .
 
-gql:FLOAT256 a rdfs:Datatype ; rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
-    owl:onDatatype xsd:string ; owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ] ) ; rdfs:label "FLOAT256"@en .
-
-### TYPY TEMPORALNE (CZAS I DATA)
-
+gql:FLOAT256 a rdfs:Datatype ;
+	rdfs:subClassOf gql:FLOAT_NUMERIC_DATA ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "[+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?" ;
+		]
+	) ;
+	rdfs:label "FLOAT256"@en ;
+	owl:equivalentClass xsd:double .
 
 gql:DATE a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    rdfs:label "DATE"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" ] ) .
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	rdfs:label "DATE"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" ;
+		]
+	) ;
+	owl:equivalentClass xsd:date .
 
 gql:LOCAL_TIME a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    rdfs:label "LOCAL TIME"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?$" ] ) ;
-    rdfs:comment "Czas lokalny bez informacji o strefie czasowej."@en .
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	rdfs:label "LOCAL TIME"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?$" ;
+		]
+	) ;
+	rdfs:comment "Czas lokalny bez informacji o strefie czasowej."@en ;
+	owl:equivalentClass xsd:time .
 
 gql:TIME_WITHOUT_TIME_ZONE a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    owl:equivalentClass gql:LOCAL_TIME ;
-    rdfs:label "TIME WITHOUT TIME ZONE"@en .
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	owl:equivalentClass gql:LOCAL_TIME ;
+	rdfs:label "TIME WITHOUT TIME ZONE"@en .
 
 gql:ZONED_TIME a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    rdfs:label "ZONED TIME"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?([+-][0-9]{2}:[0-9]{2}|Z)$" ] ) ;
-    rdfs:comment "Czas uwzględniający jawną strefę czasową lub offset."@en .
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	rdfs:label "ZONED TIME"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?([+-][0-9]{2}:[0-9]{2}|Z)$" ;
+		]
+	) ;
+	rdfs:comment "Czas uwzględniający jawną strefę czasową lub offset."@en ;
+	owl:equivalentClass xsd:time .
 
 gql:TIME_WITH_TIME_ZONE a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    owl:equivalentClass gql:ZONED_TIME ;
-    rdfs:label "TIME WITH TIME ZONE"@en .
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	owl:equivalentClass gql:ZONED_TIME ;
+	rdfs:label "TIME WITH TIME ZONE"@en .
 
 gql:LOCAL_DATETIME a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    rdfs:label "LOCAL DATETIME"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?$" ] ) .
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	rdfs:label "LOCAL DATETIME"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?$" ;
+		]
+	) ;
+	owl:equivalentClass xsd:dateTime .
 
 gql:TIMESTAMP a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    owl:equivalentClass gql:LOCAL_DATETIME ;
-    rdfs:label "TIMESTAMP"@en .
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	owl:equivalentClass gql:LOCAL_DATETIME ;
+	rdfs:label "TIMESTAMP"@en .
 
 gql:TIMESTAMP_WITHOUT_TIME_ZONE a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    owl:equivalentClass gql:LOCAL_DATETIME ;
-    rdfs:label "TIMESTAMP WITHOUT TIME ZONE"@en .
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	owl:equivalentClass gql:LOCAL_DATETIME ;
+	rdfs:label "TIMESTAMP WITHOUT TIME ZONE"@en .
 
 gql:ZONED_DATETIME a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    rdfs:label "ZONED DATETIME"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}([+-][0-9]{2}:[0-9]{2}|Z)$" ] ) .
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	rdfs:label "ZONED DATETIME"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}([+-][0-9]{2}:[0-9]{2}|Z)$" ;
+		]
+	) ;
+	owl:equivalentClass xsd:dateTime .
 
 gql:TIMESTAMP_WITH_TIME_ZONE a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
-    owl:equivalentClass gql:ZONED_DATETIME ;
-    rdfs:label "TIMESTAMP WITH TIME ZONE"@en .
-
-
-### TYPY INTERWAŁOWE (DURATION)
-
+	rdfs:subClassOf gql:TEMPORAL_INSTANT_DATA ;
+	owl:equivalentClass gql:ZONED_DATETIME ;
+	rdfs:label "TIMESTAMP WITH TIME ZONE"@en .
 
 gql:DURATION_YEAR_TO_MONTH a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_DURATION_DATA ;
-    rdfs:label "DURATION(YEAR TO MONTH)"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "^P[0-9]+Y[0-9]+M$" ] ) .
+	rdfs:subClassOf gql:TEMPORAL_DURATION_DATA ;
+	rdfs:label "DURATION(YEAR TO MONTH)"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "^P[0-9]+Y[0-9]+M$" ;
+		]
+	) ;
+	owl:equivalentClass xsd:duration .
 
 gql:DURATION_DAY_TO_SECOND a rdfs:Datatype ;
-    rdfs:subClassOf gql:TEMPORAL_DURATION_DATA ;
-    rdfs:label "DURATION(DAY TO SECOND)"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "^P[0-9]+DT[0-9]+H[0-9]+M[0-9]+(\\.[0-9]+)?S$" ] ) .
-
-
-### TYPY ZŁOŻONE: WEKTORY, LISTY I REKORDY
-
+	rdfs:subClassOf gql:TEMPORAL_DURATION_DATA ;
+	rdfs:label "DURATION(DAY TO SECOND)"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "^P[0-9]+DT[0-9]+H[0-9]+M[0-9]+(\\.[0-9]+)?S$" ;
+		]
+	) ;
+	owl:equivalentClass xsd:duration .
 
 gql:VECTOR a rdfs:Datatype ;
-    rdfs:subClassOf gql:VECTOR_DATA ;
-    rdfs:label "VECTOR"@en ;
-    rdfs:comment "Struktura wektorowa. Może być implementacyjnie mapowana na struktury takie jak cdt:List."@en .
+	rdfs:subClassOf gql:VECTOR_DATA ;
+	rdfs:label "VECTOR"@en ;
+	rdfs:comment "Struktura wektorowa. Może być implementacyjnie mapowana na struktury takie jak cdt:List."@en .
 
 gql:LIST a rdfs:Datatype ;
-    rdfs:subClassOf gql:LIST_VALUE_DATA ;
-    rdfs:label "LIST"@en ;
-    rdfs:comment "Kolekcja uporządkowana. Często mapowana na cdt:List w zastosowaniach RDF."@en .
+	rdfs:subClassOf gql:LIST_VALUE_DATA ;
+	rdfs:label "LIST"@en ;
+	rdfs:comment "Kolekcja uporządkowana. Często mapowana na cdt:List w zastosowaniach RDF."@en .
 
 gql:ARRAY a rdfs:Datatype ;
-    rdfs:subClassOf gql:LIST_VALUE_DATA ;
-    owl:equivalentClass gql:LIST ;
-    rdfs:label "ARRAY"@en .
+	rdfs:subClassOf gql:LIST_VALUE_DATA ;
+	owl:equivalentClass gql:LIST ;
+	rdfs:label "ARRAY"@en .
 
 gql:GROUP_LIST a rdfs:Datatype ;
-    rdfs:subClassOf gql:LIST_VALUE_DATA ;
-    rdfs:label "GROUP LIST"@en .
+	rdfs:subClassOf gql:LIST_VALUE_DATA ;
+	rdfs:label "GROUP LIST"@en .
 
 gql:GROUP_ARRAY a rdfs:Datatype ;
-    rdfs:subClassOf gql:LIST_VALUE_DATA ;
-    owl:equivalentClass gql:GROUP_LIST ;
-    rdfs:label "GROUP ARRAY"@en .
+	rdfs:subClassOf gql:LIST_VALUE_DATA ;
+	owl:equivalentClass gql:GROUP_LIST ;
+	rdfs:label "GROUP ARRAY"@en .
 
 gql:RECORD a rdfs:Datatype ;
-    rdfs:subClassOf gql:RECORD_DATA ;
-    rdfs:label "RECORD"@en ;
-    rdfs:comment "Struktura mapy klucz-wartość. Może być implementacyjnie mapowana na cdt:Map."@en .
+	rdfs:subClassOf gql:RECORD_DATA ;
+	rdfs:label "RECORD"@en ;
+	rdfs:comment "Struktura mapy klucz-wartość. Może być implementacyjnie mapowana na cdt:Map."@en .
 
 gql:ANY_RECORD a rdfs:Datatype ;
-    rdfs:subClassOf gql:RECORD_DATA ;
-    rdfs:label "ANY RECORD"@en .
+	rdfs:subClassOf gql:RECORD_DATA ;
+	rdfs:label "ANY RECORD"@en .
 
 gql:UNIT_RECORD a rdfs:Datatype ;
-    rdfs:subClassOf gql:RECORD_DATA ;
-    rdfs:label "UNIT RECORD"@en ;
-    owl:onDatatype xsd:string ;
-    owl:withRestrictions ( [ a owl:Restriction ; xsd:pattern "\\{\\s*\\}" ] ) ;
-    rdfs:comment "Zamknięty rekord o zerowej liczbie pól (pusty rekord)."@en .
+	rdfs:subClassOf gql:RECORD_DATA ;
+	rdfs:label "UNIT RECORD"@en ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions (
+		[
+			rdf:type owl:Restriction ;
+			xsd:pattern "\\{\\s*\\}" ;
+		]
+	) ;
+	rdfs:comment "Zamknięty rekord o zerowej liczbie pól (pusty rekord)."@en .
 
 
-### JAWNE MAPOWANIE BAZOWYCH TYPÓW GQL NA STANDARD XSD
-
-
-gql:BOOLEAN owl:equivalentClass xsd:boolean .
-
-gql:STRING owl:equivalentClass xsd:string .
-gql:CHAR owl:equivalentClass xsd:string .
-gql:VARCHAR owl:equivalentClass xsd:string .
-
-gql:BINARY owl:equivalentClass xsd:hexBinary .
-gql:VARBINARY owl:equivalentClass xsd:hexBinary .
-gql:BYTES owl:equivalentClass xsd:hexBinary .
-
-gql:INT owl:equivalentClass xsd:integer .
-gql:BIGINT owl:equivalentClass xsd:integer .
-gql:SMALLINT owl:equivalentClass xsd:integer .
-gql:UINT owl:equivalentClass xsd:nonNegativeInteger .
-gql:UBIGINT owl:equivalentClass xsd:nonNegativeInteger .
-gql:USMALLINT owl:equivalentClass xsd:nonNegativeInteger .
-
-gql:INT8 owl:equivalentClass xsd:byte .
-gql:INT16 owl:equivalentClass xsd:short .
-gql:INT32 owl:equivalentClass xsd:int .
-gql:INT64 owl:equivalentClass xsd:long .
-gql:INT128 owl:equivalentClass xsd:integer .
-gql:INT256 owl:equivalentClass xsd:integer .
-
-gql:UINT8 owl:equivalentClass xsd:unsignedByte .
-gql:UINT16 owl:equivalentClass xsd:unsignedShort .
-gql:UINT32 owl:equivalentClass xsd:unsignedInt .
-gql:UINT64 owl:equivalentClass xsd:unsignedLong .
-gql:UINT128 owl:equivalentClass xsd:nonNegativeInteger .
-gql:UINT256 owl:equivalentClass xsd:nonNegativeInteger .
-
-gql:DECIMAL owl:equivalentClass xsd:decimal .
-
-gql:FLOAT owl:equivalentClass xsd:double .
-gql:FLOAT16 owl:equivalentClass xsd:float .
-gql:FLOAT32 owl:equivalentClass xsd:float .
-gql:FLOAT64 owl:equivalentClass xsd:double .
-gql:FLOAT128 owl:equivalentClass xsd:double .
-gql:FLOAT256 owl:equivalentClass xsd:double .
-
-gql:DATE owl:equivalentClass xsd:date .
-gql:LOCAL_TIME owl:equivalentClass xsd:time .
-gql:ZONED_TIME owl:equivalentClass xsd:time .
-gql:LOCAL_DATETIME owl:equivalentClass xsd:dateTime .
-gql:ZONED_DATETIME owl:equivalentClass xsd:dateTime .
-
-gql:DURATION_YEAR_TO_MONTH owl:equivalentClass xsd:duration .
-gql:DURATION_DAY_TO_SECOND owl:equivalentClass xsd:duration .
