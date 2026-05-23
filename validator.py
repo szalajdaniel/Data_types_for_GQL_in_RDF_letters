@@ -11,7 +11,9 @@ logging.getLogger("rdflib").setLevel(logging.ERROR)
 
 
 def build_xsd_mapping(ont_g):
-
+    """
+    Dynamically builds GQL to XSD mapping based on owl:equivalentClass triples.
+    """
     mapping = {}
 
     for s, p, o in ont_g.triples((None, OWL.equivalentClass, None)):
