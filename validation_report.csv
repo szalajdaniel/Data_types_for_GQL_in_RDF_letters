@@ -1,127 +1,90 @@
 subject,predicate,value,original_dt,base_dt,reason
-http://example.org/data#Patient_96,https://schema.org/duration,4 years and 5 months,DURATION_YEAR_TO_MONTH,duration,Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$
-http://example.org/data#Patient_76,https://schema.org/birthDate,08-12-1988,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_51,https://schema.org/weight,"74,2",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
-http://example.org/data#Patient_31,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_33,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
-http://example.org/data#Patient_4,https://schema.org/birthDate,22-02-1930,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_25,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_53,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
-http://example.org/data#Patient_11,https://schema.org/height,40000,INT16,short,Value is above the allowed maximum (32767.0)
-http://example.org/data#Patient_23,https://schema.org/duration,5 years and 1 months,DURATION_YEAR_TO_MONTH,duration,Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$
-http://example.org/data#Patient_73,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
-http://example.org/data#Patient_30,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
-http://example.org/data#Patient_78,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
-http://example.org/data#Patient_68,http://xmlns.com/foaf/0.1/gender,Unknown,CHAR,string,String length (7) exceeds the maximum allowed (1)
-http://example.org/data#Patient_98,https://schema.org/birthDate,02-11-1946,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_33,http://example.org/data#metadata,"{""status"": ""active""}",UNIT_RECORD,No mapping,"Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
-http://example.org/data#Patient_72,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
-http://example.org/data#Patient_66,https://schema.org/weight,"86,3",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
-http://example.org/data#Patient_14,https://schema.org/birthDate,25-02-1947,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_1,https://schema.org/duration,4 years and 5 months,DURATION_YEAR_TO_MONTH,duration,Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$
-http://example.org/data#Patient_1,http://purl.org/dc/elements/1.1/identifier,3c3e,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_46,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
-http://example.org/data#Patient_54,https://schema.org/birthDate,09-09-1938,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_32,https://schema.org/birthDate,21-01-1989,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_96,http://xmlns.com/foaf/0.1/gender,Male,CHAR,string,String length (4) exceeds the maximum allowed (1)
-http://example.org/data#Patient_3,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_27,https://schema.org/birthDate,15-03-1994,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_29,http://example.org/data#metadata,"{""status"": ""active""}",UNIT_RECORD,No mapping,"Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
-http://example.org/data#Patient_78,https://schema.org/birthDate,18-03-1962,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_70,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
-http://example.org/data#Patient_64,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
-http://example.org/data#Patient_48,https://schema.org/baseSalary,"3981,49",DECIMAL,decimal,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?
-http://example.org/data#Patient_25,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
-http://example.org/data#Patient_8,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
-http://example.org/data#Patient_62,http://purl.org/dc/elements/1.1/identifier,5211,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_66,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_18,http://purl.org/dc/elements/1.1/identifier,0687,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_41,https://schema.org/birthDate,25-11-1984,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_10,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
-http://example.org/data#Patient_17,https://schema.org/arrivalTime,20-33-51,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
-http://example.org/data#Patient_10,https://schema.org/baseSalary,"3544,84",DECIMAL,decimal,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?
-http://example.org/data#Patient_70,https://schema.org/height,40000,INT16,short,Value is above the allowed maximum (32767.0)
-http://example.org/data#Patient_43,https://schema.org/birthDate,15-11-1917,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_67,http://purl.org/dc/elements/1.1/identifier,38ec,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_87,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_60,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
-http://example.org/data#Patient_65,http://xmlns.com/foaf/0.1/gender,Male,CHAR,string,String length (4) exceeds the maximum allowed (1)
-http://example.org/data#Patient_95,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
-http://example.org/data#Patient_90,https://schema.org/birthDate,17-11-1945,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_1,http://xmlns.com/foaf/0.1/gender,Male,CHAR,string,String length (4) exceeds the maximum allowed (1)
-http://example.org/data#Patient_50,https://schema.org/height,40000,INT16,short,Value is above the allowed maximum (32767.0)
-http://example.org/data#Patient_88,https://schema.org/Vector,"{""x"": 1.0, ""y"": 2.0}",VECTOR,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_26,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_82,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_79,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_7,https://schema.org/arrivalTime,23-11-11,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
-http://example.org/data#Patient_45,https://schema.org/baseSalary,"4130,94",DECIMAL,decimal,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?
-http://example.org/data#Patient_70,https://schema.org/Vector,"{""x"": 1.0, ""y"": 2.0}",VECTOR,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_26,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_68,https://schema.org/height,-40000,INT16,short,Value is below the allowed minimum (-32768.0)
-http://example.org/data#Patient_60,https://schema.org/requiresHealthPlan,yes,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
-http://example.org/data#Patient_79,http://purl.org/dc/elements/1.1/identifier,cd48,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_11,http://purl.org/dc/elements/1.1/identifier,5cad,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_34,https://schema.org/height,-40000,INT16,short,Value is below the allowed minimum (-32768.0)
-http://example.org/data#Patient_77,http://purl.org/dc/elements/1.1/identifier,7e3e,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_91,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
-http://example.org/data#Patient_72,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_26,https://schema.org/requiresHealthPlan,yes,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
-http://example.org/data#Patient_93,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_78,https://schema.org/arrivalTime,23-39-02,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
-http://example.org/data#Patient_89,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_16,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_95,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_3,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_76,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_29,https://schema.org/weight,"100,9",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
-http://example.org/data#Patient_18,https://schema.org/baseSalary,"708,12",DECIMAL,decimal,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?
-http://example.org/data#Patient_4,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
-http://example.org/data#Patient_4,https://schema.org/arrivalTime,18-12-14,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
+http://example.org/data#Patient_39,https://schema.org/weight,"94,9",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_13,http://example.org/data#metadata,"{""status"": ""active""}",UNIT_RECORD,No mapping,"Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
+http://example.org/data#Patient_21,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
+http://example.org/data#Patient_17,https://schema.org/birthDate,04-12-2010,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_35,http://example.org/data#metadata,"{""status"": ""active""}",UNIT_RECORD,No mapping,"Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
+http://example.org/data#Patient_31,https://schema.org/duration,2 years and 1 months,DURATION_YEAR_TO_MONTH,duration,Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$
+http://example.org/data#Patient_46,https://schema.org/arrivalTime,20-55-59,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
+http://example.org/data#Patient_1,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
+http://example.org/data#Patient_7,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
+http://example.org/data#Patient_14,https://schema.org/birthDate,18-02-1983,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_11,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
+http://example.org/data#Patient_26,http://xmlns.com/foaf/0.1/gender,Unknown,CHAR,string,String length (7) exceeds the maximum allowed (1)
+http://example.org/data#Patient_42,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
+http://example.org/data#Patient_1,http://purl.org/dc/elements/1.1/identifier,ceaa,BINARY,hexBinary,String length (4) does not match the exact required length (2)
+http://example.org/data#Patient_1,https://schema.org/birthDate,16-03-1925,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_30,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
+http://example.org/data#Patient_34,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_47,https://schema.org/baseSalary,"852,66",DECIMAL,decimal,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?
+http://example.org/data#Patient_7,https://schema.org/weight,"83,3",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_40,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
+http://example.org/data#Patient_24,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
+http://example.org/data#Patient_26,http://example.org/data#metadata,"{""status"": ""active""}",UNIT_RECORD,No mapping,"Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
+http://example.org/data#Patient_5,https://schema.org/Vector,"{""x"": 1.0, ""y"": 2.0}",VECTOR,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_35,http://xmlns.com/foaf/0.1/gender,Unknown,CHAR,string,String length (7) exceeds the maximum allowed (1)
+http://example.org/data#Patient_18,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
+http://example.org/data#Patient_17,https://schema.org/arrivalTime,01-46-18,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
+http://example.org/data#Patient_9,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
+http://example.org/data#Patient_7,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
+http://example.org/data#Patient_32,http://xmlns.com/foaf/0.1/gender,Unknown,CHAR,string,String length (7) exceeds the maximum allowed (1)
+http://example.org/data#Patient_29,https://schema.org/height,40000,INT16,short,Value is above the allowed maximum (32767.0)
+http://example.org/data#Patient_7,http://xmlns.com/foaf/0.1/gender,Unknown,CHAR,string,String length (7) exceeds the maximum allowed (1)
+http://example.org/data#Patient_42,https://schema.org/birthDate,15-10-1912,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_11,https://schema.org/weight,"41,3",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_25,https://schema.org/height,40000,INT16,short,Value is above the allowed maximum (32767.0)
+http://example.org/data#Patient_19,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
+http://example.org/data#Patient_40,https://schema.org/birthDate,19-05-2019,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_38,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_29,https://schema.org/baseSalary,"2323,66",DECIMAL,decimal,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?
+http://example.org/data#Patient_19,http://example.org/data#metadata,"{""status"": ""active""}",UNIT_RECORD,No mapping,"Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
+http://example.org/data#Patient_34,https://schema.org/birthDate,14-01-1962,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_32,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
+http://example.org/data#Patient_11,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
+http://example.org/data#Patient_28,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_23,https://schema.org/baseSalary,"2953,99",DECIMAL,decimal,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?
+http://example.org/data#Patient_12,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_42,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
+http://example.org/data#Patient_13,https://schema.org/weight,"64,2",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_28,https://schema.org/birthDate,21-03-1929,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_48,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_0,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
+http://example.org/data#Patient_44,https://schema.org/weight,"84,7",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_45,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
+http://example.org/data#Patient_41,http://xmlns.com/foaf/0.1/gender,Male,CHAR,string,String length (4) exceeds the maximum allowed (1)
+http://example.org/data#Patient_45,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
 http://example.org/data#Patient_6,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_2,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_51,https://schema.org/arrivalTime,23-30-25,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
-http://example.org/data#Patient_76,http://purl.org/dc/elements/1.1/identifier,3796,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_52,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_63,https://schema.org/birthDate,10-05-1943,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_27,https://schema.org/arrivalTime,13-58-03,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
-http://example.org/data#Patient_70,https://schema.org/weight,"91,1",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
-http://example.org/data#Patient_68,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
-http://example.org/data#Patient_29,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_5,https://schema.org/weight,"90,4",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
-http://example.org/data#Patient_74,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_47,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_13,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
-http://example.org/data#Patient_54,https://schema.org/arrivalTime,11-18-34,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
-http://example.org/data#Patient_6,https://schema.org/birthDate,25-12-1913,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_46,http://purl.org/dc/elements/1.1/identifier,d171,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_44,https://schema.org/weight,"65,3",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
-http://example.org/data#Patient_76,https://schema.org/arrivalTime,16-44-16,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
-http://example.org/data#Patient_90,http://purl.org/dc/elements/1.1/identifier,28aa,BINARY,hexBinary,String length (4) does not match the exact required length (2)
-http://example.org/data#Patient_23,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_52,https://schema.org/birthDate,08-10-2002,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_60,https://schema.org/birthDate,03-05-1989,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_12,http://xmlns.com/foaf/0.1/gender,Male,CHAR,string,String length (4) exceeds the maximum allowed (1)
-http://example.org/data#Patient_49,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_46,https://schema.org/weight,"46,0",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
-http://example.org/data#Patient_33,http://xmlns.com/foaf/0.1/gender,Male,CHAR,string,String length (4) exceeds the maximum allowed (1)
-http://example.org/data#Patient_21,https://schema.org/birthDate,26-06-1948,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-http://example.org/data#Patient_24,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_94,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_28,https://schema.org/duration,2 years and 9 months,DURATION_YEAR_TO_MONTH,duration,Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$
-http://example.org/data#Patient_30,https://schema.org/Vector,"{""x"": 1.0, ""y"": 2.0}",VECTOR,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_40,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
-http://example.org/data#Patient_86,https://schema.org/height,40000,INT16,short,Value is above the allowed maximum (32767.0)
-http://example.org/data#Patient_35,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_60,https://schema.org/arrivalTime,04-38-37,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
-http://example.org/data#Patient_36,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_80,https://schema.org/requiresHealthPlan,yes,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
-http://example.org/data#Patient_77,https://schema.org/arrivalTime,11-44-28,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
-http://example.org/data#Patient_6,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
-http://example.org/data#Patient_20,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_37,https://schema.org/baseSalary,"3153,50",DECIMAL,decimal,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?
-http://example.org/data#Patient_17,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
-http://example.org/data#Patient_54,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
-http://example.org/data#Patient_36,https://schema.org/requiresHealthPlan,yes,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
-http://example.org/data#Patient_7,http://example.org/data#metadata,"{""status"": ""active""}",UNIT_RECORD,No mapping,"Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
-http://example.org/data#Patient_34,http://purl.org/dc/elements/1.1/identifier,c441,BINARY,hexBinary,String length (4) does not match the exact required length (2)
+http://example.org/data#Patient_3,http://purl.org/dc/elements/1.1/identifier,422e,BINARY,hexBinary,String length (4) does not match the exact required length (2)
+http://example.org/data#Patient_21,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_26,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
+http://example.org/data#Patient_36,https://schema.org/weight,"41,4",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_26,https://schema.org/Vector,"{""x"": 1.0, ""y"": 2.0}",VECTOR,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_26,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_4,http://xmlns.com/foaf/0.1/gender,Unknown,CHAR,string,String length (7) exceeds the maximum allowed (1)
+http://example.org/data#Patient_30,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
+http://example.org/data#Patient_3,https://schema.org/birthDate,22-11-2005,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_37,https://schema.org/requiresHealthPlan,yes,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
+http://example.org/data#Patient_44,http://example.org/data#testField,123,UNKNOWN_TYPE,No mapping,Type was neither recognized nor explicitly mapped in the validator
+http://example.org/data#Patient_22,http://purl.org/dc/elements/1.1/identifier,6117,BINARY,hexBinary,String length (4) does not match the exact required length (2)
+http://example.org/data#Patient_43,https://schema.org/weight,"105,6",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_48,https://schema.org/birthDate,02-09-1932,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_11,https://schema.org/height,-40000,INT16,short,Value is below the allowed minimum (-32768.0)
+http://example.org/data#Patient_2,http://purl.org/dc/elements/1.1/identifier,2776,BINARY,hexBinary,String length (4) does not match the exact required length (2)
+http://example.org/data#Patient_36,http://xmlns.com/foaf/0.1/gender,Unknown,CHAR,string,String length (7) exceeds the maximum allowed (1)
+http://example.org/data#Patient_9,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
+http://example.org/data#Patient_49,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
+http://example.org/data#Patient_13,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)
+http://example.org/data#Patient_9,https://schema.org/prescription,"{""drug"": ""Ibuprofen""}",ARRAY,No mapping,"Expected a JSON Array (list), but got dict"
+http://example.org/data#Patient_37,http://xmlns.com/foaf/0.1/age,-10,UINT8,unsignedByte,Value does not match the required ontology pattern: [+]?[0-9]+
+http://example.org/data#Patient_42,http://xmlns.com/foaf/0.1/gender,Unknown,CHAR,string,String length (7) exceeds the maximum allowed (1)
+http://example.org/data#Patient_27,https://schema.org/requiresHealthPlan,no,BOOLEAN,boolean,Value is not a valid boolean (expected true/false/1/0)
+http://example.org/data#Patient_47,https://schema.org/duration,5 years and 9 months,DURATION_YEAR_TO_MONTH,duration,Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$
+http://example.org/data#Patient_36,https://schema.org/duration,2 years and 3 months,DURATION_YEAR_TO_MONTH,duration,Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$
+http://example.org/data#Patient_40,https://schema.org/weight,"57,4",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_14,https://schema.org/weight,"109,3",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_6,https://schema.org/weight,"72,5",FLOAT,double,Value does not match the required ontology pattern: [+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+http://example.org/data#Patient_25,https://schema.org/birthDate,05-03-1991,DATE,date,Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+http://example.org/data#Patient_32,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
+http://example.org/data#Patient_7,http://xmlns.com/foaf/0.1/age,300,UINT8,unsignedByte,Value is above the allowed maximum (255.0)
+http://example.org/data#Patient_42,https://schema.org/arrivalTime,09-11-34,LOCAL_TIME,time,Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?$
+http://example.org/data#Patient_49,http://xmlns.com/foaf/0.1/gender,Female,CHAR,string,String length (6) exceeds the maximum allowed (1)

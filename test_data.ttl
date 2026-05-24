@@ -4,1155 +4,587 @@
 @prefix gql: <http://example.org/gql-types#> .
 @prefix schema: <https://schema.org/> .
 
-ex:Patient_0 dc:identifier "84"^^gql:BINARY ;
-    foaf:age "77"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Leah Martinez"^^gql:STRING ;
-    schema:arrivalTime "09:51:27"^^gql:LOCAL_TIME ;
-    schema:dateAdmitted "2026-03-16T18:24:21"^^gql:TIMESTAMP ;
-    schema:duration "P5Y4M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "170"^^gql:INT16 ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "70.9"^^gql:FLOAT .
-
-ex:Patient_1 dc:identifier "3c3e"^^gql:BINARY ;
-    foaf:age "54"^^gql:UINT8 ;
-    foaf:gender "Male"^^gql:CHAR ;
-    foaf:name "Timothy Simmons"^^gql:STRING ;
-    schema:birthDate "1938-09-21"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-23T14:30:44"^^gql:TIMESTAMP ;
-    schema:duration "4 years and 5 months"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "143"^^gql:INT16 ;
-    schema:prescription "[\"Omeprazole\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "TRUE"^^gql:BOOLEAN ;
-    schema:weight "74.9"^^gql:FLOAT .
-
-ex:Patient_10 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    ex:testField "123"^^gql:UNKNOWN_TYPE ;
-    foaf:age "56"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Albert Newton"^^gql:STRING ;
-    schema:baseSalary "3544,84"^^gql:DECIMAL ;
-    schema:birthDate "1998-06-30"^^gql:DATE ;
-    schema:height "181"^^gql:INT16 ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "87.9"^^gql:FLOAT .
-
-ex:Patient_11 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "5cad"^^gql:BINARY ;
-    foaf:age "19"^^gql:UINT8 ;
-    foaf:name "Linda Hendricks"^^gql:STRING ;
-    schema:Vector "[0.153, 0.104, 0.026]"^^gql:VECTOR ;
-    schema:baseSalary "1192.17"^^gql:DECIMAL ;
-    schema:birthDate "1990-06-28"^^gql:DATE ;
-    schema:duration "P0Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "40000"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN .
-
-ex:Patient_12 dc:identifier "a0"^^gql:BINARY ;
-    foaf:age "95"^^gql:UINT8 ;
-    foaf:gender "Male"^^gql:CHAR ;
-    foaf:name "John Robinson"^^gql:STRING ;
-    schema:arrivalTime "06:27:40"^^gql:LOCAL_TIME ;
-    schema:birthDate "1987-08-22"^^gql:DATE ;
-    schema:duration "P2Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "143"^^gql:INT16 ;
-    schema:prescription "[\"Aspirin\", \"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "42.4"^^gql:FLOAT .
-
-ex:Patient_13 foaf:age "61"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Danielle Hughes"^^gql:STRING ;
-    schema:Vector "[0.788, 0.643, 0.809]"^^gql:VECTOR ;
-    schema:arrivalTime "18:48:59"^^gql:LOCAL_TIME ;
-    schema:baseSalary "859.88"^^gql:DECIMAL ;
-    schema:duration "P1Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "122"^^gql:INT16 ;
-    schema:requiresHealthPlan "no"^^gql:BOOLEAN .
-
-ex:Patient_14 dc:identifier "cc"^^gql:BINARY ;
-    foaf:age "72"^^gql:UINT8 ;
-    foaf:name "Shane Kaiser"^^gql:STRING ;
-    schema:arrivalTime "13:22:54"^^gql:LOCAL_TIME ;
-    schema:baseSalary "631.66"^^gql:DECIMAL ;
-    schema:birthDate "25-02-1947"^^gql:DATE ;
-    schema:duration "P1Y9M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "194"^^gql:INT16 ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "73.1"^^gql:FLOAT .
-
-ex:Patient_15 dc:identifier "58"^^gql:BINARY ;
-    foaf:age "1"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Jessica Cox"^^gql:STRING ;
-    schema:arrivalTime "04:35:21"^^gql:LOCAL_TIME ;
-    schema:baseSalary "4244.40"^^gql:DECIMAL ;
-    schema:dateAdmitted "2026-04-20T20:23:28"^^gql:TIMESTAMP ;
-    schema:height "112"^^gql:INT16 ;
-    schema:prescription "[\"Ibuprofen\", \"Paracetamol\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "96.9"^^gql:FLOAT .
-
-ex:Patient_16 foaf:age "300"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Karen Cooper"^^gql:STRING ;
-    schema:arrivalTime "23:29:01"^^gql:LOCAL_TIME ;
-    schema:baseSalary "4253.75"^^gql:DECIMAL ;
-    schema:height "181"^^gql:INT16 ;
-    schema:prescription "[\"Ibuprofen\"]"^^gql:ARRAY ;
+ex:Patient_0 dc:identifier "b0"^^gql:BINARY ;
+    foaf:age "24"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Larry Holland"^^gql:STRING ;
+    schema:arrivalTime "11:21:19"^^gql:LOCAL_TIME ;
+    schema:baseSalary "789.02"^^gql:DECIMAL ;
+    schema:birthDate "1964-07-04"^^gql:DATE ;
+    schema:dateAdmitted "2026-03-11T04:50:00"^^gql:TIMESTAMP ;
+    schema:height "-40000"^^gql:INT16 ;
+    schema:prescription "[\"Paracetamol\", \"Omeprazole\"]"^^gql:ARRAY ;
     schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "114.7"^^gql:FLOAT .
+    schema:weight "44.8"^^gql:FLOAT .
 
-ex:Patient_17 dc:identifier "ee"^^gql:BINARY ;
-    foaf:age "-10"^^gql:UINT8 ;
-    foaf:name "Eric Martinez"^^gql:STRING ;
-    schema:Vector "[0.147, 0.129, 0.918]"^^gql:VECTOR ;
-    schema:arrivalTime "20-33-51"^^gql:LOCAL_TIME ;
-    schema:height "120"^^gql:INT16 ;
-    schema:prescription "[\"Amoxicillin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "72.2"^^gql:FLOAT .
-
-ex:Patient_18 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "0687"^^gql:BINARY ;
-    foaf:age "89"^^gql:UINT8 ;
+ex:Patient_1 dc:identifier "be"^^gql:BINARY ;
+    foaf:age "31"^^gql:UINT8 ;
     foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Holly Andersen"^^gql:STRING ;
-    schema:arrivalTime "15:41:05"^^gql:LOCAL_TIME ;
-    schema:baseSalary "708,12"^^gql:DECIMAL ;
-    schema:birthDate "1976-12-06"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-22T01:20:10"^^gql:TIMESTAMP ;
-    schema:duration "P4Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "149"^^gql:INT16 ;
-    schema:prescription "[\"Insulin\", \"Aspirin\", \"Omeprazole\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "104.8"^^gql:FLOAT .
-
-ex:Patient_19 dc:identifier "1c"^^gql:BINARY ;
-    foaf:age "66"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Robert Pena"^^gql:STRING ;
-    schema:birthDate "1999-05-18"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-07T22:15:44"^^gql:TIMESTAMP ;
-    schema:height "166"^^gql:INT16 ;
-    schema:prescription "[\"Insulin\", \"Omeprazole\", \"Aspirin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "64.3"^^gql:FLOAT .
-
-ex:Patient_2 foaf:age "70"^^gql:UINT8 ;
-    foaf:name "Monica Guerrero"^^gql:STRING ;
-    schema:baseSalary "2349.55"^^gql:DECIMAL ;
-    schema:birthDate "1997-02-10"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-09T01:33:07"^^gql:TIMESTAMP ;
-    schema:duration "P4Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "174"^^gql:INT16 ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "50.2"^^gql:FLOAT .
-
-ex:Patient_20 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "9d"^^gql:BINARY ;
-    foaf:age "-10"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Maureen Cardenas"^^gql:STRING ;
-    schema:arrivalTime "19:50:29"^^gql:LOCAL_TIME ;
-    schema:birthDate "2015-05-25"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-29T04:43:54"^^gql:TIMESTAMP ;
-    schema:duration "P4Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "143"^^gql:INT16 ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "118.0"^^gql:FLOAT .
-
-ex:Patient_21 foaf:age "12"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Mrs. Nicole Burgess"^^gql:STRING ;
-    schema:Vector "[0.576, 0.941, 0.957]"^^gql:VECTOR ;
-    schema:baseSalary "4509.38"^^gql:DECIMAL ;
-    schema:birthDate "26-06-1948"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-02T13:34:01"^^gql:TIMESTAMP ;
-    schema:height "208"^^gql:INT16 ;
-    schema:prescription "[\"Insulin\", \"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "71.9"^^gql:FLOAT .
-
-ex:Patient_22 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "ee"^^gql:BINARY ;
-    foaf:age "23"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Zachary Evans"^^gql:STRING ;
-    schema:arrivalTime "04:35:58"^^gql:LOCAL_TIME ;
-    schema:birthDate "2003-10-23"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-26T14:47:03"^^gql:TIMESTAMP ;
-    schema:duration "P5Y10M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "102"^^gql:INT16 ;
-    schema:prescription "[\"Paracetamol\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "110.9"^^gql:FLOAT .
-
-ex:Patient_23 foaf:age "-10"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Daniel Castaneda"^^gql:STRING ;
-    schema:Vector "[0.331, 0.974, 0.658]"^^gql:VECTOR ;
-    schema:birthDate "1928-01-02"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-10T15:20:42"^^gql:TIMESTAMP ;
-    schema:duration "5 years and 1 months"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "194"^^gql:INT16 ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "114.0"^^gql:FLOAT .
-
-ex:Patient_24 foaf:age "-10"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Jeffrey Sullivan"^^gql:STRING ;
-    schema:arrivalTime "17:22:08"^^gql:LOCAL_TIME ;
-    schema:birthDate "2010-04-07"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-06 20:25:09"^^gql:TIMESTAMP ;
-    schema:duration "P1Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "183"^^gql:INT16 ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "76.3"^^gql:FLOAT .
-
-ex:Patient_25 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "09"^^gql:BINARY ;
-    foaf:age "28"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Isabella Castaneda"^^gql:STRING ;
-    schema:birthDate "2019-05-18"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-06T15:18:07"^^gql:TIMESTAMP ;
-    schema:height "153"^^gql:INT16 ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "no"^^gql:BOOLEAN ;
-    schema:weight "58.8"^^gql:FLOAT .
-
-ex:Patient_26 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "be"^^gql:BINARY ;
-    foaf:age "300"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "John Moore"^^gql:STRING ;
-    schema:baseSalary "977.33"^^gql:DECIMAL ;
-    schema:birthDate "1984-01-11"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-21 09:35:06"^^gql:TIMESTAMP ;
-    schema:height "123"^^gql:INT16 ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "yes"^^gql:BOOLEAN .
-
-ex:Patient_27 dc:identifier "00"^^gql:BINARY ;
-    foaf:age "81"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Patrick Parker"^^gql:STRING ;
-    schema:arrivalTime "13-58-03"^^gql:LOCAL_TIME ;
-    schema:baseSalary "2253.29"^^gql:DECIMAL ;
-    schema:birthDate "15-03-1994"^^gql:DATE ;
-    schema:dateAdmitted "2026-05-01T04:44:34"^^gql:TIMESTAMP ;
-    schema:prescription "[\"Omeprazole\", \"Amoxicillin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "118.0"^^gql:FLOAT .
-
-ex:Patient_28 dc:identifier "90"^^gql:BINARY ;
-    foaf:age "77"^^gql:UINT8 ;
-    foaf:name "Matthew French"^^gql:STRING ;
-    schema:arrivalTime "09:12:04"^^gql:LOCAL_TIME ;
-    schema:baseSalary "2181.44"^^gql:DECIMAL ;
-    schema:birthDate "1995-07-27"^^gql:DATE ;
-    schema:dateAdmitted "2026-05-02T01:29:07"^^gql:TIMESTAMP ;
-    schema:duration "2 years and 9 months"^^gql:DURATION_YEAR_TO_MONTH ;
+    foaf:name "Carolyn Sullivan"^^gql:STRING ;
+    schema:arrivalTime "11:36:47"^^gql:LOCAL_TIME ;
+    schema:baseSalary "4665.52"^^gql:DECIMAL ;
+    schema:birthDate "2012-06-17"^^gql:DATE ;
+    schema:duration "P0Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
     schema:height "111"^^gql:INT16 ;
-    schema:prescription "[\"Omeprazole\", \"Insulin\", \"Aspirin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
+    schema:weight "110.6"^^gql:FLOAT .
+
+ex:Patient_10 dc:identifier "a5"^^gql:BINARY ;
+    foaf:age "51"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Mrs. Rachel Smith MD"^^gql:STRING ;
+    schema:Vector "[0.467, 0.166, 0.808]"^^gql:VECTOR ;
+    schema:baseSalary "3488.80"^^gql:DECIMAL ;
+    schema:birthDate "2019-07-02"^^gql:DATE ;
+    schema:duration "P0Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "159"^^gql:INT16 ;
+    schema:prescription "[\"Aspirin\", \"Insulin\"]"^^gql:ARRAY ;
     schema:requiresHealthPlan "true"^^gql:BOOLEAN .
 
-ex:Patient_29 ex:metadata "{\"status\": \"active\"}"^^gql:UNIT_RECORD ;
-    dc:identifier "70"^^gql:BINARY ;
-    foaf:age "99"^^gql:UINT8 ;
-    foaf:name "Michael Dyer"^^gql:STRING ;
-    schema:arrivalTime "09:03:28"^^gql:LOCAL_TIME ;
-    schema:baseSalary "1165.91"^^gql:DECIMAL ;
-    schema:birthDate "1928-09-17"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-15 13:34:38"^^gql:TIMESTAMP ;
-    schema:height "201"^^gql:INT16 ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "100,9"^^gql:FLOAT .
-
-ex:Patient_3 dc:identifier "23"^^gql:BINARY ;
-    foaf:age "-10"^^gql:UINT8 ;
+ex:Patient_11 dc:identifier "b2"^^gql:BINARY ;
+    foaf:age "97"^^gql:UINT8 ;
     foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Jacob French"^^gql:STRING ;
-    schema:birthDate "1925-10-11"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-19T20:28:55"^^gql:TIMESTAMP ;
-    schema:duration "P1Y4M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "217"^^gql:INT16 ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY .
+    foaf:name "Colleen Gonzalez"^^gql:STRING ;
+    schema:Vector "[0.772, 0.47, 0.653]"^^gql:VECTOR ;
+    schema:arrivalTime "23:51:32"^^gql:LOCAL_TIME ;
+    schema:baseSalary "3708.40"^^gql:DECIMAL ;
+    schema:birthDate "1952-08-17"^^gql:DATE ;
+    schema:dateAdmitted "2026-05-14T03:11:17"^^gql:TIMESTAMP ;
+    schema:prescription "[\"Amoxicillin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
+    schema:weight "66.9"^^gql:FLOAT .
 
-ex:Patient_30 dc:identifier "ec"^^gql:BINARY ;
-    foaf:age "47"^^gql:UINT8 ;
-    foaf:gender "Female"^^gql:CHAR ;
-    foaf:name "Kenneth Hall"^^gql:STRING ;
-    schema:Vector "{\"x\": 1.0, \"y\": 2.0}"^^gql:VECTOR ;
-    schema:baseSalary "2639.39"^^gql:DECIMAL ;
-    schema:birthDate "1976-03-03"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-29 16:40:48"^^gql:TIMESTAMP ;
-    schema:height "151"^^gql:INT16 ;
+ex:Patient_12 dc:identifier "60"^^gql:BINARY ;
+    foaf:age "52"^^gql:UINT8 ;
+    foaf:name "Stacie Henry"^^gql:STRING ;
+    schema:arrivalTime "15:38:10"^^gql:LOCAL_TIME ;
+    schema:baseSalary "3613.09"^^gql:DECIMAL ;
+    schema:birthDate "13-03-1926"^^gql:DATE ;
+    schema:duration "5 years and 8 months"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:prescription "[\"Amoxicillin\", \"Paracetamol\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
+    schema:weight "55.9"^^gql:FLOAT .
+
+ex:Patient_13 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    foaf:age "23"^^gql:UINT8 ;
+    foaf:name "Ann Hunt"^^gql:STRING ;
+    schema:Vector "[0.562, 0.74, 0.603]"^^gql:VECTOR ;
+    schema:baseSalary "4318.40"^^gql:DECIMAL ;
+    schema:birthDate "2020-07-08"^^gql:DATE ;
+    schema:duration "P0Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "191"^^gql:INT16 ;
+    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
+    schema:weight "55.4"^^gql:FLOAT .
+
+ex:Patient_14 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "eb"^^gql:BINARY ;
+    foaf:age "42"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Joseph Clark"^^gql:STRING ;
+    schema:baseSalary "2996.54"^^gql:DECIMAL ;
+    schema:birthDate "1992-02-07"^^gql:DATE ;
+    schema:duration "P4Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "197"^^gql:INT16 ;
     schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "110.0"^^gql:FLOAT .
+    schema:weight "90.9"^^gql:FLOAT .
 
-ex:Patient_31 dc:identifier "7b"^^gql:BINARY ;
-    foaf:age "-10"^^gql:UINT8 ;
+ex:Patient_15 dc:identifier "5c"^^gql:BINARY ;
+    foaf:age "96"^^gql:UINT8 ;
     foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Amy Hughes"^^gql:STRING ;
-    schema:birthDate "1936-05-15"^^gql:DATE ;
-    schema:duration "P5Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "109"^^gql:INT16 ;
+    foaf:name "Anthony Ortiz"^^gql:STRING ;
+    schema:Vector "[0.969, 0.618, 0.604]"^^gql:VECTOR ;
+    schema:arrivalTime "13:11:30"^^gql:LOCAL_TIME ;
+    schema:baseSalary "1784.99"^^gql:DECIMAL ;
+    schema:birthDate "1967-05-16"^^gql:DATE ;
+    schema:dateAdmitted "2026-04-08T22:07:59"^^gql:TIMESTAMP ;
+    schema:duration "P0Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:prescription "[\"Paracetamol\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
+    schema:weight "103.4"^^gql:FLOAT .
+
+ex:Patient_16 ex:testField "123"^^gql:UNKNOWN_TYPE ;
+    dc:identifier "8b"^^gql:BINARY ;
+    foaf:age "94"^^gql:UINT8 ;
+    foaf:gender "Unknown"^^gql:CHAR ;
+    foaf:name "Cheryl Russell"^^gql:STRING ;
+    schema:arrivalTime "02:24:11"^^gql:LOCAL_TIME ;
+    schema:baseSalary "4755.15"^^gql:DECIMAL ;
+    schema:birthDate "1946-10-02"^^gql:DATE ;
+    schema:dateAdmitted "2026-03-15T01:15:49"^^gql:TIMESTAMP ;
+    schema:duration "P5Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "132"^^gql:INT16 ;
+    schema:prescription "[\"Omeprazole\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "0"^^gql:BOOLEAN .
+
+ex:Patient_17 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "46"^^gql:BINARY ;
+    foaf:age "65"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Tracey Walls"^^gql:STRING ;
+    schema:Vector "[0.98, 0.398, 0.702]"^^gql:VECTOR ;
+    schema:arrivalTime "23:25:23"^^gql:LOCAL_TIME ;
+    schema:dateAdmitted "2026-01-26T23:50:26"^^gql:TIMESTAMP ;
+    schema:height "107"^^gql:INT16 ;
+    schema:prescription "[\"Ibuprofen\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
+    schema:weight "76.4"^^gql:FLOAT .
+
+ex:Patient_18 dc:identifier "a2"^^gql:BINARY ;
+    foaf:gender "Unknown"^^gql:CHAR ;
+    foaf:name "David Brooks"^^gql:STRING ;
+    schema:arrivalTime "10-08-45"^^gql:LOCAL_TIME ;
+    schema:dateAdmitted "2026-04-23T23:31:46"^^gql:TIMESTAMP ;
+    schema:duration "P2Y8M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "211"^^gql:INT16 ;
+    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
+    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
+    schema:weight "43.4"^^gql:FLOAT .
+
+ex:Patient_19 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    foaf:age "22"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Isabella Norman"^^gql:STRING ;
+    schema:arrivalTime "14-03-32"^^gql:LOCAL_TIME ;
+    schema:baseSalary "1208.06"^^gql:DECIMAL ;
+    schema:height "190"^^gql:INT16 ;
+    schema:prescription "[\"Insulin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "0"^^gql:BOOLEAN .
+
+ex:Patient_2 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "53"^^gql:BINARY ;
+    foaf:age "95"^^gql:UINT8 ;
+    foaf:gender "M"^^gql:CHAR ;
+    foaf:name "Maria Hill"^^gql:STRING ;
+    schema:birthDate "1970-06-07"^^gql:DATE ;
+    schema:dateAdmitted "2026-05-09T20:05:24"^^gql:TIMESTAMP ;
+    schema:height "161"^^gql:INT16 ;
+    schema:requiresHealthPlan "true"^^gql:BOOLEAN .
+
+ex:Patient_20 dc:identifier "75"^^gql:BINARY ;
+    foaf:age "1"^^gql:UINT8 ;
+    foaf:name "Juan Banks"^^gql:STRING ;
+    schema:arrivalTime "02:08:15"^^gql:LOCAL_TIME ;
+    schema:baseSalary "2626.40"^^gql:DECIMAL ;
+    schema:birthDate "1986-06-05"^^gql:DATE ;
+    schema:dateAdmitted "2026-01-29T22:50:30"^^gql:TIMESTAMP ;
+    schema:height "160"^^gql:INT16 ;
     schema:prescription "[\"Paracetamol\"]"^^gql:ARRAY ;
     schema:requiresHealthPlan "1"^^gql:BOOLEAN .
 
-ex:Patient_32 foaf:age "97"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Jennifer Mooney"^^gql:STRING ;
-    schema:baseSalary "2668.99"^^gql:DECIMAL ;
-    schema:birthDate "21-01-1989"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-06T18:33:58"^^gql:TIMESTAMP ;
-    schema:height "103"^^gql:INT16 ;
-    schema:prescription "[\"Aspirin\", \"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN .
-
-ex:Patient_33 ex:metadata "{\"status\": \"active\"}"^^gql:UNIT_RECORD ;
-    ex:testField "123"^^gql:UNKNOWN_TYPE ;
-    dc:identifier "c8"^^gql:BINARY ;
-    foaf:age "87"^^gql:UINT8 ;
-    foaf:gender "Male"^^gql:CHAR ;
-    foaf:name "Keith Gill"^^gql:STRING ;
-    schema:arrivalTime "06:18:11"^^gql:LOCAL_TIME ;
-    schema:baseSalary "2132.12"^^gql:DECIMAL ;
-    schema:birthDate "1999-11-14"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-21T05:10:30"^^gql:TIMESTAMP ;
-    schema:duration "P1Y8M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "118"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN .
-
-ex:Patient_34 dc:identifier "c441"^^gql:BINARY ;
-    foaf:age "10"^^gql:UINT8 ;
+ex:Patient_21 ex:testField "123"^^gql:UNKNOWN_TYPE ;
+    dc:identifier "b9"^^gql:BINARY ;
+    foaf:age "78"^^gql:UINT8 ;
     foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Jesus Pham"^^gql:STRING ;
-    schema:Vector "[0.754, 0.721, 0.161]"^^gql:VECTOR ;
-    schema:arrivalTime "02:57:59"^^gql:LOCAL_TIME ;
-    schema:birthDate "1929-02-21"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-02T21:48:19"^^gql:TIMESTAMP ;
-    schema:height "-40000"^^gql:INT16 ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "47.6"^^gql:FLOAT .
-
-ex:Patient_35 dc:identifier "d3"^^gql:BINARY ;
-    foaf:age "-10"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Matthew White"^^gql:STRING ;
-    schema:arrivalTime "19:12:57"^^gql:LOCAL_TIME ;
-    schema:baseSalary "2789.61"^^gql:DECIMAL ;
-    schema:birthDate "1930-01-09"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-31T06:30:37"^^gql:TIMESTAMP ;
-    schema:prescription "[\"Aspirin\"]"^^gql:ARRAY ;
+    foaf:name "Patrick Jones"^^gql:STRING ;
+    schema:arrivalTime "09:24:03"^^gql:LOCAL_TIME ;
+    schema:birthDate "1950-04-30"^^gql:DATE ;
+    schema:dateAdmitted "2026-03-09T12:48:04"^^gql:TIMESTAMP ;
+    schema:height "197"^^gql:INT16 ;
     schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "94.1"^^gql:FLOAT .
+    schema:weight "51.8"^^gql:FLOAT .
 
-ex:Patient_36 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "c3"^^gql:BINARY ;
-    foaf:age "300"^^gql:UINT8 ;
-    foaf:name "Carol Carlson"^^gql:STRING ;
-    schema:arrivalTime "07:23:08"^^gql:LOCAL_TIME ;
-    schema:birthDate "1978-11-13"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-10 23:56:54"^^gql:TIMESTAMP ;
-    schema:duration "P5Y8M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "[\"Ibuprofen\", \"Amoxicillin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "yes"^^gql:BOOLEAN ;
-    schema:weight "84.2"^^gql:FLOAT .
-
-ex:Patient_37 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "92"^^gql:BINARY ;
-    foaf:age "81"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Mark Johnson"^^gql:STRING ;
-    schema:Vector "[0.525, 0.213, 0.194]"^^gql:VECTOR ;
-    schema:arrivalTime "00:48:06"^^gql:LOCAL_TIME ;
-    schema:baseSalary "3153,50"^^gql:DECIMAL ;
-    schema:birthDate "2021-08-25"^^gql:DATE ;
-    schema:height "158"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN .
-
-ex:Patient_38 foaf:age "66"^^gql:UINT8 ;
+ex:Patient_22 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "0f"^^gql:BINARY ;
+    foaf:age "65"^^gql:UINT8 ;
     foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Jose Christensen"^^gql:STRING ;
-    schema:Vector "[0.974, 0.989, 0.45]"^^gql:VECTOR ;
-    schema:arrivalTime "20:16:17"^^gql:LOCAL_TIME ;
-    schema:birthDate "1980-01-01"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-02T03:33:48"^^gql:TIMESTAMP ;
-    schema:height "220"^^gql:INT16 ;
-    schema:prescription "[\"Amoxicillin\", \"Paracetamol\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "106.8"^^gql:FLOAT .
+    foaf:name "Mark Johnson"^^gql:STRING ;
+    schema:Vector "[0.979, 0.661, 0.817]"^^gql:VECTOR ;
+    schema:dateAdmitted "2026-01-08T06:32:18"^^gql:TIMESTAMP ;
+    schema:height "171"^^gql:INT16 ;
+    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
+    schema:weight "49.9"^^gql:FLOAT .
 
-ex:Patient_39 dc:identifier "e5"^^gql:BINARY ;
-    foaf:age "56"^^gql:UINT8 ;
+ex:Patient_23 dc:identifier "3e"^^gql:BINARY ;
+    foaf:age "82"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Christian Martinez"^^gql:STRING ;
+    schema:arrivalTime "10:14:23"^^gql:LOCAL_TIME ;
+    schema:baseSalary "1529.65"^^gql:DECIMAL ;
+    schema:dateAdmitted "2026-01-20T07:53:25"^^gql:TIMESTAMP ;
+    schema:duration "P3Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "211"^^gql:INT16 ;
+    schema:prescription "[\"Ibuprofen\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
+    schema:weight "94.9"^^gql:FLOAT .
+
+ex:Patient_24 dc:identifier "70"^^gql:BINARY ;
+    foaf:age "6"^^gql:UINT8 ;
     foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Michael Hamilton"^^gql:STRING ;
-    schema:baseSalary "4475.16"^^gql:DECIMAL ;
-    schema:birthDate "1934-07-12"^^gql:DATE ;
-    schema:height "169"^^gql:INT16 ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN .
+    foaf:name "Katherine Peterson"^^gql:STRING ;
+    schema:arrivalTime "16:24:08"^^gql:LOCAL_TIME ;
+    schema:birthDate "21-01-1935"^^gql:DATE ;
+    schema:dateAdmitted "2026-04-18T09:15:45"^^gql:TIMESTAMP ;
+    schema:duration "P1Y10M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "200"^^gql:INT16 ;
+    schema:prescription "[\"Ibuprofen\", \"Omeprazole\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "yes"^^gql:BOOLEAN .
+
+ex:Patient_25 dc:identifier "3d"^^gql:BINARY ;
+    foaf:age "19"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Christopher Horton"^^gql:STRING ;
+    schema:dateAdmitted "2026-05-12 19:28:15"^^gql:TIMESTAMP ;
+    schema:duration "P1Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:prescription "[\"Paracetamol\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "TRUE"^^gql:BOOLEAN .
+
+ex:Patient_26 dc:identifier "df"^^gql:BINARY ;
+    foaf:age "97"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Daniel Mercado"^^gql:STRING ;
+    schema:arrivalTime "11:31:08"^^gql:LOCAL_TIME ;
+    schema:birthDate "2004-07-17"^^gql:DATE ;
+    schema:dateAdmitted "2026-04-16 03:29:20"^^gql:TIMESTAMP ;
+    schema:duration "P5Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "189"^^gql:INT16 ;
+    schema:requiresHealthPlan "1"^^gql:BOOLEAN .
+
+ex:Patient_27 dc:identifier "eb"^^gql:BINARY ;
+    foaf:gender "M"^^gql:CHAR ;
+    foaf:name "Justin Livingston"^^gql:STRING ;
+    schema:Vector "[0.146, 0.234, 0.812]"^^gql:VECTOR ;
+    schema:arrivalTime "03:08:56"^^gql:LOCAL_TIME ;
+    schema:baseSalary "3006.48"^^gql:DECIMAL ;
+    schema:dateAdmitted "2026-03-05T23:29:50"^^gql:TIMESTAMP ;
+    schema:duration "P2Y9M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "212"^^gql:INT16 ;
+    schema:prescription "[\"Amoxicillin\", \"Insulin\", \"Aspirin\"]"^^gql:ARRAY ;
+    schema:weight "90,9"^^gql:FLOAT .
+
+ex:Patient_28 foaf:age "33"^^gql:UINT8 ;
+    foaf:gender "M"^^gql:CHAR ;
+    foaf:name "Denise Nguyen"^^gql:STRING ;
+    schema:Vector "[0.463, 0.307, 0.635]"^^gql:VECTOR ;
+    schema:arrivalTime "23:41:51"^^gql:LOCAL_TIME ;
+    schema:birthDate "1987-01-09"^^gql:DATE ;
+    schema:dateAdmitted "2026-04-06T03:11:42"^^gql:TIMESTAMP ;
+    schema:prescription "[\"Omeprazole\", \"Paracetamol\", \"Insulin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
+    schema:weight "83.3"^^gql:FLOAT .
+
+ex:Patient_29 dc:identifier "94"^^gql:BINARY ;
+    foaf:age "23"^^gql:UINT8 ;
+    foaf:gender "M"^^gql:CHAR ;
+    foaf:name "Christopher Young"^^gql:STRING ;
+    schema:baseSalary "1383.78"^^gql:DECIMAL ;
+    schema:birthDate "2016-11-24"^^gql:DATE ;
+    schema:duration "P4Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:prescription "[\"Ibuprofen\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
+    schema:weight "110.7"^^gql:FLOAT .
+
+ex:Patient_3 dc:identifier "1d"^^gql:BINARY ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Robert Brown"^^gql:STRING ;
+    schema:arrivalTime "19:58:17"^^gql:LOCAL_TIME ;
+    schema:birthDate "1927-12-19"^^gql:DATE ;
+    schema:height "193"^^gql:INT16 ;
+    schema:prescription "[\"Paracetamol\", \"Amoxicillin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
+    schema:weight "70.8"^^gql:FLOAT .
+
+ex:Patient_30 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "9534"^^gql:BINARY ;
+    foaf:age "83"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Melissa Schwartz"^^gql:STRING ;
+    schema:arrivalTime "16-12-08"^^gql:LOCAL_TIME ;
+    schema:birthDate "1996-02-07"^^gql:DATE ;
+    schema:height "193"^^gql:INT16 ;
+    schema:weight "78.6"^^gql:FLOAT .
+
+ex:Patient_31 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "9e"^^gql:BINARY ;
+    foaf:age "92"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Michael Bryant"^^gql:STRING ;
+    schema:birthDate "2021-04-28"^^gql:DATE ;
+    schema:dateAdmitted "2026-05-18T16:32:59"^^gql:TIMESTAMP ;
+    schema:height "139"^^gql:INT16 ;
+    schema:prescription "[\"Omeprazole\", \"Aspirin\", \"Amoxicillin\"]"^^gql:ARRAY .
+
+ex:Patient_32 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "a5"^^gql:BINARY ;
+    foaf:age "87"^^gql:UINT8 ;
+    foaf:gender "M"^^gql:CHAR ;
+    foaf:name "Shawn Gibbs"^^gql:STRING ;
+    schema:Vector "[0.169, 0.921, 0.611]"^^gql:VECTOR ;
+    schema:arrivalTime "00:15:55"^^gql:LOCAL_TIME ;
+    schema:birthDate "1964-10-24"^^gql:DATE ;
+    schema:dateAdmitted "2026-04-29T06:07:15"^^gql:TIMESTAMP ;
+    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
+    schema:weight "49.1"^^gql:FLOAT .
+
+ex:Patient_33 dc:identifier "fa"^^gql:BINARY ;
+    foaf:age "60"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Brenda Willis"^^gql:STRING ;
+    schema:arrivalTime "13:56:19"^^gql:LOCAL_TIME ;
+    schema:baseSalary "2676,48"^^gql:DECIMAL ;
+    schema:birthDate "1964-07-21"^^gql:DATE ;
+    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
+    schema:weight "93.1"^^gql:FLOAT .
+
+ex:Patient_34 dc:identifier "72"^^gql:BINARY ;
+    foaf:age "27"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Brandi Rojas"^^gql:STRING ;
+    schema:Vector "[0.732, 0.65, 0.52]"^^gql:VECTOR ;
+    schema:arrivalTime "01:58:29"^^gql:LOCAL_TIME ;
+    schema:birthDate "1952-04-21"^^gql:DATE ;
+    schema:dateAdmitted "2026-05-03T08:42:58"^^gql:TIMESTAMP ;
+    schema:duration "P2Y2M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
+    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
+    schema:weight "101.6"^^gql:FLOAT .
+
+ex:Patient_35 ex:testField "123"^^gql:UNKNOWN_TYPE ;
+    dc:identifier "22"^^gql:BINARY ;
+    foaf:age "13"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Rebecca Craig"^^gql:STRING ;
+    schema:arrivalTime "10:43:22"^^gql:LOCAL_TIME ;
+    schema:baseSalary "1921.72"^^gql:DECIMAL ;
+    schema:birthDate "1987-04-16"^^gql:DATE ;
+    schema:dateAdmitted "2026-03-28T19:26:02"^^gql:TIMESTAMP ;
+    schema:duration "3 years and 7 months"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "120"^^gql:INT16 ;
+    schema:prescription "[\"Paracetamol\", \"Amoxicillin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
+    schema:weight "45.7"^^gql:FLOAT .
+
+ex:Patient_36 dc:identifier "67"^^gql:BINARY ;
+    foaf:age "98"^^gql:UINT8 ;
+    foaf:name "Tammy Martinez"^^gql:STRING ;
+    schema:arrivalTime "09:46:38"^^gql:LOCAL_TIME ;
+    schema:baseSalary "3186.91"^^gql:DECIMAL ;
+    schema:dateAdmitted "2026-04-08T04:00:45"^^gql:TIMESTAMP ;
+    schema:height "192"^^gql:INT16 ;
+    schema:prescription "[\"Insulin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
+    schema:weight "74.1"^^gql:FLOAT .
+
+ex:Patient_37 ex:testField "123"^^gql:UNKNOWN_TYPE ;
+    foaf:age "17"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Derek Ortiz"^^gql:STRING ;
+    schema:birthDate "2004-01-29"^^gql:DATE ;
+    schema:dateAdmitted "2026-03-06T09:55:37"^^gql:TIMESTAMP ;
+    schema:duration "P2Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "205"^^gql:INT16 ;
+    schema:prescription "[\"Omeprazole\", \"Aspirin\", \"Paracetamol\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
+    schema:weight "77.3"^^gql:FLOAT .
+
+ex:Patient_38 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "36"^^gql:BINARY ;
+    foaf:age "3"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Dana Norton"^^gql:STRING ;
+    schema:birthDate "1979-05-09"^^gql:DATE ;
+    schema:prescription "[\"Paracetamol\", \"Ibuprofen\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
+    schema:weight "74.3"^^gql:FLOAT .
+
+ex:Patient_39 foaf:age "36"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Tricia Macias"^^gql:STRING ;
+    schema:arrivalTime "21:15:51"^^gql:LOCAL_TIME ;
+    schema:baseSalary "4032.09"^^gql:DECIMAL ;
+    schema:birthDate "1946-05-16"^^gql:DATE ;
+    schema:dateAdmitted "2026-03-17T07:29:07"^^gql:TIMESTAMP ;
+    schema:duration "P4Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:prescription "[\"Aspirin\", \"Insulin\"]"^^gql:ARRAY ;
+    schema:weight "83.6"^^gql:FLOAT .
 
 ex:Patient_4 ex:metadata "{}"^^gql:UNIT_RECORD ;
     ex:testField "123"^^gql:UNKNOWN_TYPE ;
-    dc:identifier "2a"^^gql:BINARY ;
-    foaf:age "63"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Tyler Maldonado"^^gql:STRING ;
-    schema:Vector "[0.97, 0.936, 0.769]"^^gql:VECTOR ;
-    schema:arrivalTime "18-12-14"^^gql:LOCAL_TIME ;
-    schema:baseSalary "940.59"^^gql:DECIMAL ;
-    schema:birthDate "22-02-1930"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-02T06:35:25"^^gql:TIMESTAMP ;
-    schema:duration "P1Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "[\"Omeprazole\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "67.1"^^gql:FLOAT .
-
-ex:Patient_40 dc:identifier "1e"^^gql:BINARY ;
-    foaf:gender "Female"^^gql:CHAR ;
-    foaf:name "Michael Smith"^^gql:STRING ;
-    schema:arrivalTime "08:35:20"^^gql:LOCAL_TIME ;
-    schema:birthDate "1989-11-27"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-05T11:06:14"^^gql:TIMESTAMP ;
-    schema:duration "P0Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "[\"Ibuprofen\", \"Omeprazole\", \"Amoxicillin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "59.9"^^gql:FLOAT .
-
-ex:Patient_41 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "59"^^gql:BINARY ;
-    foaf:age "19"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Cathy Anderson"^^gql:STRING ;
-    schema:Vector "[0.417, 0.533, 0.794]"^^gql:VECTOR ;
-    schema:birthDate "25-11-1984"^^gql:DATE ;
-    schema:height "137"^^gql:INT16 ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "101.2"^^gql:FLOAT .
-
-ex:Patient_42 dc:identifier "4d"^^gql:BINARY ;
-    foaf:age "28"^^gql:UINT8 ;
+    foaf:age "44"^^gql:UINT8 ;
     foaf:gender "X"^^gql:CHAR ;
-    foaf:name "David Miller"^^gql:STRING ;
-    schema:arrivalTime "23:54:05"^^gql:LOCAL_TIME ;
-    schema:baseSalary "1233.31"^^gql:DECIMAL ;
-    schema:dateAdmitted "2026-01-07T13:22:14"^^gql:TIMESTAMP ;
-    schema:prescription "[\"Aspirin\", \"Insulin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "65.7"^^gql:FLOAT .
+    foaf:name "Amanda Leonard"^^gql:STRING ;
+    schema:arrivalTime "02:35:56"^^gql:LOCAL_TIME ;
+    schema:baseSalary "2037.52"^^gql:DECIMAL ;
+    schema:birthDate "1937-12-31"^^gql:DATE ;
+    schema:dateAdmitted "2026-01-02T17:56:41"^^gql:TIMESTAMP ;
+    schema:duration "P4Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "135"^^gql:INT16 ;
+    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
+    schema:weight "87.8"^^gql:FLOAT .
 
-ex:Patient_43 dc:identifier "d9"^^gql:BINARY ;
-    foaf:age "40"^^gql:UINT8 ;
-    foaf:name "Laura Hawkins"^^gql:STRING ;
-    schema:Vector "[0.718, 0.517, 0.523]"^^gql:VECTOR ;
-    schema:arrivalTime "16:40:54"^^gql:LOCAL_TIME ;
-    schema:birthDate "15-11-1917"^^gql:DATE ;
-    schema:dateAdmitted "2026-05-14 14:27:10"^^gql:TIMESTAMP ;
-    schema:duration "P3Y8M"^^gql:DURATION_YEAR_TO_MONTH ;
+ex:Patient_40 dc:identifier "2ef5"^^gql:BINARY ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Sandra Adams"^^gql:STRING ;
+    schema:arrivalTime "23:39:02"^^gql:LOCAL_TIME ;
+    schema:baseSalary "797.77"^^gql:DECIMAL ;
+    schema:birthDate "1960-10-30"^^gql:DATE ;
+    schema:dateAdmitted "2026-03-16T11:21:03"^^gql:TIMESTAMP ;
+    schema:duration "P1Y10M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "152"^^gql:INT16 ;
     schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "48.3"^^gql:FLOAT .
+    schema:weight "55.8"^^gql:FLOAT .
+
+ex:Patient_41 ex:metadata "{\"status\": \"active\"}"^^gql:UNIT_RECORD ;
+    dc:identifier "8c"^^gql:BINARY ;
+    foaf:age "88"^^gql:UINT8 ;
+    foaf:gender "M"^^gql:CHAR ;
+    foaf:name "Joseph Ramirez"^^gql:STRING ;
+    schema:Vector "[0.319, 0.918, 0.595]"^^gql:VECTOR ;
+    schema:arrivalTime "04:18:35"^^gql:LOCAL_TIME ;
+    schema:birthDate "1996-08-04"^^gql:DATE ;
+    schema:dateAdmitted "2026-03-02T17:10:52"^^gql:TIMESTAMP ;
+    schema:duration "P5Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:prescription "[\"Insulin\", \"Ibuprofen\", \"Omeprazole\"]"^^gql:ARRAY .
+
+ex:Patient_42 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "cb"^^gql:BINARY ;
+    foaf:age "66"^^gql:UINT8 ;
+    foaf:gender "M"^^gql:CHAR ;
+    foaf:name "Mrs. Elizabeth Hansen DVM"^^gql:STRING ;
+    schema:Vector "[0.383, 0.774, 0.711]"^^gql:VECTOR ;
+    schema:arrivalTime "07:12:38"^^gql:LOCAL_TIME ;
+    schema:baseSalary "3597.59"^^gql:DECIMAL ;
+    schema:birthDate "1967-03-24"^^gql:DATE ;
+    schema:dateAdmitted "2026-01-04T21:36:31"^^gql:TIMESTAMP ;
+    schema:duration "P0Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "201"^^gql:INT16 ;
+    schema:prescription "[\"Paracetamol\"]"^^gql:ARRAY .
+
+ex:Patient_43 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "3b"^^gql:BINARY ;
+    foaf:age "25"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Michelle Welch"^^gql:STRING ;
+    schema:Vector "{\"x\": 1.0, \"y\": 2.0}"^^gql:VECTOR ;
+    schema:arrivalTime "23:01:56"^^gql:LOCAL_TIME ;
+    schema:dateAdmitted "2026-01-22T04:28:47"^^gql:TIMESTAMP ;
+    schema:height "163"^^gql:INT16 ;
+    schema:prescription "[\"Paracetamol\", \"Ibuprofen\"]"^^gql:ARRAY ;
+    schema:weight "80.9"^^gql:FLOAT .
 
 ex:Patient_44 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "95"^^gql:BINARY ;
-    foaf:age "1"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Christina Robles"^^gql:STRING ;
-    schema:arrivalTime "22:20:20"^^gql:LOCAL_TIME ;
-    schema:birthDate "1958-09-30"^^gql:DATE ;
-    schema:dateAdmitted "2026-05-11T13:56:11"^^gql:TIMESTAMP ;
-    schema:duration "P2Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "210"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "65,3"^^gql:FLOAT .
+    dc:identifier "7f"^^gql:BINARY ;
+    foaf:age "40"^^gql:UINT8 ;
+    foaf:name "Ronald Lawrence"^^gql:STRING ;
+    schema:arrivalTime "13:06:41"^^gql:LOCAL_TIME ;
+    schema:birthDate "1926-11-22"^^gql:DATE ;
+    schema:height "104"^^gql:INT16 ;
+    schema:prescription "[\"Amoxicillin\", \"Aspirin\", \"Omeprazole\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
+    schema:weight "70.6"^^gql:FLOAT .
 
-ex:Patient_45 dc:identifier "95"^^gql:BINARY ;
-    foaf:age "97"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "James Jackson"^^gql:STRING ;
-    schema:arrivalTime "18:38:12"^^gql:LOCAL_TIME ;
-    schema:baseSalary "4130,94"^^gql:DECIMAL ;
-    schema:duration "P1Y2M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "[\"Paracetamol\", \"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "101.7"^^gql:FLOAT .
-
-ex:Patient_46 dc:identifier "d171"^^gql:BINARY ;
-    foaf:gender "Female"^^gql:CHAR ;
-    foaf:name "Angela Thomas"^^gql:STRING ;
-    schema:Vector "[0.288, 0.011, 0.451]"^^gql:VECTOR ;
-    schema:arrivalTime "08:25:03"^^gql:LOCAL_TIME ;
-    schema:birthDate "1972-02-24"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-08T10:49:54"^^gql:TIMESTAMP ;
-    schema:duration "P3Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "[\"Aspirin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "46,0"^^gql:FLOAT .
-
-ex:Patient_47 foaf:age "17"^^gql:UINT8 ;
+ex:Patient_45 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    dc:identifier "3a"^^gql:BINARY ;
     foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Kimberly Henderson"^^gql:STRING ;
-    schema:birthDate "2005-11-06"^^gql:DATE ;
-    schema:dateAdmitted "2026-05-16T03:21:04"^^gql:TIMESTAMP ;
-    schema:height "132"^^gql:INT16 ;
+    foaf:name "Stacey English"^^gql:STRING ;
+    schema:arrivalTime "15:13:06"^^gql:LOCAL_TIME ;
+    schema:dateAdmitted "2026-05-06T17:12:24"^^gql:TIMESTAMP ;
+    schema:height "-40000"^^gql:INT16 ;
     schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
     schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "41.5"^^gql:FLOAT .
+    schema:weight "114.9"^^gql:FLOAT .
+
+ex:Patient_46 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    foaf:age "87"^^gql:UINT8 ;
+    foaf:gender "M"^^gql:CHAR ;
+    foaf:name "Christopher Aguilar III"^^gql:STRING ;
+    schema:arrivalTime "15:25:57"^^gql:LOCAL_TIME ;
+    schema:baseSalary "2677.28"^^gql:DECIMAL ;
+    schema:birthDate "1973-10-10"^^gql:DATE ;
+    schema:height "131"^^gql:INT16 ;
+    schema:prescription "[\"Amoxicillin\", \"Insulin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
+    schema:weight "49.7"^^gql:FLOAT .
+
+ex:Patient_47 foaf:age "77"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Michelle Martin"^^gql:STRING ;
+    schema:arrivalTime "07:56:27"^^gql:LOCAL_TIME ;
+    schema:birthDate "1961-01-04"^^gql:DATE ;
+    schema:dateAdmitted "2026-03-22T22:52:42"^^gql:TIMESTAMP ;
+    schema:duration "P5Y9M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "104"^^gql:INT16 ;
+    schema:prescription "[\"Amoxicillin\", \"Aspirin\", \"Omeprazole\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "0"^^gql:BOOLEAN .
 
 ex:Patient_48 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "6e"^^gql:BINARY ;
-    foaf:age "87"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Cristina Moreno"^^gql:STRING ;
-    schema:baseSalary "3981,49"^^gql:DECIMAL ;
-    schema:birthDate "1968-07-31"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-28 21:08:55"^^gql:TIMESTAMP ;
-    schema:duration "P1Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "[\"Aspirin\"]"^^gql:ARRAY ;
-    schema:weight "94.4"^^gql:FLOAT .
+    dc:identifier "3c"^^gql:BINARY ;
+    foaf:age "14"^^gql:UINT8 ;
+    foaf:name "Melinda Hall"^^gql:STRING ;
+    schema:baseSalary "3368.22"^^gql:DECIMAL ;
+    schema:birthDate "1948-10-09"^^gql:DATE ;
+    schema:dateAdmitted "2026-05-05T04:57:21"^^gql:TIMESTAMP ;
+    schema:duration "P2Y4M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "116"^^gql:INT16 ;
+    schema:prescription "[\"Insulin\", \"Aspirin\", \"Amoxicillin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
+    schema:weight "95.7"^^gql:FLOAT .
 
-ex:Patient_49 dc:identifier "b5"^^gql:BINARY ;
-    foaf:age "300"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Robert Garcia"^^gql:STRING ;
-    schema:arrivalTime "11:30:53"^^gql:LOCAL_TIME ;
-    schema:dateAdmitted "2026-02-06 14:44:20"^^gql:TIMESTAMP ;
-    schema:duration "P1Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "174"^^gql:INT16 ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "61.7"^^gql:FLOAT .
-
-ex:Patient_5 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "b4"^^gql:BINARY ;
-    foaf:age "36"^^gql:UINT8 ;
-    foaf:name "Cameron Morgan"^^gql:STRING ;
-    schema:Vector "[0.499, 0.126, 0.624]"^^gql:VECTOR ;
-    schema:arrivalTime "17:37:50"^^gql:LOCAL_TIME ;
-    schema:baseSalary "3873.67"^^gql:DECIMAL ;
-    schema:birthDate "1951-03-05"^^gql:DATE ;
-    schema:duration "P3Y4M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "[\"Ibuprofen\", \"Insulin\", \"Paracetamol\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "90,4"^^gql:FLOAT .
-
-ex:Patient_50 dc:identifier "2b"^^gql:BINARY ;
-    foaf:age "78"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Michelle Morris"^^gql:STRING ;
-    schema:arrivalTime "05:16:30"^^gql:LOCAL_TIME ;
-    schema:baseSalary "3782.56"^^gql:DECIMAL ;
-    schema:height "40000"^^gql:INT16 ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "89.6"^^gql:FLOAT .
-
-ex:Patient_51 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "64"^^gql:BINARY ;
-    foaf:age "95"^^gql:UINT8 ;
+ex:Patient_49 ex:metadata "{}"^^gql:UNIT_RECORD ;
+    ex:testField "123"^^gql:UNKNOWN_TYPE ;
+    dc:identifier "17"^^gql:BINARY ;
+    foaf:age "56"^^gql:UINT8 ;
     foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Diane Campbell"^^gql:STRING ;
-    schema:Vector "[0.425, 0.738, 0.091]"^^gql:VECTOR ;
-    schema:arrivalTime "23-30-25"^^gql:LOCAL_TIME ;
-    schema:birthDate "1937-05-30"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-26T23:55:04"^^gql:TIMESTAMP ;
-    schema:duration "P4Y1M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "175"^^gql:INT16 ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "74,2"^^gql:FLOAT .
-
-ex:Patient_52 dc:identifier "df"^^gql:BINARY ;
-    foaf:age "-10"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Blake Palmer"^^gql:STRING ;
-    schema:birthDate "08-10-2002"^^gql:DATE ;
-    schema:height "213"^^gql:INT16 ;
-    schema:requiresHealthPlan "TRUE"^^gql:BOOLEAN ;
-    schema:weight "69.8"^^gql:FLOAT .
-
-ex:Patient_53 dc:identifier "2f"^^gql:BINARY ;
-    foaf:age "40"^^gql:UINT8 ;
-    foaf:gender "Female"^^gql:CHAR ;
-    foaf:name "Jacqueline Cunningham"^^gql:STRING ;
-    schema:dateAdmitted "2026-01-15T02:47:06"^^gql:TIMESTAMP ;
-    schema:duration "P1Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "205"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "62.5"^^gql:FLOAT .
-
-ex:Patient_54 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "2d"^^gql:BINARY ;
-    foaf:age "300"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Jenna Kelley"^^gql:STRING ;
-    schema:arrivalTime "11-18-34"^^gql:LOCAL_TIME ;
-    schema:baseSalary "2120.38"^^gql:DECIMAL ;
-    schema:birthDate "09-09-1938"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-08 04:49:21"^^gql:TIMESTAMP ;
-    schema:height "200"^^gql:INT16 ;
-    schema:prescription "[\"Insulin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "113.9"^^gql:FLOAT .
-
-ex:Patient_55 dc:identifier "4f"^^gql:BINARY ;
-    foaf:age "74"^^gql:UINT8 ;
-    foaf:name "Antonio Guerrero"^^gql:STRING ;
-    schema:birthDate "2018-01-05"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-23T18:25:37"^^gql:TIMESTAMP ;
-    schema:duration "P2Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "106"^^gql:INT16 ;
-    schema:requiresHealthPlan "TRUE"^^gql:BOOLEAN ;
-    schema:weight "93.4"^^gql:FLOAT .
-
-ex:Patient_56 dc:identifier "71"^^gql:BINARY ;
-    foaf:age "85"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Sylvia Prince"^^gql:STRING ;
-    schema:arrivalTime "14:02:21"^^gql:LOCAL_TIME ;
-    schema:birthDate "1952-06-24"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-27T20:44:54"^^gql:TIMESTAMP ;
-    schema:duration "P2Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "193"^^gql:INT16 ;
-    schema:prescription "[\"Omeprazole\", \"Aspirin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "117.2"^^gql:FLOAT .
-
-ex:Patient_57 dc:identifier "b6"^^gql:BINARY ;
-    foaf:age "73"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Melvin Mcdonald"^^gql:STRING ;
-    schema:arrivalTime "23:58:24"^^gql:LOCAL_TIME ;
-    schema:baseSalary "4268.92"^^gql:DECIMAL ;
-    schema:birthDate "2010-08-28"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-10T15:02:07"^^gql:TIMESTAMP ;
-    schema:duration "P4Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "121"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN .
-
-ex:Patient_58 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "07"^^gql:BINARY ;
-    foaf:age "30"^^gql:UINT8 ;
-    foaf:name "Peter Allen"^^gql:STRING ;
-    schema:Vector "[0.155, 0.843, 0.359]"^^gql:VECTOR ;
-    schema:birthDate "1954-05-12"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-29T13:46:39"^^gql:TIMESTAMP ;
-    schema:duration "P0Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "196"^^gql:INT16 ;
-    schema:prescription "[\"Omeprazole\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN .
-
-ex:Patient_59 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    foaf:age "24"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Cathy Mitchell"^^gql:STRING ;
-    schema:arrivalTime "07:30:44"^^gql:LOCAL_TIME ;
-    schema:birthDate "2003-11-04"^^gql:DATE ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN .
-
-ex:Patient_6 dc:identifier "2e"^^gql:BINARY ;
-    foaf:age "300"^^gql:UINT8 ;
-    foaf:name "Michael Reed"^^gql:STRING ;
-    schema:Vector "[0.162, 0.668, 0.384]"^^gql:VECTOR ;
-    schema:arrivalTime "11:22:39"^^gql:LOCAL_TIME ;
-    schema:baseSalary "2337.71"^^gql:DECIMAL ;
-    schema:birthDate "25-12-1913"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-05T04:07:08"^^gql:TIMESTAMP ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN .
-
-ex:Patient_60 ex:testField "123"^^gql:UNKNOWN_TYPE ;
-    dc:identifier "23"^^gql:BINARY ;
-    foaf:age "26"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Danielle Gray"^^gql:STRING ;
-    schema:arrivalTime "04-38-37"^^gql:LOCAL_TIME ;
-    schema:birthDate "03-05-1989"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-12T03:00:30"^^gql:TIMESTAMP ;
-    schema:requiresHealthPlan "yes"^^gql:BOOLEAN ;
-    schema:weight "42.2"^^gql:FLOAT .
-
-ex:Patient_61 dc:identifier "64"^^gql:BINARY ;
-    foaf:age "66"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Deborah Garcia"^^gql:STRING ;
-    schema:arrivalTime "06:50:35"^^gql:LOCAL_TIME ;
-    schema:birthDate "1928-01-18"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-11T23:11:24"^^gql:TIMESTAMP ;
-    schema:height "126"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN .
-
-ex:Patient_62 dc:identifier "5211"^^gql:BINARY ;
-    foaf:age "24"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Michael Arroyo"^^gql:STRING ;
-    schema:Vector "[0.004, 0.492, 0.473]"^^gql:VECTOR ;
-    schema:arrivalTime "20:42:43"^^gql:LOCAL_TIME ;
-    schema:birthDate "2000-09-12"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-05T19:18:29"^^gql:TIMESTAMP ;
-    schema:prescription "[\"Aspirin\", \"Amoxicillin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "79.8"^^gql:FLOAT .
-
-ex:Patient_63 dc:identifier "e9"^^gql:BINARY ;
-    foaf:age "42"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Leah Martinez"^^gql:STRING ;
-    schema:arrivalTime "12:48:20"^^gql:LOCAL_TIME ;
-    schema:birthDate "10-05-1943"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-05T06:04:59"^^gql:TIMESTAMP ;
-    schema:duration "P4Y7M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "190"^^gql:INT16 ;
-    schema:prescription "[\"Omeprazole\", \"Paracetamol\", \"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:weight "118.6"^^gql:FLOAT .
-
-ex:Patient_64 foaf:age "92"^^gql:UINT8 ;
-    foaf:gender "Female"^^gql:CHAR ;
-    foaf:name "Philip Garcia"^^gql:STRING ;
-    schema:Vector "[0.633, 0.79, 0.377]"^^gql:VECTOR ;
-    schema:arrivalTime "12:37:19"^^gql:LOCAL_TIME ;
-    schema:baseSalary "1202.70"^^gql:DECIMAL ;
-    schema:birthDate "1946-04-09"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-26T22:16:40"^^gql:TIMESTAMP ;
-    schema:duration "P3Y10M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "113"^^gql:INT16 ;
+    foaf:name "Marie Reed DDS"^^gql:STRING ;
+    schema:Vector "[0.689, 0.026, 0.383]"^^gql:VECTOR ;
+    schema:baseSalary "1169.84"^^gql:DECIMAL ;
+    schema:duration "P5Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "154"^^gql:INT16 ;
     schema:prescription "[\"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "104.9"^^gql:FLOAT .
-
-ex:Patient_65 dc:identifier "03"^^gql:BINARY ;
-    foaf:age "77"^^gql:UINT8 ;
-    foaf:gender "Male"^^gql:CHAR ;
-    foaf:name "Taylor Jackson"^^gql:STRING ;
-    schema:baseSalary "2372.73"^^gql:DECIMAL ;
-    schema:birthDate "1947-01-07"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-07T12:36:33"^^gql:TIMESTAMP ;
-    schema:height "175"^^gql:INT16 ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "114.2"^^gql:FLOAT .
-
-ex:Patient_66 dc:identifier "fa"^^gql:BINARY ;
-    foaf:age "300"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Frederick Matthews"^^gql:STRING ;
-    schema:baseSalary "4440.05"^^gql:DECIMAL ;
-    schema:birthDate "2022-04-12"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-21T04:16:17"^^gql:TIMESTAMP ;
-    schema:duration "P2Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "150"^^gql:INT16 ;
-    schema:prescription "[\"Insulin\", \"Paracetamol\"]"^^gql:ARRAY ;
     schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "86,3"^^gql:FLOAT .
-
-ex:Patient_67 dc:identifier "38ec"^^gql:BINARY ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Andrea Walker"^^gql:STRING ;
-    schema:arrivalTime "18:23:48"^^gql:LOCAL_TIME ;
-    schema:birthDate "1939-07-18"^^gql:DATE ;
-    schema:dateAdmitted "2026-05-09T18:10:25"^^gql:TIMESTAMP ;
-    schema:duration "P3Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "220"^^gql:INT16 ;
-    schema:prescription "[\"Paracetamol\", \"Omeprazole\", \"Insulin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "83.9"^^gql:FLOAT .
-
-ex:Patient_68 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    ex:testField "123"^^gql:UNKNOWN_TYPE ;
-    dc:identifier "28"^^gql:BINARY ;
-    foaf:age "16"^^gql:UINT8 ;
-    foaf:gender "Unknown"^^gql:CHAR ;
-    foaf:name "Amy Smith MD"^^gql:STRING ;
-    schema:arrivalTime "17:48:02"^^gql:LOCAL_TIME ;
-    schema:baseSalary "4332.40"^^gql:DECIMAL ;
-    schema:birthDate "1999-04-30"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-07 12:19:57"^^gql:TIMESTAMP ;
-    schema:height "-40000"^^gql:INT16 ;
-    schema:weight "92.0"^^gql:FLOAT .
-
-ex:Patient_69 foaf:age "56"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Christopher Flowers"^^gql:STRING ;
-    schema:arrivalTime "17:34:43"^^gql:LOCAL_TIME ;
-    schema:baseSalary "3731.86"^^gql:DECIMAL ;
-    schema:birthDate "2022-09-20"^^gql:DATE ;
-    schema:height "138"^^gql:INT16 ;
-    schema:prescription "[\"Omeprazole\"]"^^gql:ARRAY ;
-    schema:weight "114.4"^^gql:FLOAT .
-
-ex:Patient_7 ex:metadata "{\"status\": \"active\"}"^^gql:UNIT_RECORD ;
-    dc:identifier "db"^^gql:BINARY ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Richard Lee"^^gql:STRING ;
-    schema:arrivalTime "23-11-11"^^gql:LOCAL_TIME ;
-    schema:birthDate "1994-10-07"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-21 06:42:49"^^gql:TIMESTAMP ;
-    schema:height "111"^^gql:INT16 ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "50.4"^^gql:FLOAT .
-
-ex:Patient_70 dc:identifier "52"^^gql:BINARY ;
-    foaf:age "45"^^gql:UINT8 ;
-    foaf:gender "Female"^^gql:CHAR ;
-    foaf:name "Scott Simpson"^^gql:STRING ;
-    schema:Vector "{\"x\": 1.0, \"y\": 2.0}"^^gql:VECTOR ;
-    schema:arrivalTime "03:14:09"^^gql:LOCAL_TIME ;
-    schema:birthDate "1988-03-07"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-05T18:28:31"^^gql:TIMESTAMP ;
-    schema:height "40000"^^gql:INT16 ;
-    schema:requiresHealthPlan "TRUE"^^gql:BOOLEAN ;
-    schema:weight "91,1"^^gql:FLOAT .
-
-ex:Patient_71 dc:identifier "54"^^gql:BINARY ;
-    foaf:age "41"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Mary James"^^gql:STRING ;
-    schema:birthDate "1980-02-24"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-05 22:31:17"^^gql:TIMESTAMP ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "104.1"^^gql:FLOAT .
-
-ex:Patient_72 dc:identifier "17"^^gql:BINARY ;
-    foaf:age "300"^^gql:UINT8 ;
-    foaf:gender "Female"^^gql:CHAR ;
-    foaf:name "Alyssa Burns"^^gql:STRING ;
-    schema:baseSalary "4369.93"^^gql:DECIMAL ;
-    schema:birthDate "1986-08-24"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-23 15:22:13"^^gql:TIMESTAMP ;
-    schema:prescription "[\"Omeprazole\", \"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "81.3"^^gql:FLOAT .
-
-ex:Patient_73 ex:testField "123"^^gql:UNKNOWN_TYPE ;
-    dc:identifier "5b"^^gql:BINARY ;
-    foaf:age "13"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Isabella Rice"^^gql:STRING ;
-    schema:arrivalTime "13:55:47"^^gql:LOCAL_TIME ;
-    schema:birthDate "2017-11-26"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-11T09:02:01"^^gql:TIMESTAMP ;
-    schema:height "102"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "85.1"^^gql:FLOAT .
-
-ex:Patient_74 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    foaf:name "Nathan Ortega"^^gql:STRING ;
-    schema:arrivalTime "19:10:03"^^gql:LOCAL_TIME ;
-    schema:dateAdmitted "2026-03-28T20:06:59"^^gql:TIMESTAMP ;
-    schema:duration "P4Y9M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "42.9"^^gql:FLOAT .
-
-ex:Patient_75 dc:identifier "34"^^gql:BINARY ;
-    foaf:age "62"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Mrs. Jordan Mercer"^^gql:STRING ;
-    schema:Vector "[0.712, 0.838, 0.294]"^^gql:VECTOR ;
-    schema:baseSalary "778.88"^^gql:DECIMAL ;
-    schema:birthDate "1953-03-04"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-31T08:53:31"^^gql:TIMESTAMP ;
-    schema:prescription "[\"Paracetamol\", \"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "74.6"^^gql:FLOAT .
-
-ex:Patient_76 dc:identifier "3796"^^gql:BINARY ;
-    foaf:age "90"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Karen Stone"^^gql:STRING ;
-    schema:Vector "[0.688, 0.812, 0.23]"^^gql:VECTOR ;
-    schema:arrivalTime "16-44-16"^^gql:LOCAL_TIME ;
-    schema:birthDate "08-12-1988"^^gql:DATE ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN .
-
-ex:Patient_77 dc:identifier "7e3e"^^gql:BINARY ;
-    foaf:age "2"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Joan Young"^^gql:STRING ;
-    schema:Vector "[0.479, 0.46, 0.914]"^^gql:VECTOR ;
-    schema:arrivalTime "11-44-28"^^gql:LOCAL_TIME ;
-    schema:baseSalary "3459.81"^^gql:DECIMAL ;
-    schema:birthDate "1994-08-24"^^gql:DATE ;
-    schema:duration "P4Y10M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "167"^^gql:INT16 ;
-    schema:prescription "[\"Aspirin\", \"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "91.4"^^gql:FLOAT .
-
-ex:Patient_78 foaf:age "20"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Amber Shannon"^^gql:STRING ;
-    schema:Vector "[0.554, 0.57, 0.712]"^^gql:VECTOR ;
-    schema:arrivalTime "23-39-02"^^gql:LOCAL_TIME ;
-    schema:birthDate "18-03-1962"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-16T15:15:50"^^gql:TIMESTAMP ;
-    schema:duration "P2Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "160"^^gql:INT16 ;
-    schema:requiresHealthPlan "no"^^gql:BOOLEAN .
-
-ex:Patient_79 dc:identifier "cd48"^^gql:BINARY ;
-    foaf:age "300"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Margaret Morris"^^gql:STRING ;
-    schema:arrivalTime "11:07:32"^^gql:LOCAL_TIME ;
-    schema:birthDate "2007-05-02"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-21T04:31:05"^^gql:TIMESTAMP ;
-    schema:duration "P3Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "218"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "50.9"^^gql:FLOAT .
-
-ex:Patient_8 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    ex:testField "123"^^gql:UNKNOWN_TYPE ;
-    foaf:age "64"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Donald Villanueva"^^gql:STRING ;
-    schema:arrivalTime "04:41:28"^^gql:LOCAL_TIME ;
-    schema:baseSalary "4067.41"^^gql:DECIMAL ;
-    schema:birthDate "1925-05-24"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-19T01:23:21"^^gql:TIMESTAMP ;
-    schema:duration "P2Y5M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "133"^^gql:INT16 ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "104.2"^^gql:FLOAT .
-
-ex:Patient_80 dc:identifier "fe"^^gql:BINARY ;
-    foaf:age "95"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Eric Franklin"^^gql:STRING ;
-    schema:baseSalary "4222.82"^^gql:DECIMAL ;
-    schema:birthDate "1989-10-04"^^gql:DATE ;
-    schema:prescription "[\"Paracetamol\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "yes"^^gql:BOOLEAN ;
-    schema:weight "91.4"^^gql:FLOAT .
-
-ex:Patient_81 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "11"^^gql:BINARY ;
-    foaf:age "72"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Anthony Walker"^^gql:STRING ;
-    schema:birthDate "1999-06-18"^^gql:DATE ;
-    schema:dateAdmitted "2026-05-08T09:08:16"^^gql:TIMESTAMP ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "83.4"^^gql:FLOAT .
-
-ex:Patient_82 dc:identifier "ae"^^gql:BINARY ;
-    foaf:age "-10"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Amanda Ashley"^^gql:STRING ;
-    schema:birthDate "2000-10-17"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-01T16:14:20"^^gql:TIMESTAMP ;
-    schema:duration "P4Y8M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "161"^^gql:INT16 ;
-    schema:prescription "[\"Aspirin\", \"Ibuprofen\", \"Paracetamol\"]"^^gql:ARRAY .
-
-ex:Patient_83 dc:identifier "d5"^^gql:BINARY ;
-    foaf:age "20"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "William Gonzalez"^^gql:STRING ;
-    schema:Vector "[0.083, 0.314, 0.624]"^^gql:VECTOR ;
-    schema:arrivalTime "19:26:30"^^gql:LOCAL_TIME ;
-    schema:baseSalary "3362.72"^^gql:DECIMAL ;
-    schema:birthDate "1968-08-31"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-03T16:54:54"^^gql:TIMESTAMP ;
-    schema:height "142"^^gql:INT16 ;
-    schema:prescription "[\"Omeprazole\", \"Paracetamol\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "47.9"^^gql:FLOAT .
-
-ex:Patient_84 dc:identifier "d8"^^gql:BINARY ;
-    foaf:age "39"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Taylor Wright"^^gql:STRING ;
-    schema:baseSalary "3137.10"^^gql:DECIMAL ;
-    schema:dateAdmitted "2026-05-13T19:20:10"^^gql:TIMESTAMP ;
-    schema:prescription "[\"Aspirin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
     schema:weight "75.6"^^gql:FLOAT .
 
-ex:Patient_85 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "ef"^^gql:BINARY ;
+ex:Patient_5 dc:identifier "20"^^gql:BINARY ;
+    foaf:age "86"^^gql:UINT8 ;
     foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Jason Golden"^^gql:STRING ;
-    schema:arrivalTime "08:09:15"^^gql:LOCAL_TIME ;
-    schema:baseSalary "811.18"^^gql:DECIMAL ;
-    schema:birthDate "1967-12-12"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-10T23:21:10"^^gql:TIMESTAMP ;
-    schema:duration "P5Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "180"^^gql:INT16 ;
-    schema:weight "42.5"^^gql:FLOAT .
-
-ex:Patient_86 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "2e"^^gql:BINARY ;
-    foaf:age "37"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Alan Tran"^^gql:STRING ;
-    schema:arrivalTime "22:25:22"^^gql:LOCAL_TIME ;
-    schema:baseSalary "1859.72"^^gql:DECIMAL ;
-    schema:dateAdmitted "2026-04-18T01:58:03"^^gql:TIMESTAMP ;
-    schema:height "40000"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN .
-
-ex:Patient_87 dc:identifier "ac"^^gql:BINARY ;
-    foaf:age "300"^^gql:UINT8 ;
-    foaf:name "Kurt Bradley"^^gql:STRING ;
-    schema:arrivalTime "09:57:02"^^gql:LOCAL_TIME ;
-    schema:baseSalary "3306.26"^^gql:DECIMAL ;
-    schema:birthDate "2019-03-08"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-28T05:24:33"^^gql:TIMESTAMP ;
-    schema:height "203"^^gql:INT16 ;
+    foaf:name "Victoria Heath"^^gql:STRING ;
+    schema:arrivalTime "13:24:39"^^gql:LOCAL_TIME ;
+    schema:birthDate "1996-07-28"^^gql:DATE ;
+    schema:dateAdmitted "2026-04-03 21:19:22"^^gql:TIMESTAMP ;
+    schema:duration "5 years and 5 months"^^gql:DURATION_YEAR_TO_MONTH ;
     schema:prescription "[\"Aspirin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN .
+    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
+    schema:weight "71.4"^^gql:FLOAT .
 
-ex:Patient_88 foaf:age "67"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Adam Wilson"^^gql:STRING ;
-    schema:Vector "{\"x\": 1.0, \"y\": 2.0}"^^gql:VECTOR ;
-    schema:arrivalTime "17:44:15"^^gql:LOCAL_TIME ;
-    schema:baseSalary "4563.90"^^gql:DECIMAL ;
-    schema:dateAdmitted "2026-02-15T22:42:17"^^gql:TIMESTAMP ;
-    schema:weight "62.3"^^gql:FLOAT .
+ex:Patient_6 foaf:age "91"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Stephen Anderson"^^gql:STRING ;
+    schema:Vector "[0.235, 0.841, 0.968]"^^gql:VECTOR ;
+    schema:birthDate "1950-07-16"^^gql:DATE ;
+    schema:dateAdmitted "2026-05-08T11:37:20"^^gql:TIMESTAMP ;
+    schema:duration "P3Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:height "192"^^gql:INT16 ;
+    schema:prescription "[\"Insulin\", \"Ibuprofen\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
+    schema:weight "55.5"^^gql:FLOAT .
 
-ex:Patient_89 dc:identifier "35"^^gql:BINARY ;
-    foaf:age "-10"^^gql:UINT8 ;
-    foaf:name "Sylvia Smith"^^gql:STRING ;
-    schema:arrivalTime "16:38:48"^^gql:LOCAL_TIME ;
-    schema:birthDate "1944-10-20"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-24T17:04:22"^^gql:TIMESTAMP ;
-    schema:duration "P3Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "177"^^gql:INT16 ;
-    schema:requiresHealthPlan "true"^^gql:BOOLEAN .
+ex:Patient_7 dc:identifier "1d"^^gql:BINARY ;
+    foaf:age "77"^^gql:UINT8 ;
+    foaf:gender "X"^^gql:CHAR ;
+    foaf:name "Mary Becker"^^gql:STRING ;
+    schema:birthDate "1942-11-15"^^gql:DATE ;
+    schema:duration "P0Y9M"^^gql:DURATION_YEAR_TO_MONTH ;
+    schema:prescription "[\"Amoxicillin\", \"Aspirin\"]"^^gql:ARRAY ;
+    schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
+    schema:weight "53.9"^^gql:FLOAT .
+
+ex:Patient_8 dc:identifier "05"^^gql:BINARY ;
+    foaf:age "56"^^gql:UINT8 ;
+    foaf:gender "F"^^gql:CHAR ;
+    foaf:name "Laura Floyd"^^gql:STRING ;
+    schema:birthDate "17-02-2013"^^gql:DATE ;
+    schema:dateAdmitted "2026-01-04T13:23:35"^^gql:TIMESTAMP ;
+    schema:height "161"^^gql:INT16 ;
+    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
+    schema:weight "95.5"^^gql:FLOAT .
 
 ex:Patient_9 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "25"^^gql:BINARY ;
-    foaf:age "14"^^gql:UINT8 ;
-    foaf:name "Jamie Hale"^^gql:STRING ;
-    schema:arrivalTime "12:41:10"^^gql:LOCAL_TIME ;
-    schema:birthDate "2022-07-15"^^gql:DATE ;
-    schema:dateAdmitted "2026-01-02T20:42:28"^^gql:TIMESTAMP ;
-    schema:duration "P2Y2M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "[\"Amoxicillin\"]"^^gql:ARRAY ;
+    dc:identifier "04"^^gql:BINARY ;
+    foaf:age "25"^^gql:UINT8 ;
+    foaf:gender "M"^^gql:CHAR ;
+    foaf:name "Taylor Jacobs"^^gql:STRING ;
+    schema:birthDate "2014-10-19"^^gql:DATE ;
+    schema:height "213"^^gql:INT16 ;
+    schema:prescription "[\"Ibuprofen\", \"Amoxicillin\", \"Omeprazole\"]"^^gql:ARRAY ;
     schema:requiresHealthPlan "true"^^gql:BOOLEAN ;
-    schema:weight "90.2"^^gql:FLOAT .
-
-ex:Patient_90 dc:identifier "28aa"^^gql:BINARY ;
-    foaf:age "15"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Joshua Beltran"^^gql:STRING ;
-    schema:arrivalTime "02:56:54"^^gql:LOCAL_TIME ;
-    schema:baseSalary "3921.83"^^gql:DECIMAL ;
-    schema:birthDate "17-11-1945"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-26 17:11:33"^^gql:TIMESTAMP ;
-    schema:height "113"^^gql:INT16 ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "50.6"^^gql:FLOAT .
-
-ex:Patient_91 ex:testField "123"^^gql:UNKNOWN_TYPE ;
-    foaf:age "35"^^gql:UINT8 ;
-    foaf:gender "F"^^gql:CHAR ;
-    foaf:name "Caitlyn Compton"^^gql:STRING ;
-    schema:arrivalTime "20:24:01"^^gql:LOCAL_TIME ;
-    schema:birthDate "1953-11-18"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-23T10:58:29"^^gql:TIMESTAMP ;
-    schema:duration "P0Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "136"^^gql:INT16 ;
-    schema:prescription "[\"Ibuprofen\", \"Aspirin\", \"Omeprazole\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "109.1"^^gql:FLOAT .
-
-ex:Patient_92 foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Erin Gamble"^^gql:STRING ;
-    schema:arrivalTime "03:01:44"^^gql:LOCAL_TIME ;
-    schema:baseSalary "1622.44"^^gql:DECIMAL ;
-    schema:birthDate "1955-06-05"^^gql:DATE ;
-    schema:dateAdmitted "2026-05-14T22:02:00"^^gql:TIMESTAMP ;
-    schema:duration "P3Y3M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:prescription "[\"Paracetamol\", \"Omeprazole\", \"Ibuprofen\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "112.1"^^gql:FLOAT .
-
-ex:Patient_93 dc:identifier "eb"^^gql:BINARY ;
-    foaf:age "58"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Ruben Harrison"^^gql:STRING ;
-    schema:arrivalTime "18:54:06"^^gql:LOCAL_TIME ;
-    schema:baseSalary "1321.43"^^gql:DECIMAL ;
-    schema:birthDate "1953-10-21"^^gql:DATE ;
-    schema:duration "P4Y11M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "200"^^gql:INT16 ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "TRUE"^^gql:BOOLEAN ;
-    schema:weight "60.7"^^gql:FLOAT .
-
-ex:Patient_94 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "dc"^^gql:BINARY ;
-    foaf:age "5"^^gql:UINT8 ;
-    foaf:name "Gina Norton"^^gql:STRING ;
-    schema:arrivalTime "18:25:37"^^gql:LOCAL_TIME ;
-    schema:baseSalary "2717.67"^^gql:DECIMAL ;
-    schema:birthDate "1972-01-29"^^gql:DATE ;
-    schema:dateAdmitted "2026-03-13T04:12:26"^^gql:TIMESTAMP ;
-    schema:duration "P4Y9M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "212"^^gql:INT16 ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "91.5"^^gql:FLOAT .
-
-ex:Patient_95 foaf:age "84"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Christopher Jones"^^gql:STRING ;
-    schema:arrivalTime "22:10:28"^^gql:LOCAL_TIME ;
-    schema:birthDate "1995-11-05"^^gql:DATE ;
-    schema:dateAdmitted "2026-05-18T21:19:53"^^gql:TIMESTAMP ;
-    schema:height "128"^^gql:INT16 ;
-    schema:prescription "{\"drug\": \"Ibuprofen\"}"^^gql:ARRAY ;
-    schema:requiresHealthPlan "no"^^gql:BOOLEAN ;
-    schema:weight "96.6"^^gql:FLOAT .
-
-ex:Patient_96 dc:identifier "4b"^^gql:BINARY ;
-    foaf:age "14"^^gql:UINT8 ;
-    foaf:gender "Male"^^gql:CHAR ;
-    foaf:name "Jasmine Guerrero"^^gql:STRING ;
-    schema:arrivalTime "11:44:23"^^gql:LOCAL_TIME ;
-    schema:birthDate "1997-03-11"^^gql:DATE ;
-    schema:duration "4 years and 5 months"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:height "208"^^gql:INT16 ;
-    schema:prescription "[\"Paracetamol\", \"Aspirin\"]"^^gql:ARRAY ;
-    schema:requiresHealthPlan "0"^^gql:BOOLEAN ;
-    schema:weight "96.7"^^gql:FLOAT .
-
-ex:Patient_97 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "bb"^^gql:BINARY ;
-    foaf:age "28"^^gql:UINT8 ;
-    foaf:gender "X"^^gql:CHAR ;
-    foaf:name "Jason Payne"^^gql:STRING ;
-    schema:Vector "[0.611, 0.749, 0.135]"^^gql:VECTOR ;
-    schema:arrivalTime "06:26:40"^^gql:LOCAL_TIME ;
-    schema:birthDate "1930-10-31"^^gql:DATE ;
-    schema:dateAdmitted "2026-02-13T01:20:11"^^gql:TIMESTAMP ;
-    schema:duration "P1Y2M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:requiresHealthPlan "1"^^gql:BOOLEAN ;
-    schema:weight "109.1"^^gql:FLOAT .
-
-ex:Patient_98 dc:identifier "82"^^gql:BINARY ;
-    foaf:age "78"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "Melissa Gomez"^^gql:STRING ;
-    schema:Vector "[0.453, 0.228, 0.674]"^^gql:VECTOR ;
-    schema:arrivalTime "09:10:56"^^gql:LOCAL_TIME ;
-    schema:birthDate "02-11-1946"^^gql:DATE ;
-    schema:duration "P0Y6M"^^gql:DURATION_YEAR_TO_MONTH ;
-    schema:requiresHealthPlan "false"^^gql:BOOLEAN ;
-    schema:weight "74.3"^^gql:FLOAT .
-
-ex:Patient_99 ex:metadata "{}"^^gql:UNIT_RECORD ;
-    dc:identifier "61"^^gql:BINARY ;
-    foaf:age "69"^^gql:UINT8 ;
-    foaf:gender "M"^^gql:CHAR ;
-    foaf:name "David Adams"^^gql:STRING ;
-    schema:birthDate "2013-05-10"^^gql:DATE ;
-    schema:dateAdmitted "2026-04-14T22:46:02"^^gql:TIMESTAMP ;
-    schema:height "102"^^gql:INT16 .
+    schema:weight "48.7"^^gql:FLOAT .
 

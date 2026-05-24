@@ -3,7 +3,8 @@ import json
 import csv
 import warnings
 import re
-from rdflib import Graph, Literal, XSD, RDF, OWL
+import argparse
+from rdflib import Graph, Literal, XSD, RDF, OWL, RDFS  # <-- DODANO: RDFS
 
 # Suppress warnings from rdflib
 warnings.filterwarnings("ignore", category=UserWarning, module="rdflib")
@@ -11,9 +12,7 @@ logging.getLogger("rdflib").setLevel(logging.ERROR)
 
 
 def build_xsd_mapping(ont_g):
-    """
-    Dynamically builds GQL to XSD mapping based on owl:equivalentClass triples.
-    """
+
     mapping = {}
 
     for s, p, o in ont_g.triples((None, OWL.equivalentClass, None)):
@@ -33,7 +32,7 @@ def build_xsd_mapping(ont_g):
 
 def build_rules(ont_g):
     rules = {}
-    for dt in ont_g.subjects(RDF.type, None):
+    for dt in ont_g.subjects(RDF.type, RDFS.Datatype):
         name = str(dt).split('#')[-1]
         rules[name] = {"min": None, "max": None, "min_len": None, "max_len": None, "exact_len": None, "pattern": None}
 
@@ -52,7 +51,7 @@ def build_rules(ont_g):
     return rules
 
 
-def validate_data(data_file, ontology_file):
+def validate_data(data_file, ontology_file, report_prefix="validation_report"):
     ont_g = Graph().parse(ontology_file, format="turtle")
     gql_to_xsd = build_xsd_mapping(ont_g)
     rules = build_rules(ont_g)
@@ -60,6 +59,7 @@ def validate_data(data_file, ontology_file):
 
     errors = []
     total_literals = 0
+    invalid_literals_count = 0
 
     for s, p, o in data_g:
         if isinstance(o, Literal) and o.datatype:
@@ -77,6 +77,8 @@ def validate_data(data_file, ontology_file):
                 "original_dt": dtype_name,
                 "base_dt": base_xsd_str
             }
+
+            initial_errors_len = len(errors)
 
             # 1. JSON / Structural Types Validation
             json_types_lists = ["LIST", "ARRAY", "GROUP_LIST", "GROUP_ARRAY", "VECTOR"]
@@ -131,7 +133,7 @@ def validate_data(data_file, ontology_file):
                                 errors.append(error_data.copy())
                                 error_found = True
 
-                        # B. String Length Constraints (including new exact_len)
+                        # B. String Length Constraints
                         if not error_found and r["exact_len"] is not None and len(raw_val) != r["exact_len"]:
                             error_data[
                                 "reason"] = f"String length ({len(raw_val)}) does not match the exact required length ({r['exact_len']})"
@@ -179,6 +181,9 @@ def validate_data(data_file, ontology_file):
                 error_data["reason"] = "Type was neither recognized nor explicitly mapped in the validator"
                 errors.append(error_data)
 
+            if len(errors) > initial_errors_len:
+                invalid_literals_count += 1
+
     print(f"\nErrors found: {len(errors)}\n")
     for idx, err in enumerate(errors, 1):
         print(f"Error #{idx}:")
@@ -189,46 +194,57 @@ def validate_data(data_file, ontology_file):
         print("-" * 60)
 
     if total_literals > 0:
-        error_count = len(errors)
-        correct_count = total_literals - error_count
-        error_percent = (error_count / total_literals) * 100
+        correct_count = total_literals - invalid_literals_count
+        error_percent = (invalid_literals_count / total_literals) * 100
         correct_percent = (correct_count / total_literals) * 100
 
         print("\n" + "=" * 60)
         print("VALIDATION STATISTICAL SUMMARY")
         print("=" * 60)
         print(f"Total literals evaluated: {total_literals}")
-        print(f"Valid:   {correct_count} ({correct_percent:.1f}%)")
-        print(f"Invalid: {error_count} ({error_percent:.1f}%)")
+        print(f"Valid literals:   {correct_count} ({correct_percent:.1f}%)")
+        print(f"Invalid literals: {invalid_literals_count} ({error_percent:.1f}%)")
+        print(f"Total error triggers: {len(errors)}")
         print("=" * 60)
 
-        csv_filename = "validation_report.csv"
+        csv_filename = f"{report_prefix}.csv"
         with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
             fieldnames = ['subject', 'predicate', 'value', 'original_dt', 'base_dt', 'reason']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(errors)
+        print(f"\n[Export] Detailed error list saved to: {csv_filename}")
 
-        json_filename = "validation_report.json"
+        json_filename = f"{report_prefix}.json"
         report_data = {
             "summary": {
-                "total_literals": total_literals,
-                "valid_count": correct_count,
-                "invalid_count": error_count,
+                "total_literals_evaluated": total_literals,
+                "valid_literals_count": correct_count,
+                "invalid_literals_count": invalid_literals_count,
+                "total_error_triggers": len(errors),
                 "error_rate_percent": round(error_percent, 2)
             },
             "errors": errors
         }
         with open(json_filename, 'w', encoding='utf-8') as jsonfile:
             json.dump(report_data, jsonfile, indent=4, ensure_ascii=False)
+        print(f"[Export] Full report with summary saved to: {json_filename}\n")
 
 
 if __name__ == "__main__":
-    import argparse
+
 
     parser = argparse.ArgumentParser(description="GQL Datatypes RDF Validator")
     parser.add_argument("-d", "--data", default="test_data.ttl", help="RDF data file to validate")
     parser.add_argument("-o", "--ontology", default="gql_datatypes.ttl", help="GQL ontology TTL file")
+    parser.add_argument("-p", "--report-prefix", default="validation_report", help="Prefix for the output report files")
+
     args = parser.parse_args()
 
-    validate_data(args.data, args.ontology)
+    print("=== GQL Datatypes RDF Validator ===")
+    print(f"Ontology file: {args.ontology}")
+    print(f"Data file:     {args.data}")
+    print(f"Report prefix: {args.report_prefix}.[csv|json]")
+    print("-" * 60)
+
+    validate_data(args.data, args.ontology, args.report_prefix)

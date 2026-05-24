@@ -27,8 +27,8 @@ DEFAULT_PROBS = {
     "duration": 0.50,
     "baseSalary": 0.40,
     "vector": 0.30,
-    "unit_record": 0.30,  # Added for UNIT_RECORD testing
-    "unknown_type": 0.10  # Overall chance to insert a completely unrecognized mapping
+    "unit_record": 0.30,
+    "unknown_type": 0.10
 }
 
 
@@ -148,27 +148,60 @@ def generate_patient_data(output_file, num_records, error_rate, field_probs):
     print("-" * 50)
 
 
+def check_positive_int(value):
+    ivalue = int(value)
+    if ivalue <= 0:
+        raise argparse.ArgumentTypeError(f"Value must be a positive integer, got: {value}")
+    return ivalue
+
+
+def check_percent_float(value):
+    fvalue = float(value)
+    if not (0 <= fvalue <= 100):
+        raise argparse.ArgumentTypeError(f"Value must be between 0 and 100, got: {value}")
+    return fvalue
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="RDF Patient Data Generator")
     parser.add_argument("-o", "--output", default="test_data.ttl", help="Output file path")
-    parser.add_argument("-c", "--count", type=int, help="Number of records")
-    parser.add_argument("-e", "--error-rate", type=float, help="Percentage of invalid data (0-100)")
-    parser.add_argument("--config", type=str, help="Path to a JSON file overriding field probabilities")
+    parser.add_argument("-c", "--count", type=check_positive_int, help="Number of records (positive integer)")
+    parser.add_argument("-e", "--error-rate", type=check_percent_float, help="Percentage of invalid data (0-100)")
+    # ZMIANA: Domyślna wartość to teraz "probabilities.json"
+    parser.add_argument("--config", type=str, default="probabilities.json",
+                        help="Path to a JSON file overriding field probabilities")
     args = parser.parse_args()
 
     # Load custom probabilities if provided
     active_probs = DEFAULT_PROBS.copy()
-    if args.config:
-        if os.path.exists(args.config):
-            with open(args.config, 'r') as f:
+    if os.path.exists(args.config):
+        with open(args.config, 'r') as f:
+            try:
                 custom_probs = json.load(f)
+
+
+                for key, value in custom_probs.items():
+                    if not isinstance(value, (int, float)) or not (0.0 <= value <= 1.0):
+                        print(
+                            f"Error: Invalid probability for '{key}' in {args.config}. Values must be between 0.0 and 1.0 (got: {value}).")
+                        sys.exit(1)
+
                 active_probs.update(custom_probs)
                 print(f"Loaded custom field probabilities from {args.config}")
+
+            except json.JSONDecodeError as e:
+                print(f"Error: Failed to parse {args.config}. Invalid JSON format: {e}")
+                sys.exit(1)
+    else:
+
+        if args.config != "probabilities.json":
+            print(f"Warning: Config file '{args.config}' not found. Using defaults.")
         else:
-            print(f"Warning: Config file {args.config} not found. Using defaults.")
+            print("Note: 'probabilities.json' not found. Using default internal probabilities.")
 
     print("=== RDF Patient Data Generator ===")
 
+    # 1. Error Rate
     error_rate_pct = args.error_rate
     if error_rate_pct is None:
         while True:
@@ -184,6 +217,7 @@ if __name__ == "__main__":
 
     error_rate = error_rate_pct / 100.0
 
+    # 2. Record Count
     num_records = args.count
     if num_records is None:
         while True:
