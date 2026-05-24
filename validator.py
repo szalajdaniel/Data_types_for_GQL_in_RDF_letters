@@ -4,26 +4,31 @@ import csv
 import warnings
 import re
 import argparse
-from rdflib import Graph, Literal, XSD, RDF, OWL, RDFS  # <-- DODANO: RDFS
+import os
+from rdflib import Graph, Literal, XSD, RDF, OWL, RDFS
 
 # Suppress warnings from rdflib
 warnings.filterwarnings("ignore", category=UserWarning, module="rdflib")
 logging.getLogger("rdflib").setLevel(logging.ERROR)
 
 
+def local_name(uri):
+    if not uri:
+        return None
+    return str(uri).rsplit("#", 1)[-1].rsplit("/", 1)[-1]
+
+
 def build_xsd_mapping(ont_g):
-
     mapping = {}
-
     for s, p, o in ont_g.triples((None, OWL.equivalentClass, None)):
         if str(o).startswith(str(XSD)) or str(o).startswith(str(RDF)):
-            name = str(s).split('#')[-1]
+            name = local_name(s)
             mapping[name] = o
 
     for s, p, o in ont_g.triples((None, OWL.equivalentClass, None)):
-        if str(o).startswith("http://example.org/gql-types#"):
-            alias_name = str(s).split('#')[-1]
-            target_name = str(o).split('#')[-1]
+        if "http://example.org/gql-types" in str(o):
+            alias_name = local_name(s)
+            target_name = local_name(o)
             if target_name in mapping:
                 mapping[alias_name] = mapping[target_name]
 
@@ -33,7 +38,7 @@ def build_xsd_mapping(ont_g):
 def build_rules(ont_g):
     rules = {}
     for dt in ont_g.subjects(RDF.type, RDFS.Datatype):
-        name = str(dt).split('#')[-1]
+        name = local_name(dt)
         rules[name] = {"min": None, "max": None, "min_len": None, "max_len": None, "exact_len": None, "pattern": None}
 
         for restr in ont_g.objects(dt, OWL.withRestrictions):
@@ -52,6 +57,12 @@ def build_rules(ont_g):
 
 
 def validate_data(data_file, ontology_file, report_prefix="validation_report"):
+    if not os.path.exists(ontology_file):
+        raise FileNotFoundError(f"Ontology file is missing or path is incorrect: '{ontology_file}'")
+
+    if not os.path.exists(data_file):
+        raise FileNotFoundError(f"RDF data file is missing or path is incorrect: '{data_file}'")
+
     ont_g = Graph().parse(ontology_file, format="turtle")
     gql_to_xsd = build_xsd_mapping(ont_g)
     rules = build_rules(ont_g)
@@ -64,11 +75,12 @@ def validate_data(data_file, ontology_file, report_prefix="validation_report"):
     for s, p, o in data_g:
         if isinstance(o, Literal) and o.datatype:
             total_literals += 1
-            dtype_name = str(o.datatype).split('#')[-1]
+
+            dtype_name = local_name(o.datatype)
             raw_val = str(o)
 
             base_xsd_uri = gql_to_xsd.get(dtype_name)
-            base_xsd_str = str(base_xsd_uri).split('#')[-1] if base_xsd_uri else "No mapping"
+            base_xsd_str = local_name(base_xsd_uri) if base_xsd_uri else "No mapping"
 
             error_data = {
                 "subject": str(s),
@@ -86,35 +98,37 @@ def validate_data(data_file, ontology_file, report_prefix="validation_report"):
             json_types_unit = ["UNIT_RECORD"]
 
             if dtype_name in json_types_lists + json_types_objects + json_types_unit:
+                # Wąski blok try-except-else
                 try:
                     parsed_json = json.loads(raw_val)
-
+                except json.JSONDecodeError as e:
+                    error_data["reason"] = f"JSON format parsing error: {e}"
+                    errors.append(error_data.copy())
+                else:
                     if dtype_name in json_types_lists:
                         if not isinstance(parsed_json, list):
                             error_data["reason"] = f"Expected a JSON Array (list), but got {type(parsed_json).__name__}"
-                            errors.append(error_data)
+                            errors.append(error_data.copy())
+                        elif dtype_name == "VECTOR":
+                            if not all(isinstance(item, (int, float)) and not isinstance(item, bool) for item in parsed_json):
+                                error_data["reason"] = "Expected VECTOR to contain only numbers, but found other data types"
+                                errors.append(error_data.copy())
 
                     elif dtype_name in json_types_objects:
                         if not isinstance(parsed_json, dict):
-                            error_data[
-                                "reason"] = f"Expected a JSON Object (dict), but got {type(parsed_json).__name__}"
-                            errors.append(error_data)
+                            error_data["reason"] = f"Expected a JSON Object (dict), but got {type(parsed_json).__name__}"
+                            errors.append(error_data.copy())
 
                     elif dtype_name in json_types_unit:
                         if not isinstance(parsed_json, dict) or len(parsed_json) > 0:
-                            error_data[
-                                "reason"] = f"Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
-                            errors.append(error_data)
-
-                except Exception as e:
-                    error_data["reason"] = f"JSON format parsing error: {e}"
-                    errors.append(error_data)
+                            error_data["reason"] = f"Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
+                            errors.append(error_data.copy())
 
             # 2. Boolean Validation
             elif dtype_name in ["BOOLEAN", "BOOL"]:
                 if raw_val.lower() not in ["true", "false", "1", "0"]:
                     error_data["reason"] = "Value is not a valid boolean (expected true/false/1/0)"
-                    errors.append(error_data)
+                    errors.append(error_data.copy())  # <-- POPRAWIONO na .copy()
 
             # 3. Validation via XSD mapping and Ontology Rules
             elif dtype_name in gql_to_xsd:
@@ -128,58 +142,54 @@ def validate_data(data_file, ontology_file, report_prefix="validation_report"):
                         # A. Regex Pattern
                         if r["pattern"] is not None:
                             if not re.fullmatch(r["pattern"], raw_val):
-                                error_data[
-                                    "reason"] = f"Value does not match the required ontology pattern: {r['pattern']}"
+                                error_data["reason"] = f"Value does not match the required ontology pattern: {r['pattern']}"
                                 errors.append(error_data.copy())
                                 error_found = True
 
                         # B. String Length Constraints
                         if not error_found and r["exact_len"] is not None and len(raw_val) != r["exact_len"]:
-                            error_data[
-                                "reason"] = f"String length ({len(raw_val)}) does not match the exact required length ({r['exact_len']})"
+                            error_data["reason"] = f"String length ({len(raw_val)}) does not match the exact required length ({r['exact_len']})"
                             errors.append(error_data.copy())
                             error_found = True
 
                         if not error_found and r["min_len"] is not None and len(raw_val) < r["min_len"]:
-                            error_data[
-                                "reason"] = f"String length ({len(raw_val)}) is below the minimum allowed ({r['min_len']})"
+                            error_data["reason"] = f"String length ({len(raw_val)}) is below the minimum allowed ({r['min_len']})"
                             errors.append(error_data.copy())
                             error_found = True
 
                         if not error_found and r["max_len"] is not None and len(raw_val) > r["max_len"]:
-                            error_data[
-                                "reason"] = f"String length ({len(raw_val)}) exceeds the maximum allowed ({r['max_len']})"
+                            error_data["reason"] = f"String length ({len(raw_val)}) exceeds the maximum allowed ({r['max_len']})"
                             errors.append(error_data.copy())
                             error_found = True
 
-                        # C. Numerical Constraints
-                        if not error_found and (r["min"] is not None or r["max"] is not None):
-                            try:
-                                val_float = float(raw_val)
-                                if r["min"] is not None and val_float < r["min"]:
-                                    error_data["reason"] = f"Value is below the allowed minimum ({r['min']})"
-                                    errors.append(error_data.copy())
-                                    error_found = True
-                                elif r["max"] is not None and val_float > r["max"]:
-                                    error_data["reason"] = f"Value is above the allowed maximum ({r['max']})"
-                                    errors.append(error_data.copy())
-                                    error_found = True
-                            except ValueError:
-                                pass
+                        if not error_found and val_lit.ill_typed:
+                            error_data[
+                                "reason"] = f"Lexical form '{raw_val}' is not valid for XSD data format ({base_xsd_str})"
+                            errors.append(error_data.copy())
+                            error_found = True
 
-                                # D. Lexical ill_typed Check
-                    if not error_found and val_lit.ill_typed:
-                        error_data["reason"] = f"Lexical form is not valid for XSD data format ({base_xsd_str})"
-                        errors.append(error_data.copy())
+                        if not error_found and (r["min"] is not None or r["max"] is not None):
+                            val_num = val_lit.value
+                            if val_num is not None:
+                                if r["min"] is not None and val_num < r["min"]:
+                                    error_data[
+                                        "reason"] = f"Value ({val_num}) is below the allowed minimum ({r['min']})"
+                                    errors.append(error_data.copy())
+                                    error_found = True
+                                elif r["max"] is not None and val_num > r["max"]:
+                                    error_data[
+                                        "reason"] = f"Value ({val_num}) is above the allowed maximum ({r['max']})"
+                                    errors.append(error_data.copy())
+                                    error_found = True
 
                 except Exception as e:
                     error_data["reason"] = f"Data verification error: {e}"
-                    errors.append(error_data)
+                    errors.append(error_data.copy())  # <-- POPRAWIONO na .copy()
 
             # 4. Unknown type
             else:
                 error_data["reason"] = "Type was neither recognized nor explicitly mapped in the validator"
-                errors.append(error_data)
+                errors.append(error_data.copy())  # <-- POPRAWIONO na .copy()
 
             if len(errors) > initial_errors_len:
                 invalid_literals_count += 1
@@ -232,8 +242,6 @@ def validate_data(data_file, ontology_file, report_prefix="validation_report"):
 
 
 if __name__ == "__main__":
-
-
     parser = argparse.ArgumentParser(description="GQL Datatypes RDF Validator")
     parser.add_argument("-d", "--data", default="test_data.ttl", help="RDF data file to validate")
     parser.add_argument("-o", "--ontology", default="gql_datatypes.ttl", help="GQL ontology TTL file")

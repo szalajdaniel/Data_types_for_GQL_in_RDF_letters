@@ -2,7 +2,7 @@ import argparse
 import sys
 import random
 import json
-from rdflib import Graph, Namespace, Literal
+from rdflib import Graph, Namespace, Literal, RDF
 from faker import Faker
 import os
 
@@ -52,6 +52,7 @@ def generate_patient_data(output_file, num_records, error_rate, field_probs):
         patient = EX[f"Patient_{i}"]
 
         # Mandatory
+        g.add((patient, RDF.type, SCHEMA.Patient))
         g.add((patient, FOAF.name, Literal(fake.name(), datatype=GQL.STRING)))
 
         # Optional fields based on parameterized probabilities
@@ -164,10 +165,14 @@ def check_percent_float(value):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="RDF Patient Data Generator")
-    parser.add_argument("-o", "--output", default="test_data.ttl", help="Output file path")
-    parser.add_argument("-c", "--count", type=check_positive_int, help="Number of records (positive integer)")
-    parser.add_argument("-e", "--error-rate", type=check_percent_float, help="Percentage of invalid data (0-100)")
-    # ZMIANA: Domyślna wartość to teraz "probabilities.json"
+    parser.add_argument("-o", "--output", default="test_data.ttl", help="Output file path (default: test_data.ttl)")
+
+    #'default'
+    parser.add_argument("-c", "--count", type=check_positive_int, default=1000,
+                        help="Number of records (default: 1000)")
+    parser.add_argument("-e", "--error-rate", type=check_percent_float, default=10.0,
+                        help="Percentage of invalid data (0-100, default: 10.0)")
+
     parser.add_argument("--config", type=str, default="probabilities.json",
                         help="Path to a JSON file overriding field probabilities")
     args = parser.parse_args()
@@ -179,8 +184,15 @@ if __name__ == "__main__":
             try:
                 custom_probs = json.load(f)
 
-
+                # Walidacja kluczy i wartości z pliku JSON
                 for key, value in custom_probs.items():
+                    # 1. Sprawdzenie, czy klucz istnieje w domyślnych ustawieniach (ochrona przed literówkami)
+                    if key not in DEFAULT_PROBS:
+                        print(f"Error: Unknown probability key '{key}' in {args.config}.")
+                        print(f"Allowed keys are: {', '.join(DEFAULT_PROBS.keys())}")
+                        sys.exit(1)
+
+                    # 2. Sprawdzenie zakresu matematycznego (0.0 do 1.0)
                     if not isinstance(value, (int, float)) or not (0.0 <= value <= 1.0):
                         print(
                             f"Error: Invalid probability for '{key}' in {args.config}. Values must be between 0.0 and 1.0 (got: {value}).")
@@ -193,7 +205,6 @@ if __name__ == "__main__":
                 print(f"Error: Failed to parse {args.config}. Invalid JSON format: {e}")
                 sys.exit(1)
     else:
-
         if args.config != "probabilities.json":
             print(f"Warning: Config file '{args.config}' not found. Using defaults.")
         else:
@@ -201,34 +212,9 @@ if __name__ == "__main__":
 
     print("=== RDF Patient Data Generator ===")
 
-    # 1. Error Rate
-    error_rate_pct = args.error_rate
-    if error_rate_pct is None:
-        while True:
-            try:
-                err_input = input("Enter the percentage of invalid data (e.g. 20 for 20%): ")
-                error_rate_pct = float(err_input)
-                if 0 <= error_rate_pct <= 100:
-                    break
-                else:
-                    print("Please enter a value between 0 and 100.")
-            except ValueError:
-                print("Invalid input.")
-
-    error_rate = error_rate_pct / 100.0
-
-    # 2. Record Count
     num_records = args.count
-    if num_records is None:
-        while True:
-            try:
-                count_input = input("Enter the number of records to generate (e.g. 1000): ")
-                num_records = int(count_input)
-                if num_records > 0:
-                    break
-                else:
-                    print("Please enter a positive integer.")
-            except ValueError:
-                print("Invalid input.")
+    error_rate = args.error_rate / 100.0
+
+    print(f"Generating {num_records} records with an error rate of {args.error_rate}%...")
 
     generate_patient_data(args.output, num_records, error_rate, active_probs)

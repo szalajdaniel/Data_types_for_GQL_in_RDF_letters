@@ -1,70 +1,22 @@
 {
     "summary": {
-        "total_literals_evaluated": 503,
-        "valid_literals_count": 414,
-        "invalid_literals_count": 89,
-        "total_error_triggers": 89,
-        "error_rate_percent": 17.69
+        "total_literals_evaluated": 534,
+        "valid_literals_count": 505,
+        "invalid_literals_count": 29,
+        "total_error_triggers": 29,
+        "error_rate_percent": 5.43
     },
     "errors": [
         {
-            "subject": "http://example.org/data#Patient_39",
-            "predicate": "https://schema.org/weight",
-            "value": "94,9",
-            "original_dt": "FLOAT",
-            "base_dt": "double",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_13",
-            "predicate": "http://example.org/data#metadata",
-            "value": "{\"status\": \"active\"}",
-            "original_dt": "UNIT_RECORD",
-            "base_dt": "No mapping",
-            "reason": "Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
-        },
-        {
-            "subject": "http://example.org/data#Patient_21",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Female",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (6) exceeds the maximum allowed (1)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_17",
-            "predicate": "https://schema.org/birthDate",
-            "value": "04-12-2010",
-            "original_dt": "DATE",
-            "base_dt": "date",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-        },
-        {
             "subject": "http://example.org/data#Patient_35",
-            "predicate": "http://example.org/data#metadata",
-            "value": "{\"status\": \"active\"}",
-            "original_dt": "UNIT_RECORD",
-            "base_dt": "No mapping",
-            "reason": "Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
-        },
-        {
-            "subject": "http://example.org/data#Patient_31",
             "predicate": "https://schema.org/duration",
-            "value": "2 years and 1 months",
+            "value": "3 years and 7 months",
             "original_dt": "DURATION_YEAR_TO_MONTH",
             "base_dt": "duration",
             "reason": "Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$"
         },
         {
-            "subject": "http://example.org/data#Patient_46",
-            "predicate": "https://schema.org/arrivalTime",
-            "value": "20-55-59",
-            "original_dt": "LOCAL_TIME",
-            "base_dt": "time",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_1",
+            "subject": "http://example.org/data#Patient_49",
             "predicate": "http://example.org/data#testField",
             "value": "123",
             "original_dt": "UNKNOWN_TYPE",
@@ -72,127 +24,7 @@
             "reason": "Type was neither recognized nor explicitly mapped in the validator"
         },
         {
-            "subject": "http://example.org/data#Patient_7",
-            "predicate": "http://example.org/data#testField",
-            "value": "123",
-            "original_dt": "UNKNOWN_TYPE",
-            "base_dt": "No mapping",
-            "reason": "Type was neither recognized nor explicitly mapped in the validator"
-        },
-        {
-            "subject": "http://example.org/data#Patient_14",
-            "predicate": "https://schema.org/birthDate",
-            "value": "18-02-1983",
-            "original_dt": "DATE",
-            "base_dt": "date",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_11",
-            "predicate": "https://schema.org/requiresHealthPlan",
-            "value": "no",
-            "original_dt": "BOOLEAN",
-            "base_dt": "boolean",
-            "reason": "Value is not a valid boolean (expected true/false/1/0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_26",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Unknown",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (7) exceeds the maximum allowed (1)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_42",
-            "predicate": "https://schema.org/requiresHealthPlan",
-            "value": "no",
-            "original_dt": "BOOLEAN",
-            "base_dt": "boolean",
-            "reason": "Value is not a valid boolean (expected true/false/1/0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_1",
-            "predicate": "http://purl.org/dc/elements/1.1/identifier",
-            "value": "ceaa",
-            "original_dt": "BINARY",
-            "base_dt": "hexBinary",
-            "reason": "String length (4) does not match the exact required length (2)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_1",
-            "predicate": "https://schema.org/birthDate",
-            "value": "16-03-1925",
-            "original_dt": "DATE",
-            "base_dt": "date",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_30",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "-10",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value does not match the required ontology pattern: [+]?[0-9]+"
-        },
-        {
-            "subject": "http://example.org/data#Patient_34",
-            "predicate": "https://schema.org/prescription",
-            "value": "{\"drug\": \"Ibuprofen\"}",
-            "original_dt": "ARRAY",
-            "base_dt": "No mapping",
-            "reason": "Expected a JSON Array (list), but got dict"
-        },
-        {
-            "subject": "http://example.org/data#Patient_47",
-            "predicate": "https://schema.org/baseSalary",
-            "value": "852,66",
-            "original_dt": "DECIMAL",
-            "base_dt": "decimal",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_7",
-            "predicate": "https://schema.org/weight",
-            "value": "83,3",
-            "original_dt": "FLOAT",
-            "base_dt": "double",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_40",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "-10",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value does not match the required ontology pattern: [+]?[0-9]+"
-        },
-        {
-            "subject": "http://example.org/data#Patient_24",
-            "predicate": "https://schema.org/requiresHealthPlan",
-            "value": "no",
-            "original_dt": "BOOLEAN",
-            "base_dt": "boolean",
-            "reason": "Value is not a valid boolean (expected true/false/1/0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_26",
-            "predicate": "http://example.org/data#metadata",
-            "value": "{\"status\": \"active\"}",
-            "original_dt": "UNIT_RECORD",
-            "base_dt": "No mapping",
-            "reason": "Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
-        },
-        {
-            "subject": "http://example.org/data#Patient_5",
-            "predicate": "https://schema.org/Vector",
-            "value": "{\"x\": 1.0, \"y\": 2.0}",
-            "original_dt": "VECTOR",
-            "base_dt": "No mapping",
-            "reason": "Expected a JSON Array (list), but got dict"
-        },
-        {
-            "subject": "http://example.org/data#Patient_35",
+            "subject": "http://example.org/data#Patient_18",
             "predicate": "http://xmlns.com/foaf/0.1/gender",
             "value": "Unknown",
             "original_dt": "CHAR",
@@ -201,22 +33,22 @@
         },
         {
             "subject": "http://example.org/data#Patient_18",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "-10",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value does not match the required ontology pattern: [+]?[0-9]+"
-        },
-        {
-            "subject": "http://example.org/data#Patient_17",
             "predicate": "https://schema.org/arrivalTime",
-            "value": "01-46-18",
+            "value": "10-08-45",
             "original_dt": "LOCAL_TIME",
             "base_dt": "time",
             "reason": "Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?$"
         },
         {
-            "subject": "http://example.org/data#Patient_9",
+            "subject": "http://example.org/data#Patient_8",
+            "predicate": "https://schema.org/birthDate",
+            "value": "17-02-2013",
+            "original_dt": "DATE",
+            "base_dt": "date",
+            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        {
+            "subject": "http://example.org/data#Patient_16",
             "predicate": "http://example.org/data#testField",
             "value": "123",
             "original_dt": "UNKNOWN_TYPE",
@@ -224,151 +56,47 @@
             "reason": "Type was neither recognized nor explicitly mapped in the validator"
         },
         {
-            "subject": "http://example.org/data#Patient_7",
-            "predicate": "https://schema.org/requiresHealthPlan",
-            "value": "no",
-            "original_dt": "BOOLEAN",
-            "base_dt": "boolean",
-            "reason": "Value is not a valid boolean (expected true/false/1/0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_32",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Unknown",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (7) exceeds the maximum allowed (1)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_29",
-            "predicate": "https://schema.org/height",
-            "value": "40000",
-            "original_dt": "INT16",
-            "base_dt": "short",
-            "reason": "Value is above the allowed maximum (32767.0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_7",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Unknown",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (7) exceeds the maximum allowed (1)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_42",
-            "predicate": "https://schema.org/birthDate",
-            "value": "15-10-1912",
-            "original_dt": "DATE",
-            "base_dt": "date",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_11",
-            "predicate": "https://schema.org/weight",
-            "value": "41,3",
-            "original_dt": "FLOAT",
-            "base_dt": "double",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_25",
-            "predicate": "https://schema.org/height",
-            "value": "40000",
-            "original_dt": "INT16",
-            "base_dt": "short",
-            "reason": "Value is above the allowed maximum (32767.0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_19",
-            "predicate": "https://schema.org/requiresHealthPlan",
-            "value": "no",
-            "original_dt": "BOOLEAN",
-            "base_dt": "boolean",
-            "reason": "Value is not a valid boolean (expected true/false/1/0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_40",
-            "predicate": "https://schema.org/birthDate",
-            "value": "19-05-2019",
-            "original_dt": "DATE",
-            "base_dt": "date",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_38",
+            "subject": "http://example.org/data#Patient_18",
             "predicate": "https://schema.org/prescription",
             "value": "{\"drug\": \"Ibuprofen\"}",
             "original_dt": "ARRAY",
             "base_dt": "No mapping",
             "reason": "Expected a JSON Array (list), but got dict"
-        },
-        {
-            "subject": "http://example.org/data#Patient_29",
-            "predicate": "https://schema.org/baseSalary",
-            "value": "2323,66",
-            "original_dt": "DECIMAL",
-            "base_dt": "decimal",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_19",
-            "predicate": "http://example.org/data#metadata",
-            "value": "{\"status\": \"active\"}",
-            "original_dt": "UNIT_RECORD",
-            "base_dt": "No mapping",
-            "reason": "Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
-        },
-        {
-            "subject": "http://example.org/data#Patient_34",
-            "predicate": "https://schema.org/birthDate",
-            "value": "14-01-1962",
-            "original_dt": "DATE",
-            "base_dt": "date",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_32",
-            "predicate": "http://example.org/data#testField",
-            "value": "123",
-            "original_dt": "UNKNOWN_TYPE",
-            "base_dt": "No mapping",
-            "reason": "Type was neither recognized nor explicitly mapped in the validator"
-        },
-        {
-            "subject": "http://example.org/data#Patient_11",
-            "predicate": "http://example.org/data#testField",
-            "value": "123",
-            "original_dt": "UNKNOWN_TYPE",
-            "base_dt": "No mapping",
-            "reason": "Type was neither recognized nor explicitly mapped in the validator"
-        },
-        {
-            "subject": "http://example.org/data#Patient_28",
-            "predicate": "https://schema.org/prescription",
-            "value": "{\"drug\": \"Ibuprofen\"}",
-            "original_dt": "ARRAY",
-            "base_dt": "No mapping",
-            "reason": "Expected a JSON Array (list), but got dict"
-        },
-        {
-            "subject": "http://example.org/data#Patient_23",
-            "predicate": "https://schema.org/baseSalary",
-            "value": "2953,99",
-            "original_dt": "DECIMAL",
-            "base_dt": "decimal",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?"
         },
         {
             "subject": "http://example.org/data#Patient_12",
-            "predicate": "https://schema.org/prescription",
-            "value": "{\"drug\": \"Ibuprofen\"}",
-            "original_dt": "ARRAY",
-            "base_dt": "No mapping",
-            "reason": "Expected a JSON Array (list), but got dict"
+            "predicate": "https://schema.org/duration",
+            "value": "5 years and 8 months",
+            "original_dt": "DURATION_YEAR_TO_MONTH",
+            "base_dt": "duration",
+            "reason": "Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$"
         },
         {
-            "subject": "http://example.org/data#Patient_42",
+            "subject": "http://example.org/data#Patient_19",
+            "predicate": "https://schema.org/arrivalTime",
+            "value": "14-03-32",
+            "original_dt": "LOCAL_TIME",
+            "base_dt": "time",
+            "reason": "Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?$"
+        },
+        {
+            "subject": "http://example.org/data#Patient_16",
+            "predicate": "http://xmlns.com/foaf/0.1/gender",
+            "value": "Unknown",
+            "original_dt": "CHAR",
+            "base_dt": "string",
+            "reason": "String length (7) exceeds the maximum allowed (1)"
+        },
+        {
+            "subject": "http://example.org/data#Patient_40",
+            "predicate": "http://purl.org/dc/elements/1.1/identifier",
+            "value": "2ef5",
+            "original_dt": "BINARY",
+            "base_dt": "hexBinary",
+            "reason": "String length (4) does not match the exact required length (2)"
+        },
+        {
+            "subject": "http://example.org/data#Patient_37",
             "predicate": "http://example.org/data#testField",
             "value": "123",
             "original_dt": "UNKNOWN_TYPE",
@@ -376,47 +104,47 @@
             "reason": "Type was neither recognized nor explicitly mapped in the validator"
         },
         {
-            "subject": "http://example.org/data#Patient_13",
-            "predicate": "https://schema.org/weight",
-            "value": "64,2",
-            "original_dt": "FLOAT",
-            "base_dt": "double",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
+            "subject": "http://example.org/data#Patient_45",
+            "predicate": "https://schema.org/height",
+            "value": "-40000",
+            "original_dt": "INT16",
+            "base_dt": "short",
+            "reason": "Value is below the allowed minimum (-32768.0)"
         },
         {
-            "subject": "http://example.org/data#Patient_28",
+            "subject": "http://example.org/data#Patient_12",
             "predicate": "https://schema.org/birthDate",
-            "value": "21-03-1929",
+            "value": "13-03-1926",
             "original_dt": "DATE",
             "base_dt": "date",
             "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
         {
-            "subject": "http://example.org/data#Patient_48",
-            "predicate": "https://schema.org/prescription",
-            "value": "{\"drug\": \"Ibuprofen\"}",
-            "original_dt": "ARRAY",
+            "subject": "http://example.org/data#Patient_33",
+            "predicate": "https://schema.org/baseSalary",
+            "value": "2676,48",
+            "original_dt": "DECIMAL",
+            "base_dt": "decimal",
+            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?"
+        },
+        {
+            "subject": "http://example.org/data#Patient_43",
+            "predicate": "https://schema.org/Vector",
+            "value": "{\"x\": 1.0, \"y\": 2.0}",
+            "original_dt": "VECTOR",
             "base_dt": "No mapping",
             "reason": "Expected a JSON Array (list), but got dict"
         },
         {
-            "subject": "http://example.org/data#Patient_0",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "-10",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value does not match the required ontology pattern: [+]?[0-9]+"
+            "subject": "http://example.org/data#Patient_24",
+            "predicate": "https://schema.org/requiresHealthPlan",
+            "value": "yes",
+            "original_dt": "BOOLEAN",
+            "base_dt": "boolean",
+            "reason": "Value is not a valid boolean (expected true/false/1/0)"
         },
         {
-            "subject": "http://example.org/data#Patient_44",
-            "predicate": "https://schema.org/weight",
-            "value": "84,7",
-            "original_dt": "FLOAT",
-            "base_dt": "double",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_45",
+            "subject": "http://example.org/data#Patient_35",
             "predicate": "http://example.org/data#testField",
             "value": "123",
             "original_dt": "UNKNOWN_TYPE",
@@ -425,142 +153,70 @@
         },
         {
             "subject": "http://example.org/data#Patient_41",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Male",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (4) exceeds the maximum allowed (1)"
+            "predicate": "http://example.org/data#metadata",
+            "value": "{\"status\": \"active\"}",
+            "original_dt": "UNIT_RECORD",
+            "base_dt": "No mapping",
+            "reason": "Expected an EMPTY JSON Object for UNIT_RECORD, but got a populated structure"
+        },
+        {
+            "subject": "http://example.org/data#Patient_24",
+            "predicate": "https://schema.org/birthDate",
+            "value": "21-01-1935",
+            "original_dt": "DATE",
+            "base_dt": "date",
+            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
         {
             "subject": "http://example.org/data#Patient_45",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Female",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (6) exceeds the maximum allowed (1)"
+            "predicate": "https://schema.org/prescription",
+            "value": "{\"drug\": \"Ibuprofen\"}",
+            "original_dt": "ARRAY",
+            "base_dt": "No mapping",
+            "reason": "Expected a JSON Array (list), but got dict"
         },
         {
-            "subject": "http://example.org/data#Patient_6",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "300",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value is above the allowed maximum (255.0)"
+            "subject": "http://example.org/data#Patient_5",
+            "predicate": "https://schema.org/duration",
+            "value": "5 years and 5 months",
+            "original_dt": "DURATION_YEAR_TO_MONTH",
+            "base_dt": "duration",
+            "reason": "Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$"
         },
         {
-            "subject": "http://example.org/data#Patient_3",
+            "subject": "http://example.org/data#Patient_30",
             "predicate": "http://purl.org/dc/elements/1.1/identifier",
-            "value": "422e",
+            "value": "9534",
             "original_dt": "BINARY",
             "base_dt": "hexBinary",
             "reason": "String length (4) does not match the exact required length (2)"
         },
         {
             "subject": "http://example.org/data#Patient_21",
-            "predicate": "https://schema.org/prescription",
-            "value": "{\"drug\": \"Ibuprofen\"}",
-            "original_dt": "ARRAY",
+            "predicate": "http://example.org/data#testField",
+            "value": "123",
+            "original_dt": "UNKNOWN_TYPE",
             "base_dt": "No mapping",
-            "reason": "Expected a JSON Array (list), but got dict"
+            "reason": "Type was neither recognized nor explicitly mapped in the validator"
         },
         {
-            "subject": "http://example.org/data#Patient_26",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "300",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value is above the allowed maximum (255.0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_36",
+            "subject": "http://example.org/data#Patient_27",
             "predicate": "https://schema.org/weight",
-            "value": "41,4",
+            "value": "90,9",
             "original_dt": "FLOAT",
             "base_dt": "double",
             "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_26",
-            "predicate": "https://schema.org/Vector",
-            "value": "{\"x\": 1.0, \"y\": 2.0}",
-            "original_dt": "VECTOR",
-            "base_dt": "No mapping",
-            "reason": "Expected a JSON Array (list), but got dict"
-        },
-        {
-            "subject": "http://example.org/data#Patient_26",
-            "predicate": "https://schema.org/prescription",
-            "value": "{\"drug\": \"Ibuprofen\"}",
-            "original_dt": "ARRAY",
-            "base_dt": "No mapping",
-            "reason": "Expected a JSON Array (list), but got dict"
-        },
-        {
-            "subject": "http://example.org/data#Patient_4",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Unknown",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (7) exceeds the maximum allowed (1)"
         },
         {
             "subject": "http://example.org/data#Patient_30",
-            "predicate": "http://example.org/data#testField",
-            "value": "123",
-            "original_dt": "UNKNOWN_TYPE",
-            "base_dt": "No mapping",
-            "reason": "Type was neither recognized nor explicitly mapped in the validator"
+            "predicate": "https://schema.org/arrivalTime",
+            "value": "16-12-08",
+            "original_dt": "LOCAL_TIME",
+            "base_dt": "time",
+            "reason": "Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?$"
         },
         {
-            "subject": "http://example.org/data#Patient_3",
-            "predicate": "https://schema.org/birthDate",
-            "value": "22-11-2005",
-            "original_dt": "DATE",
-            "base_dt": "date",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_37",
-            "predicate": "https://schema.org/requiresHealthPlan",
-            "value": "yes",
-            "original_dt": "BOOLEAN",
-            "base_dt": "boolean",
-            "reason": "Value is not a valid boolean (expected true/false/1/0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_44",
-            "predicate": "http://example.org/data#testField",
-            "value": "123",
-            "original_dt": "UNKNOWN_TYPE",
-            "base_dt": "No mapping",
-            "reason": "Type was neither recognized nor explicitly mapped in the validator"
-        },
-        {
-            "subject": "http://example.org/data#Patient_22",
-            "predicate": "http://purl.org/dc/elements/1.1/identifier",
-            "value": "6117",
-            "original_dt": "BINARY",
-            "base_dt": "hexBinary",
-            "reason": "String length (4) does not match the exact required length (2)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_43",
-            "predicate": "https://schema.org/weight",
-            "value": "105,6",
-            "original_dt": "FLOAT",
-            "base_dt": "double",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_48",
-            "predicate": "https://schema.org/birthDate",
-            "value": "02-09-1932",
-            "original_dt": "DATE",
-            "base_dt": "date",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_11",
+            "subject": "http://example.org/data#Patient_0",
             "predicate": "https://schema.org/height",
             "value": "-40000",
             "original_dt": "INT16",
@@ -568,156 +224,20 @@
             "reason": "Value is below the allowed minimum (-32768.0)"
         },
         {
-            "subject": "http://example.org/data#Patient_2",
-            "predicate": "http://purl.org/dc/elements/1.1/identifier",
-            "value": "2776",
-            "original_dt": "BINARY",
-            "base_dt": "hexBinary",
-            "reason": "String length (4) does not match the exact required length (2)"
+            "subject": "http://example.org/data#Patient_4",
+            "predicate": "http://example.org/data#testField",
+            "value": "123",
+            "original_dt": "UNKNOWN_TYPE",
+            "base_dt": "No mapping",
+            "reason": "Type was neither recognized nor explicitly mapped in the validator"
         },
         {
-            "subject": "http://example.org/data#Patient_36",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Unknown",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (7) exceeds the maximum allowed (1)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_9",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "300",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value is above the allowed maximum (255.0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_49",
-            "predicate": "https://schema.org/requiresHealthPlan",
-            "value": "no",
-            "original_dt": "BOOLEAN",
-            "base_dt": "boolean",
-            "reason": "Value is not a valid boolean (expected true/false/1/0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_13",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Female",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (6) exceeds the maximum allowed (1)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_9",
+            "subject": "http://example.org/data#Patient_34",
             "predicate": "https://schema.org/prescription",
             "value": "{\"drug\": \"Ibuprofen\"}",
             "original_dt": "ARRAY",
             "base_dt": "No mapping",
             "reason": "Expected a JSON Array (list), but got dict"
-        },
-        {
-            "subject": "http://example.org/data#Patient_37",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "-10",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value does not match the required ontology pattern: [+]?[0-9]+"
-        },
-        {
-            "subject": "http://example.org/data#Patient_42",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Unknown",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (7) exceeds the maximum allowed (1)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_27",
-            "predicate": "https://schema.org/requiresHealthPlan",
-            "value": "no",
-            "original_dt": "BOOLEAN",
-            "base_dt": "boolean",
-            "reason": "Value is not a valid boolean (expected true/false/1/0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_47",
-            "predicate": "https://schema.org/duration",
-            "value": "5 years and 9 months",
-            "original_dt": "DURATION_YEAR_TO_MONTH",
-            "base_dt": "duration",
-            "reason": "Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_36",
-            "predicate": "https://schema.org/duration",
-            "value": "2 years and 3 months",
-            "original_dt": "DURATION_YEAR_TO_MONTH",
-            "base_dt": "duration",
-            "reason": "Value does not match the required ontology pattern: ^P[0-9]+Y[0-9]+M$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_40",
-            "predicate": "https://schema.org/weight",
-            "value": "57,4",
-            "original_dt": "FLOAT",
-            "base_dt": "double",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_14",
-            "predicate": "https://schema.org/weight",
-            "value": "109,3",
-            "original_dt": "FLOAT",
-            "base_dt": "double",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_6",
-            "predicate": "https://schema.org/weight",
-            "value": "72,5",
-            "original_dt": "FLOAT",
-            "base_dt": "double",
-            "reason": "Value does not match the required ontology pattern: [+-]?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?"
-        },
-        {
-            "subject": "http://example.org/data#Patient_25",
-            "predicate": "https://schema.org/birthDate",
-            "value": "05-03-1991",
-            "original_dt": "DATE",
-            "base_dt": "date",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_32",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "300",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value is above the allowed maximum (255.0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_7",
-            "predicate": "http://xmlns.com/foaf/0.1/age",
-            "value": "300",
-            "original_dt": "UINT8",
-            "base_dt": "unsignedByte",
-            "reason": "Value is above the allowed maximum (255.0)"
-        },
-        {
-            "subject": "http://example.org/data#Patient_42",
-            "predicate": "https://schema.org/arrivalTime",
-            "value": "09-11-34",
-            "original_dt": "LOCAL_TIME",
-            "base_dt": "time",
-            "reason": "Value does not match the required ontology pattern: ^[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?$"
-        },
-        {
-            "subject": "http://example.org/data#Patient_49",
-            "predicate": "http://xmlns.com/foaf/0.1/gender",
-            "value": "Female",
-            "original_dt": "CHAR",
-            "base_dt": "string",
-            "reason": "String length (6) exceeds the maximum allowed (1)"
         }
     ]
 }
