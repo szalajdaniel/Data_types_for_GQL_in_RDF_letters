@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Generator and Validator of Synthetic Medical RDF Graphs with Semantic Typing"
+version: "1.0.0"
+license: "MIT"
+type: software
+message: "If you use this software, please cite it as below."
+abstract: "This repository contains the source code for a comprehensive system designed to generate and validate synthetic medical data represented as RDF (Resource Description Framework) graphs. The software addresses the challenge of strict data typing in the Semantic Web environment by implementing a custom GQL-based ontology utilizing XML Schema (XSD) standards."
+authors:
+  - given-names: "Daniel"
+    family-names: "Szałaj"
+    affiliation: "Uniwersytet w Białymstoku wydział Informatyki"
+keywords:
+  - RDF
+  - Semantic Web
+  - Data Validation
+  - Healthcare Data
+  - Python
+  - Ontology
+  - rdflib
